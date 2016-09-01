@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{790075B6-91C7-44DE-34A9-5192386C3462}") = "GuitarPatterns", "Assembly-CSharp.csproj", "{F91B39D1-DA4F-FC26-24CC-3F47703BB4E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F91B39D1-DA4F-FC26-24CC-3F47703BB4E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F91B39D1-DA4F-FC26-24CC-3F47703BB4E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F91B39D1-DA4F-FC26-24CC-3F47703BB4E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F91B39D1-DA4F-FC26-24CC-3F47703BB4E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

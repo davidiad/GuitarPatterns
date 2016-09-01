@@ -1,0 +1,98 @@
+﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+#include <stdint.h>
+#include <assert.h>
+#include <exception>
+
+
+#include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Collections_Generic_Dictionary_2_g1173172538MethodDeclarations.h"
+
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::.ctor()
+#define Dictionary_2__ctor_m2735666370(__this, method) ((  void (*) (Dictionary_2_t53793924 *, const MethodInfo*))Dictionary_2__ctor_m315673637_gshared)(__this, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::.ctor(System.Collections.Generic.IEqualityComparer`1<TKey>)
+#define Dictionary_2__ctor_m1500366786(__this, ___comparer, method) ((  void (*) (Dictionary_2_t53793924 *, Il2CppObject*, const MethodInfo*))Dictionary_2__ctor_m1324452380_gshared)(__this, ___comparer, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::.ctor(System.Int32)
+#define Dictionary_2__ctor_m2715012508(__this, ___capacity, method) ((  void (*) (Dictionary_2_t53793924 *, int32_t, const MethodInfo*))Dictionary_2__ctor_m1400664566_gshared)(__this, ___capacity, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+#define Dictionary_2__ctor_m417991564(__this, ___info, ___context, method) ((  void (*) (Dictionary_2_t53793924 *, SerializationInfo_t2995724695 *, StreamingContext_t986364934 , const MethodInfo*))Dictionary_2__ctor_m3763530726_gshared)(__this, ___info, ___context, method)
+// System.Object System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.IDictionary.get_Item(System.Object)
+#define Dictionary_2_System_Collections_IDictionary_get_Item_m1786893267(__this, ___key, method) ((  Il2CppObject * (*) (Dictionary_2_t53793924 *, Il2CppObject *, const MethodInfo*))Dictionary_2_System_Collections_IDictionary_get_Item_m1864269827_gshared)(__this, ___key, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.IDictionary.set_Item(System.Object,System.Object)
+#define Dictionary_2_System_Collections_IDictionary_set_Item_m646999106(__this, ___key, ___value, method) ((  void (*) (Dictionary_2_t53793924 *, Il2CppObject *, Il2CppObject *, const MethodInfo*))Dictionary_2_System_Collections_IDictionary_set_Item_m1039707944_gshared)(__this, ___key, ___value, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.IDictionary.Add(System.Object,System.Object)
+#define Dictionary_2_System_Collections_IDictionary_Add_m1414508751(__this, ___key, ___value, method) ((  void (*) (Dictionary_2_t53793924 *, Il2CppObject *, Il2CppObject *, const MethodInfo*))Dictionary_2_System_Collections_IDictionary_Add_m2199303721_gshared)(__this, ___key, ___value, method)
+// System.Boolean System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.IDictionary.Contains(System.Object)
+#define Dictionary_2_System_Collections_IDictionary_Contains_m1278246659(__this, ___key, method) ((  bool (*) (Dictionary_2_t53793924 *, Il2CppObject *, const MethodInfo*))Dictionary_2_System_Collections_IDictionary_Contains_m1775896365_gshared)(__this, ___key, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.IDictionary.Remove(System.Object)
+#define Dictionary_2_System_Collections_IDictionary_Remove_m3889670784(__this, ___key, method) ((  void (*) (Dictionary_2_t53793924 *, Il2CppObject *, const MethodInfo*))Dictionary_2_System_Collections_IDictionary_Remove_m3791550822_gshared)(__this, ___key, method)
+// System.Object System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.ICollection.get_SyncRoot()
+#define Dictionary_2_System_Collections_ICollection_get_SyncRoot_m3809249891(__this, method) ((  Il2CppObject * (*) (Dictionary_2_t53793924 *, const MethodInfo*))Dictionary_2_System_Collections_ICollection_get_SyncRoot_m1520724019_gshared)(__this, method)
+// System.Boolean System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.get_IsReadOnly()
+#define Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_get_IsReadOnly_m2652090421(__this, method) ((  bool (*) (Dictionary_2_t53793924 *, const MethodInfo*))Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_get_IsReadOnly_m2772091083_gshared)(__this, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Add(System.Collections.Generic.KeyValuePair`2<TKey,TValue>)
+#define Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Add_m170661654(__this, ___keyValuePair, method) ((  void (*) (Dictionary_2_t53793924 *, KeyValuePair_2_t3837292518 , const MethodInfo*))Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Add_m1345960700_gshared)(__this, ___keyValuePair, method)
+// System.Boolean System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Contains(System.Collections.Generic.KeyValuePair`2<TKey,TValue>)
+#define Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Contains_m1359712944(__this, ___keyValuePair, method) ((  bool (*) (Dictionary_2_t53793924 *, KeyValuePair_2_t3837292518 , const MethodInfo*))Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Contains_m577953606_gshared)(__this, ___keyValuePair, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.CopyTo(System.Collections.Generic.KeyValuePair`2<TKey,TValue>[],System.Int32)
+#define Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_CopyTo_m532000122(__this, ___array, ___index, method) ((  void (*) (Dictionary_2_t53793924 *, KeyValuePair_2U5BU5D_t3476243907*, int32_t, const MethodInfo*))Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_CopyTo_m534012896_gshared)(__this, ___array, ___index, method)
+// System.Boolean System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Remove(System.Collections.Generic.KeyValuePair`2<TKey,TValue>)
+#define Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Remove_m1321117141(__this, ___keyValuePair, method) ((  bool (*) (Dictionary_2_t53793924 *, KeyValuePair_2_t3837292518 , const MethodInfo*))Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Remove_m1637621739_gshared)(__this, ___keyValuePair, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
+#define Dictionary_2_System_Collections_ICollection_CopyTo_m1695843033(__this, ___array, ___index, method) ((  void (*) (Dictionary_2_t53793924 *, Il2CppArray *, int32_t, const MethodInfo*))Dictionary_2_System_Collections_ICollection_CopyTo_m254683327_gshared)(__this, ___array, ___index, method)
+// System.Collections.IEnumerator System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.IEnumerable.GetEnumerator()
+#define Dictionary_2_System_Collections_IEnumerable_GetEnumerator_m3901186856(__this, method) ((  Il2CppObject * (*) (Dictionary_2_t53793924 *, const MethodInfo*))Dictionary_2_System_Collections_IEnumerable_GetEnumerator_m3866120186_gshared)(__this, method)
+// System.Collections.Generic.IEnumerator`1<System.Collections.Generic.KeyValuePair`2<TKey,TValue>> System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey,TValue>>.GetEnumerator()
+#define Dictionary_2_System_Collections_Generic_IEnumerableU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_GetEnumerator_m1530586847(__this, method) ((  Il2CppObject* (*) (Dictionary_2_t53793924 *, const MethodInfo*))Dictionary_2_System_Collections_Generic_IEnumerableU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_GetEnumerator_m31027511_gshared)(__this, method)
+// System.Collections.IDictionaryEnumerator System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::System.Collections.IDictionary.GetEnumerator()
+#define Dictionary_2_System_Collections_IDictionary_GetEnumerator_m628937708(__this, method) ((  Il2CppObject * (*) (Dictionary_2_t53793924 *, const MethodInfo*))Dictionary_2_System_Collections_IDictionary_GetEnumerator_m3582587922_gshared)(__this, method)
+// System.Int32 System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::get_Count()
+#define Dictionary_2_get_Count_m3483674475(__this, method) ((  int32_t (*) (Dictionary_2_t53793924 *, const MethodInfo*))Dictionary_2_get_Count_m2431671821_gshared)(__this, method)
+// TValue System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::get_Item(TKey)
+#define Dictionary_2_get_Item_m2800746044(__this, ___key, method) ((  GameObject_t4012695102 * (*) (Dictionary_2_t53793924 *, int32_t, const MethodInfo*))Dictionary_2_get_Item_m2176104894_gshared)(__this, ___key, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::set_Item(TKey,TValue)
+#define Dictionary_2_set_Item_m2987747147(__this, ___key, ___value, method) ((  void (*) (Dictionary_2_t53793924 *, int32_t, GameObject_t4012695102 *, const MethodInfo*))Dictionary_2_set_Item_m2619759909_gshared)(__this, ___key, ___value, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::Init(System.Int32,System.Collections.Generic.IEqualityComparer`1<TKey>)
+#define Dictionary_2_Init_m3645960259(__this, ___capacity, ___hcp, method) ((  void (*) (Dictionary_2_t53793924 *, int32_t, Il2CppObject*, const MethodInfo*))Dictionary_2_Init_m3344038813_gshared)(__this, ___capacity, ___hcp, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::InitArrays(System.Int32)
+#define Dictionary_2_InitArrays_m2336127444(__this, ___size, method) ((  void (*) (Dictionary_2_t53793924 *, int32_t, const MethodInfo*))Dictionary_2_InitArrays_m384859578_gshared)(__this, ___size, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::CopyToCheck(System.Array,System.Int32)
+#define Dictionary_2_CopyToCheck_m4046295760(__this, ___array, ___index, method) ((  void (*) (Dictionary_2_t53793924 *, Il2CppArray *, int32_t, const MethodInfo*))Dictionary_2_CopyToCheck_m1790954550_gshared)(__this, ___array, ___index, method)
+// System.Collections.Generic.KeyValuePair`2<TKey,TValue> System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::make_pair(TKey,TValue)
+#define Dictionary_2_make_pair_m3850689380(__this /* static, unused */, ___key, ___value, method) ((  KeyValuePair_2_t3837292518  (*) (Il2CppObject * /* static, unused */, int32_t, GameObject_t4012695102 *, const MethodInfo*))Dictionary_2_make_pair_m1312432770_gshared)(__this /* static, unused */, ___key, ___value, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::CopyTo(System.Collections.Generic.KeyValuePair`2<TKey,TValue>[],System.Int32)
+#define Dictionary_2_CopyTo_m465549055(__this, ___array, ___index, method) ((  void (*) (Dictionary_2_t53793924 *, KeyValuePair_2U5BU5D_t3476243907*, int32_t, const MethodInfo*))Dictionary_2_CopyTo_m1115510489_gshared)(__this, ___array, ___index, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::Resize()
+#define Dictionary_2_Resize_m3064467661(__this, method) ((  void (*) (Dictionary_2_t53793924 *, const MethodInfo*))Dictionary_2_Resize_m1253744819_gshared)(__this, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::Add(TKey,TValue)
+#define Dictionary_2_Add_m2255091786(__this, ___key, ___value, method) ((  void (*) (Dictionary_2_t53793924 *, int32_t, GameObject_t4012695102 *, const MethodInfo*))Dictionary_2_Add_m1475953200_gshared)(__this, ___key, ___value, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::Clear()
+#define Dictionary_2_Clear_m1798089974(__this, method) ((  void (*) (Dictionary_2_t53793924 *, const MethodInfo*))Dictionary_2_Clear_m2016774224_gshared)(__this, method)
+// System.Boolean System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::ContainsKey(TKey)
+#define Dictionary_2_ContainsKey_m2347349280(__this, ___key, method) ((  bool (*) (Dictionary_2_t53793924 *, int32_t, const MethodInfo*))Dictionary_2_ContainsKey_m3188593334_gshared)(__this, ___key, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+#define Dictionary_2_GetObjectData_m358418153(__this, ___info, ___context, method) ((  void (*) (Dictionary_2_t53793924 *, SerializationInfo_t2995724695 *, StreamingContext_t986364934 , const MethodInfo*))Dictionary_2_GetObjectData_m4126469443_gshared)(__this, ___info, ___context, method)
+// System.Void System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::OnDeserialization(System.Object)
+#define Dictionary_2_OnDeserialization_m157211419(__this, ___sender, method) ((  void (*) (Dictionary_2_t53793924 *, Il2CppObject *, const MethodInfo*))Dictionary_2_OnDeserialization_m3319372033_gshared)(__this, ___sender, method)
+// System.Boolean System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::Remove(TKey)
+#define Dictionary_2_Remove_m3359756240(__this, ___key, method) ((  bool (*) (Dictionary_2_t53793924 *, int32_t, const MethodInfo*))Dictionary_2_Remove_m997379194_gshared)(__this, ___key, method)
+// System.Boolean System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::TryGetValue(TKey,TValue&)
+#define Dictionary_2_TryGetValue_m2373905785(__this, ___key, ___value, method) ((  bool (*) (Dictionary_2_t53793924 *, int32_t, GameObject_t4012695102 **, const MethodInfo*))Dictionary_2_TryGetValue_m403657999_gshared)(__this, ___key, ___value, method)
+// TKey System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::ToTKey(System.Object)
+#define Dictionary_2_ToTKey_m1098742325(__this, ___key, method) ((  int32_t (*) (Dictionary_2_t53793924 *, Il2CppObject *, const MethodInfo*))Dictionary_2_ToTKey_m3977553807_gshared)(__this, ___key, method)
+// TValue System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::ToTValue(System.Object)
+#define Dictionary_2_ToTValue_m2292327121(__this, ___value, method) ((  GameObject_t4012695102 * (*) (Dictionary_2_t53793924 *, Il2CppObject *, const MethodInfo*))Dictionary_2_ToTValue_m1028340111_gshared)(__this, ___value, method)
+// System.Boolean System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::ContainsKeyValuePair(System.Collections.Generic.KeyValuePair`2<TKey,TValue>)
+#define Dictionary_2_ContainsKeyValuePair_m2147253683(__this, ___pair, method) ((  bool (*) (Dictionary_2_t53793924 *, KeyValuePair_2_t3837292518 , const MethodInfo*))Dictionary_2_ContainsKeyValuePair_m2389912157_gshared)(__this, ___pair, method)
+// System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::GetEnumerator()
+#define Dictionary_2_GetEnumerator_m613413078(__this, method) ((  Enumerator_t4115789161  (*) (Dictionary_2_t53793924 *, const MethodInfo*))Dictionary_2_GetEnumerator_m3279526250_gshared)(__this, method)
+// System.Collections.DictionaryEntry System.Collections.Generic.Dictionary`2<Fretboard/PieceType,UnityEngine.GameObject>::<CopyTo>m__0(TKey,TValue)
+#define Dictionary_2_U3CCopyToU3Em__0_m3627812557(__this /* static, unused */, ___key, ___value, method) ((  DictionaryEntry_t130027246  (*) (Il2CppObject * /* static, unused */, int32_t, GameObject_t4012695102 *, const MethodInfo*))Dictionary_2_U3CCopyToU3Em__0_m3547759673_gshared)(__this /* static, unused */, ___key, ___value, method)

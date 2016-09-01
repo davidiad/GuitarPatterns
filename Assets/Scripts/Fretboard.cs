@@ -1,0 +1,120 @@
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public class Fretboard : MonoBehaviour {
+
+	public enum PieceType 
+	{
+		NORMAL,
+		COUNT,
+	};
+
+	[System.Serializable]
+
+	public struct PiecePrefab 
+	{
+		public PieceType type;
+		public GameObject prefab;
+	};
+
+	public int xDim;
+	public int yDim;
+
+	public PiecePrefab[] piecePrefabs;
+	public GameObject backgroundPrefab;
+
+	private Dictionary<PieceType, GameObject> piecePrefabDict;
+
+	private Note[,] notes;
+
+	// Use this for initialization
+	void Start () {
+		piecePrefabDict = new Dictionary <PieceType, GameObject> ();
+
+		for (int i = 0; i < piecePrefabs.Length; i++) {
+			if (!piecePrefabDict.ContainsKey (piecePrefabs [i].type)) {
+				piecePrefabDict.Add (piecePrefabs [i].type, piecePrefabs [i].prefab);
+			}
+		}
+
+		for (int x = 0; x < xDim; x++) {
+			for (int y = 0; y < yDim; y++) {
+				
+				GameObject background = (GameObject)Instantiate (backgroundPrefab, new Vector3 (3.01f * x, 0, y), Quaternion.identity);
+				background.transform.parent = transform;
+			}
+		}
+
+		notes = new Note[xDim, yDim];
+		int octave = 2;
+
+		for (int x = 0; x < xDim; x++) {
+			for (int y = 0; y < yDim; y++) {
+				GameObject newNote = (GameObject)Instantiate (piecePrefabDict [PieceType.NORMAL], new Vector3 (3.01f * x, 0, 1.3f * y), Quaternion.identity);
+				newNote.name = "Notes(" + x + "," + y + ")";
+				newNote.transform.parent = transform;
+
+				notes[x, y] = newNote.GetComponent<Note>();
+
+				int pitchShift = 0;
+
+				switch (y) {
+				case 0: // low E string
+					pitchShift = 8;
+					if (x > 3) {
+						octave = 3;
+					} else { octave = 2; }
+					break;
+				case 1: // A string
+					pitchShift = 1;
+					octave = 3;
+					break;
+				case 2: // D string
+					pitchShift = 6;
+					if (x > 5) {octave = 4;}
+					else {octave = 3;}
+					break;
+				case 3: // G string
+					pitchShift = 11;
+					if (x == 0) {octave = 3;}
+					else {octave = 4;}
+					break;
+				case 4: // B string
+					pitchShift = 3;
+					if (x > 8) {octave = 5;}
+					else {octave = 4;}
+					break;
+				case 5: // high E string
+					pitchShift = 8;
+					if (x > 3) {
+						octave = 5;
+					} else {
+						octave = 4;
+					}
+					break;
+				default: // either E string
+					pitchShift = 8;
+					break;
+				}
+				notes[x,y].Init(this, PieceType.NORMAL, pitchShift + x, octave);
+
+				//notes [x, y].NoteComponent.SetPitch ((Note.PitchType)Random.Range (0, notes [x, y].NoteComponent.NumPitches));
+			}
+		}
+	}
+
+//	Vector2 GetWorldPosition(int x, int y) {
+//		return new Vector2 (transform.position.x - xDim / 2.0f + x, transform.position.y + yDim / 2.0f - y);
+//
+//	}
+	Vector3 GetWorldPosition(int x, int y) {
+		return new Vector3 (transform.position.x - xDim / 2.0f + (3.01f * x), 0.0f, transform.position.y + yDim / 2.0f - y);
+
+	}
+
+
+	
+
+}
+ 
