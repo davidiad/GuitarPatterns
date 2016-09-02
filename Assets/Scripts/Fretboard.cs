@@ -41,7 +41,7 @@ public class Fretboard : MonoBehaviour {
 		for (int x = 0; x < xDim; x++) {
 			for (int y = 0; y < yDim; y++) {
 				
-				GameObject background = (GameObject)Instantiate (backgroundPrefab, new Vector3 (3.01f * x, 0, y), Quaternion.identity);
+				GameObject background = (GameObject)Instantiate (backgroundPrefab, new Vector3 (3.01f * x + 3.0f + 0, 0, y + 0.8f), Quaternion.identity);
 				background.transform.parent = transform;
 			}
 		}
@@ -61,32 +61,32 @@ public class Fretboard : MonoBehaviour {
 
 				switch (y) {
 				case 0: // low E string
-					pitchShift = 8;
+					pitchShift = 7;
 					if (x > 3) {
 						octave = 3;
 					} else { octave = 2; }
 					break;
 				case 1: // A string
-					pitchShift = 1;
+					pitchShift = 0;
 					octave = 3;
 					break;
 				case 2: // D string
-					pitchShift = 6;
+					pitchShift = 5;
 					if (x > 5) {octave = 4;}
 					else {octave = 3;}
 					break;
 				case 3: // G string
-					pitchShift = 11;
+					pitchShift = 10;
 					if (x == 0) {octave = 3;}
 					else {octave = 4;}
 					break;
 				case 4: // B string
-					pitchShift = 3;
+					pitchShift = 2;
 					if (x > 8) {octave = 5;}
 					else {octave = 4;}
 					break;
 				case 5: // high E string
-					pitchShift = 8;
+					pitchShift = 7;
 					if (x > 3) {
 						octave = 5;
 					} else {

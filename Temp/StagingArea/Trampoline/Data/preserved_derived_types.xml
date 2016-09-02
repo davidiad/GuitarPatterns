@@ -1,8 +1,0 @@
-<linker>
-<assembly fullname="Assembly-CSharp">
-<type fullname="Fretboard" preserve="all"/>
-<type fullname="GuitarNoteClips" preserve="all"/>
-<type fullname="Note" preserve="all"/>
-<type fullname="NoteInfo" preserve="all"/>
-</assembly>
-</linker>

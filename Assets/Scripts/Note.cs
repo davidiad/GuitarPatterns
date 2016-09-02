@@ -65,7 +65,8 @@ public class Note : MonoBehaviour {
 
 	public enum PitchType
 	{
-		C, CSHARP, D, DSHARP, E, F, FSHARP, G, GSHARP, A, ASHARP, B, COUNT 
+		//C, CSHARP, D, DSHARP, E, F, FSHARP, G, GSHARP, A, ASHARP, B, COUNT 
+		C, CSHARP, D, DSHARP, E, F, FSHARP, G, GSHARP, A, ASHARP, B, COUNT
 	};
 		
 
