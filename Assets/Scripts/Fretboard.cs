@@ -27,9 +27,10 @@ public class Fretboard : MonoBehaviour {
 	private Dictionary<PieceType, GameObject> piecePrefabDict;
 
 	private Note[,] notes;
-
+	public string[] noteArray;
 	// Use this for initialization
 	void Start () {
+		//noteArray = ["A", "A#", "B", "C", "C#", 
 		piecePrefabDict = new Dictionary <PieceType, GameObject> ();
 
 		for (int i = 0; i < piecePrefabs.Length; i++) {
@@ -100,6 +101,30 @@ public class Fretboard : MonoBehaviour {
 				notes[x,y].Init(this, PieceType.NORMAL, pitchShift + x, octave);
 
 				//notes [x, y].NoteComponent.SetPitch ((Note.PitchType)Random.Range (0, notes [x, y].NoteComponent.NumPitches));
+			}
+		}
+	}
+
+	void Update() {
+		SetChord (10);
+		//ResetNoteColors ();
+	}
+
+	void SetChord(int _chordID) {
+		for (int x = 0; x < xDim; x++) {
+			for (int y = 0; y < yDim; y++) {
+				if ( notes [x, y].noteIdentifer != 10 && notes [x, y].noteIdentifer != 2 && notes [x, y].noteIdentifer != 5  )
+				{
+					notes [x, y].noteText.color = Color.gray;
+				}
+			}
+		}
+	}
+
+	void ResetNoteColors() {
+		for (int x = 0; x < xDim; x++) {
+			for (int y = 0; y < yDim; y++) {
+				notes [x, y].noteText.color = Color.HSVToRGB (notes[x, y].noteColor, 1.0f, 1.0f);
 			}
 		}
 	}

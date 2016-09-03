@@ -23,6 +23,7 @@ public class Note : MonoBehaviour {
 	public bool sharp;
 	public int noteIdentifer;
 	public string noteRichText;
+	public float noteColor;
 		
 	public float pitchAdjust;
 	//private NoteData noteData; // to be deprecated in favor of NoteInfo object
@@ -93,7 +94,7 @@ public class Note : MonoBehaviour {
 		get { return noteMeshObjects.Length; }
 	}
 
-	private TextMesh noteText; // should be the color ot the pitch?
+	public TextMesh noteText; // should be the color ot the pitch?
 	//private Dictionary<PitchType, NoteData> noteMeshDict;
 
 	private Note noteComponent;
@@ -259,7 +260,7 @@ public class Note : MonoBehaviour {
 			noteRichText += "<size=38>#</size>";
 		}
 
-		float noteColor = (xpos / 12.0f) - 0.1f;
+		noteColor = (xpos / 12.0f) - 0.1f;
 		noteText.text = noteRichText;
 		noteText.color = Color.HSVToRGB (noteColor, 1.0f, 1.0f);
 
@@ -280,6 +281,8 @@ public class Note : MonoBehaviour {
 
 		 
 	}
+
+
 
 	void OnMouseDown() {
 
