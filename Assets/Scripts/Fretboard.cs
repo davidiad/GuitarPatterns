@@ -106,28 +106,53 @@ public class Fretboard : MonoBehaviour {
 	}
 
 	void Update() {
-		SetChord (10);
+		//SetNoteColorsByChord (10); // 10 is id of G chord
 		//ResetNoteColors ();
 	}
 
-	void SetChord(int _chordID) {
+	public void SetNoteColorsByChord(int _chordID) {
+		switch (_chordID) {
+		case 0: // G chord
+			_chordID = 10;
+			break;
+		case 1: // C chord
+			_chordID = 3;
+			break;
+		case 2: // D chord
+			_chordID = 5;
+			break;
+		}
+
 		for (int x = 0; x < xDim; x++) {
 			for (int y = 0; y < yDim; y++) {
-				if ( notes [x, y].noteIdentifer != 10 && notes [x, y].noteIdentifer != 2 && notes [x, y].noteIdentifer != 5  )
+				if ( notes [x, y].noteIdentifer != _chordID && notes [x, y].noteIdentifer != 2 && notes [x, y].noteIdentifer != 5  )
 				{
 					notes [x, y].noteText.color = Color.gray;
 				}
+
+				if (notes [x, y].noteIdentifer == _chordID) {
+					notes [x, y].noteText.color = Color.HSVToRGB (notes [x, y].noteColor, 1.0f, 1.0f);
+				} else if (notes [x, y].noteIdentifer == ((_chordID + 4) % 12)) {
+					notes [x, y].noteText.color = Color.HSVToRGB (notes [x, y].noteColor, 1.0f, 1.0f);
+				} else if (notes [x, y].noteIdentifer == ((_chordID + 7) % 12)) {
+					notes [x, y].noteText.color = Color.HSVToRGB (notes [x, y].noteColor, 1.0f, 1.0f);
+				} else {
+					notes [x, y].noteText.color = Color.gray;
+				}
+
+
+
 			}
 		}
 	}
 
-	void ResetNoteColors() {
-		for (int x = 0; x < xDim; x++) {
-			for (int y = 0; y < yDim; y++) {
-				notes [x, y].noteText.color = Color.HSVToRGB (notes[x, y].noteColor, 1.0f, 1.0f);
-			}
-		}
-	}
+//	void ResetNoteColors() {
+//		for (int x = 0; x < xDim; x++) {
+//			for (int y = 0; y < yDim; y++) {
+//				notes [x, y].noteText.color = Color.HSVToRGB (notes[x, y].noteColor, 1.0f, 1.0f);
+//			}
+//		}
+//	}
 
 //	Vector2 GetWorldPosition(int x, int y) {
 //		return new Vector2 (transform.position.x - xDim / 2.0f + x, transform.position.y + yDim / 2.0f - y);
