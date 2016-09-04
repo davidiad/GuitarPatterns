@@ -40,7 +40,8 @@ public class Note : MonoBehaviour {
 	//string[] noteRichTexts = new string[] { "A", "A", "B", "C", "C", "D", "D", "E", "F", "F", "G", "G" };
 
 	bool[] gmajor = new bool[] {true, false, true, true, false, true, false, true, false, true, true, false};
-		
+	bool[] cmajor = new bool[] {true, false, true, true, false, true, false, true, true, false, true, false};
+
 	//public TextMesh noteTextMesh;
 
 //	private int noteID;
@@ -153,7 +154,7 @@ public class Note : MonoBehaviour {
 
 
 		//noteData.note.SetActive (gmajor [noteIdentifer]);
-		this.gameObject.SetActive(gmajor[noteIdentifer]);
+		//this.gameObject.SetActive(cmajor[noteIdentifer]);
 
 
 
@@ -178,70 +179,7 @@ public class Note : MonoBehaviour {
 //		}
 //	}
 
-//	private void SetNote() {
-//		if (Pitch == PitchType.C) {
-//			noteID = 0;
-//			noteText.text = "<b>C</b>";
-//			noteText.color = Color.red;
-//
-//		}
-//		if (Pitch == PitchType.CSHARP) {
-//			noteID = 1;
-//			noteText.text = "<b>C</b><size=38>#</size>";
-//			noteText.color = Color.yellow;
-//		}
-//		if (Pitch == PitchType.D) {
-//			noteID = 2;
-//			noteText.text = "<b>D</b>";
-//			noteText.color = Color.magenta;
-//		}
-//		if (Pitch == PitchType.DSHARP) {
-//			noteID = 3;
-//			noteText.text = "<b>D</b><size=38>#</size>";
-//			noteText.color = Color.green;
-//		}
-//		if (Pitch == PitchType.E) {
-//			noteID = 4;
-//			noteText.text = "<b>E</b>";
-//			noteText.color = Color.magenta;
-//		}
-//		if (Pitch == PitchType.F) {
-//			noteID = 5;
-//			noteText.text = "<b>F</b>";
-//			noteText.color = Color.magenta;
-//		}
-//		if (Pitch == PitchType.FSHARP) {
-//			noteID = 6;
-//			noteText.text = "<b>F</b><size=38>#</size>";
-//			noteText.color = Color.green;
-//		}
-//		if (Pitch == PitchType.G) {
-//			noteID = 7;
-//			noteText.text = "<b>G</b>";
-//			noteText.color = Color.white;
-//		}
-//		if (Pitch == PitchType.GSHARP) {
-//			noteID = 8;
-//			noteText.text = "<b>G</b><size=38>#</size>";
-//			noteText.color = Color.green;
-//		}
-//		if (Pitch == PitchType.A) {
-//			noteID = 9;
-//			noteText.text = "<b>A</b>";
-//			noteText.color = Color.magenta;
-//		}
-//		if (Pitch == PitchType.ASHARP) {
-//			noteID = 10;
-//			noteText.text = "<b>A</b><size=38>#</size>";
-//			noteText.color = Color.green;
-//		}
-//		if (Pitch == PitchType.B) {
-//			noteID = 11;
-//			noteText.text = "<b>B</b>";
-//			noteText.color = Color.blue;
-//		}
-//	}
-		
+
 
 	public void Init(Fretboard _fret, Fretboard.PieceType _type, int xValue, int _octave)
 	{
@@ -266,14 +204,6 @@ public class Note : MonoBehaviour {
 
 		noteSource = gameObject.GetComponent<AudioSource>();
 
-		//noteData.clip = clips.audioClips [xpos];
-
-//		if (_octave == 2) {
-//			noteData.clip = clips.audioClips [0];
-//		} else {
-//			noteData.clip = clips.audioClips [1];
-//		}
-//
 		clip = clips.audioClips [_octave];
 		noteSource.clip = clip;
 

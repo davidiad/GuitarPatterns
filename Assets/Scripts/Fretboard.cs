@@ -28,8 +28,17 @@ public class Fretboard : MonoBehaviour {
 
 	private Note[,] notes;
 	public string[] noteArray;
+
+	public bool[] gmajor;
+	public bool[] cmajor;
+	public bool[][] scales;
+
 	// Use this for initialization
 	void Start () {
+		// scales
+		gmajor = new bool[] {true, false, true, true, false, true, false, true, false, true, true, false};
+		cmajor = new bool[] {true, false, true, true, false, true, false, true, true, false, true, false};
+		scales = new bool[][] { gmajor, cmajor };
 		//noteArray = ["A", "A#", "B", "C", "C#", 
 		piecePrefabDict = new Dictionary <PieceType, GameObject> ();
 
@@ -103,12 +112,19 @@ public class Fretboard : MonoBehaviour {
 				//notes [x, y].NoteComponent.SetPitch ((Note.PitchType)Random.Range (0, notes [x, y].NoteComponent.NumPitches));
 			}
 		}
+		SetScale (0);
 	}
 
-	void Update() {
-		//SetNoteColorsByChord (10); // 10 is id of G chord
-		//ResetNoteColors ();
+	public void SetScale(int _scaleID) {
+		bool[] scale = scales [_scaleID];
+		for (int x = 0; x < xDim; x++) {
+			for (int y = 0; y < yDim; y++) {
+				notes [x, y].gameObject.SetActive (scale[notes [x, y].noteIdentifer]);
+					
+			}
+		}
 	}
+		
 
 	public void SetNoteColorsByChord(int _chordID) {
 		switch (_chordID) {
