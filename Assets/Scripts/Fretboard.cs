@@ -33,12 +33,57 @@ public class Fretboard : MonoBehaviour {
 	public bool[] cmajor;
 	public bool[][] scales;
 
+	public bool[] majorscale;
+	public int[] currentScale;
+
+
+	public void generateMajorScale(int _rootIndex) {
+		// The pattern of the major scale, shifted to start at the current key
+		bool [] shiftedScale = new bool[12];
+		int j = 0;
+		for (int i = 0; i < 12; i++) {
+			shiftedScale [(_rootIndex + j) % 12] = majorscale [j];
+			j++;
+		}
+
+
+		int k = 0;
+		for (int i=_rootIndex; i<12; i++) {
+			if (shiftedScale[i]) {
+				currentScale[k] = i;
+				k++;
+			}
+		}
+		for (int i=0; i<_rootIndex; i++) {
+			if (shiftedScale[i]) {
+				
+				currentScale[k] = i;
+				k++;
+
+			}
+		}
+		Debug.Log("The Scale:   ");
+		for (int i=0; i<currentScale.Length; i++) {
+			Debug.Log(" " + currentScale[i] + " ");
+		}
+
+	}
+
 	// Use this for initialization
 	void Start () {
 		// scales
+		majorscale = new bool[] {true, false, true, false, true, true, false, true, false, true, false, true};
 		gmajor = new bool[] {true, false, true, true, false, true, false, true, false, true, true, false};
 		cmajor = new bool[] {true, false, true, true, false, true, false, true, true, false, true, false};
 		scales = new bool[][] { gmajor, cmajor };
+		currentScale = new int[7];
+		generateMajorScale (10);
+		// start from the root eg G = 10
+//		/g_major = new int [7];
+//		for 10 to end
+//			if true, add ThreadSafeAttribute index Touch gmaj
+//				again, from 0 til 10
+
 		//noteArray = ["A", "A#", "B", "C", "C#", 
 		piecePrefabDict = new Dictionary <PieceType, GameObject> ();
 
