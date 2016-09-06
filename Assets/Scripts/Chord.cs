@@ -1,21 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Chord : MonoBehaviour {
+public class Chord {
 
 	public string name;
 	//public Note[] notes;
 	public int[] noteIDs;
 
-
-	// Use this for initialization
-	void Awake () {
-		//notes = new Note[3]; // could be 4 or more notes
+	 public void Init(int _rootNoteIndex, int _note2, int _note3) {
 		noteIDs = new int[3];
+		noteIDs [0] = _rootNoteIndex;
+		noteIDs [1] = _note2;
+		noteIDs [2] = _note3;
+
 	}
-	
-	// Update is called once per frame
-	void Start () {
-	
-	}
+
 }

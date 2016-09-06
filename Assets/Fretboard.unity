@@ -1635,8 +1635,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scale: 
-  chords: []
-  rootIndex: 0
+  chordNames: []
+  rootIndex: 10
 --- !u!4 &1347609053
 Transform:
   m_ObjectHideFlags: 0
