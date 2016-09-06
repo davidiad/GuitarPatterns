@@ -33,6 +33,8 @@ public class Note : MonoBehaviour {
 	public GuitarNoteClips clips; // replace with just one clip, would be better, use less resources
 	public AudioSource noteSource;
 	public int octave;
+	public bool isColored; // color of text is gray if false.
+
 
 	private PitchName[] pitchNames  = new PitchName[] {PitchName.A, PitchName.A, PitchName.B, PitchName.C, PitchName.C, PitchName.D, PitchName.D, PitchName.E, PitchName.F, PitchName.F, PitchName.G, PitchName.G};
 	//bool[] sharps = new bool[] {false, true, false, false, true, false, true, false, false, true, false, true};
@@ -179,7 +181,15 @@ public class Note : MonoBehaviour {
 //		}
 //	}
 
-
+	public void colorOn(bool _isColored) {
+		if (_isColored) {
+			isColored = true;
+			noteText.color = Color.HSVToRGB (noteColor, 1.0f, 1.0f);
+		} else {
+			isColored = false;
+			noteText.color = Color.gray;
+		}
+	}
 
 	public void Init(Fretboard _fret, Fretboard.PieceType _type, int xValue, int _octave)
 	{
@@ -201,6 +211,7 @@ public class Note : MonoBehaviour {
 		noteColor = (xpos / 12.0f) - 0.1f;
 		noteText.text = noteRichText;
 		noteText.color = Color.HSVToRGB (noteColor, 1.0f, 1.0f);
+		isColored = true;
 
 		noteSource = gameObject.GetComponent<AudioSource>();
 

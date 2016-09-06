@@ -657,6 +657,9 @@ MonoBehaviour:
   noteArray: []
   gmajor: 
   cmajor: 
+  majorscale: 
+  currentScale: 
+  chordMenu: {fileID: 1489766135}
 --- !u!4 &492655166
 Transform:
   m_ObjectHideFlags: 0
@@ -1331,8 +1334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda8843c3cffa4a39976c2d9577946e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gmajor: 
-  cmajor: 
 --- !u!4 &1107394711
 Transform:
   m_ObjectHideFlags: 0
@@ -1606,6 +1607,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1331735921}
+--- !u!1 &1347609051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1347609053}
+  - 114: {fileID: 1347609052}
+  m_Layer: 0
+  m_Name: Scales
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1347609052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1347609051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 265628c541d8b46d285b0cb823039dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 
+  chords: []
+  rootIndex: 0
+--- !u!4 &1347609053
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1347609051}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 85, y: 378, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &1430575413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,7 +1810,7 @@ GameObject:
   - 114: {fileID: 1489766135}
   m_Layer: 5
   m_Name: DropdownChords
-  m_TagString: Untagged
+  m_TagString: ChordsMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

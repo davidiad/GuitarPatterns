@@ -45,10 +45,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Chord.cs" />
      <Compile Include="Assets\Scripts\Fretboard.cs" />
      <Compile Include="Assets\Scripts\GuitarNoteClips.cs" />
      <Compile Include="Assets\Scripts\Note.cs" />
      <Compile Include="Assets\Scripts\NoteInfo.cs" />
+     <Compile Include="Assets\Scripts\Scale.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

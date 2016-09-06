@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Fretboard : MonoBehaviour {
 
@@ -36,6 +37,7 @@ public class Fretboard : MonoBehaviour {
 	public bool[] majorscale;
 	public int[] currentScale;
 
+	public Dropdown chordMenu;
 
 	public void generateMajorScale(int _rootIndex) {
 		// The pattern of the major scale, shifted to start at the current key
@@ -158,9 +160,31 @@ public class Fretboard : MonoBehaviour {
 			}
 		}
 		SetScale (0);
+
+		// set up for chord menu
+		List<string> list = new List<string> { "G", "Am", "C", "D" };
+		chordMenu.ClearOptions();
+
+
+		foreach (string option in list)
+		{
+			chordMenu.options.Add(new Dropdown.OptionData(option));
+		}
+
 	}
 
 	public void SetScale(int _scaleID) {
+
+		/******************* Example of foreach to count multi-d array******************/
+		int counter = 0;
+		foreach (Note note in notes) {
+			Debug.Log (note.noteIdentifer + "  *  ");
+			counter++;
+		}
+		Debug.Log ("Counter: " + counter);
+		/*******************************************************************************/
+
+
 		bool[] scale = scales [_scaleID];
 		for (int x = 0; x < xDim; x++) {
 			for (int y = 0; y < yDim; y++) {
@@ -172,6 +196,12 @@ public class Fretboard : MonoBehaviour {
 		
 
 	public void SetNoteColorsByChord(int _chordID) {
+
+		//need to pass in scale.chords[0] (for now)
+		// we are getting 0, 1, or 2 from the dropdownmenu
+		// ?Start with G major scale already instantiated? Including its chords? 
+		// Should scales be instantiated and saved as they are needed?
+		// Woulnd't want to have to recreate a scale each time it is switched to. or chords.
 		switch (_chordID) {
 		case 0: // G chord
 			_chordID = 10;
@@ -183,6 +213,14 @@ public class Fretboard : MonoBehaviour {
 			_chordID = 5;
 			break;
 		}
+
+
+		// The question: Given the notes in a chord, how to find all the notes of a chord, and change their colors??
+		// Add a bool property to Note that turns the color on or off? Better than recalculating the color each time.
+		// How to check whether a note is in the current chord. If this was Swift, would probably use a Set to check inclusion.
+		// But only checking 3 or so values, so maybe a loop is ok
+		// Maybe a helper function that checks the noteID against all 3+ notes in the chord? A simple switch: case, or a simple loop
+		// What's the best way to iterate thru all the notes on the fretboard? foreach
 
 		for (int x = 0; x < xDim; x++) {
 			for (int y = 0; y < yDim; y++) {
@@ -200,11 +238,29 @@ public class Fretboard : MonoBehaviour {
 				} else {
 					notes [x, y].noteText.color = Color.gray;
 				}
-
-
-
 			}
 		}
+
+
+//		foreach (Note note in notes) {
+//			if (isNoteInChord() == true) {
+//				note.colorOn (true);
+//			} else {
+//				note.colorOn (false);
+//			}
+//		}
+
+	}
+
+	// helper function to check whether a note is in the currently active chord
+	// ? should this function be moved to Chord object? or to Note object?
+	public bool isNoteInChord(Chord _chord, Note _note) {
+		for (int i = 0; i < _chord.noteIDs.Length; i++) {
+			if (_note.noteIdentifer == _chord.noteIDs [i]) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 //	void ResetNoteColors() {
