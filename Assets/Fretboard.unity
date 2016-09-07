@@ -1633,7 +1633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265628c541d8b46d285b0cb823039dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rootIndex: 3
+  rootIndex: 0
   chordMenu: {fileID: 1489766135}
   scaleMenu: {fileID: 1979169735}
   scale: 
@@ -2441,8 +2441,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 492655165}
-        m_MethodName: SetScale
+      - m_Target: {fileID: 1347609052}
+        m_MethodName: ChangeScale
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
