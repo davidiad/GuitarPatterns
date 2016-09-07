@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class Scale : MonoBehaviour {
 
 	public int rootIndex;
+	public Dropdown chordMenu;
+	public Dropdown scaleMenu;
 	public int[] scale;
 	public Chord[] chords;
 	public string[] chordNames; // chordNames duplicates chord.name, but allows viewing in Inspector
-	public Dropdown chordMenu;
 
 	private bool[] majorScalePattern;
 
@@ -33,6 +34,7 @@ public class Scale : MonoBehaviour {
 	
 
 	void Start () {
+		ScaleMenuSetup ();
 		// The pattern for the scale in order by the index of each note
 		// For instance, G Major contains  the 7 notes (G, A, B, C, D, E, F#) so
 		// the pattern by index is (10, 0, 2, 3, 5, 7, 9)
@@ -42,15 +44,21 @@ public class Scale : MonoBehaviour {
 		// and then, make it so that the scale can be updated in GenerateMajorScale(), so just one Scale object can be used in game 
 		***********************/
 
-		GenerateMajorScale (rootIndex); 
 
-		// either need to create the notes to reference, or use existing notes, or else generate a new note here
-		// but would not be good to generate a new set of notes each time a chord is referenced!
+		//TODO: - set up the scale menu here (keep in Start) //		ScaleMenuSetup ();
+		// then. put all these into a separate func: SetScale() ? ChangeScale() ? SetupScale() ? ScaleSetUp() ?
+		// except scale munu setup should probably not be inside set scale
 
-		// setting the major chord
-		//chords[0] = new Chord();
+//		GenerateMajorScale (rootIndex);
+//		GenerateChords ();
+//		ChordMenuSetup ();
+
+		GenerateMajorScale (rootIndex);
+
+		// Generate the Chords for the Scale
+		// need to put these into a separate func (GenerateChords()?), so it can be called when changing the scale
 		string[] chordPrefix = {"I: ", "ii: ", "iii: ", "IV: ", "V: ", "vi: ", "vii: "};
-		string[] sharps ={"", "", "", "", "", "", ""}; // will be blank string unless the note is sharped
+		string[] sharps = {"", "", "", "", "", "", ""}; // will be blank string unless the note is sharped
 		string[] chordPostfix = {"", "m", "m", "", "", "m", " dim"};
 
 		for (int i = 0; i < 7; i++) {
@@ -71,9 +79,20 @@ public class Scale : MonoBehaviour {
 		ChordMenuSetup ();
 	}
 
+	void ScaleMenuSetup() {
+		scaleMenu.ClearOptions ();
+		for (int i = 0; i < 12; i++) {
+			string option = noteInfo.NoteRichTexts [i];
+			if (noteInfo.Sharps [i]) {
+				option += "#";
+			}
+			scaleMenu.options.Add (new Dropdown.OptionData (option));
+		}
+	}
+
 	void ChordMenuSetup() {
-		// set up for chord menu
-		List<string> list = new List<string> { "G", "Am", "Bm", "D" };
+
+		//List<string> list = new List<string> { "G", "Am", "Bm", "D" };
 		chordMenu.ClearOptions();
 
 		foreach (string option in chordNames)
@@ -96,7 +115,6 @@ public class Scale : MonoBehaviour {
 			j++;
 		}
 
-
 		int k = 0;
 		for (int i=_rootIndex; i<12; i++) {
 			if (shiftedScalePattern[i]) {
@@ -112,15 +130,11 @@ public class Scale : MonoBehaviour {
 
 			}
 		}
-		Debug.Log("The Scale:   ");
-		for (int i=0; i<scale.Length; i++) {
-			Debug.Log(" " + scale[i] + " ");
-		}
 
 	}
 
 	private void GenerateChords() {
-		//chords [0].notes [0] = noteNames [scale [0]];
+		
 
 	}
 }

@@ -659,7 +659,6 @@ MonoBehaviour:
   cmajor: 
   majorscale: 
   currentScale: 
-  chordMenu: {fileID: 1489766135}
 --- !u!4 &492655166
 Transform:
   m_ObjectHideFlags: 0
@@ -1635,9 +1634,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rootIndex: 3
+  chordMenu: {fileID: 1489766135}
+  scaleMenu: {fileID: 1979169735}
   scale: 
   chordNames: []
-  chordMenu: {fileID: 1489766135}
 --- !u!4 &1347609053
 Transform:
   m_ObjectHideFlags: 0
@@ -1856,8 +1856,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.6864187, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.45793685, g: 0.66362906, b: 0.8088235, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
