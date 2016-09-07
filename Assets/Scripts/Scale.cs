@@ -46,19 +46,25 @@ public class Scale : MonoBehaviour {
 
 		// setting the major chord
 		//chords[0] = new Chord();
-		chords [0].Init (scale[0], scale[2], scale[4]);
-		chords [1].Init (scale[6], scale[2], scale[0]);
-		chords [2].Init (scale[3], scale[5], scale[0]);
-		chords [3].Init (scale[4], scale[6], scale[1]);
+		string[] chordPrefix = {"I: ", "ii: ", "iii: ", "IV: ", "V: ", "vi: ", "vii: "};
+		string[] sharps ={"", "", "", "", "", "", ""}; // will be blank string unless the note is sharped
+		string[] chordPostfix = {"", "m", "m", "", "", "m", " dim"};
 
-		chords [1].name = noteInfo.PitchNames [scale [5]] + "m";
-		chordNames [1] = chords [1].name;
-//		for (int i = 0; i < 7; i++) {
-//			chords [i].name = "G-chord " + i;
-//			chordNames [i] = chords [i].name;
-//		}
-			
+		for (int i = 0; i < 7; i++) {
+			// each chord is made up of the 1st root note, followed by one 2 notes above in the scale, followed by 2 notes above that
+			// circling back to the first one after the 7th, hence the modulus operation
+			int j = (i + 2) % 7;
+			int k = (i + 4) % 7;
+			chords [i].Init (scale [i], scale [j], scale [k]);
 
+			if (noteInfo.Sharps[scale[i]]) {
+				sharps [i] += "#";
+			}
+
+			chords[i].name = chordPrefix[i] + noteInfo.PitchNames [scale [i]] + sharps[i] + chordPostfix[i];
+			chordNames [i] = chords [i].name;
+
+		}
 
 	}
 
