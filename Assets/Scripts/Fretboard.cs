@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 
 public class Fretboard : MonoBehaviour {
 
@@ -37,8 +37,9 @@ public class Fretboard : MonoBehaviour {
 	public bool[] majorscale;
 	public int[] currentScale;
 
-	public Dropdown chordMenu;
+	//public Dropdown chordMenu;
 
+	// shouldn't need this -- moved to Scale.cs
 	public void generateMajorScale(int _rootIndex) {
 		// The pattern of the major scale, shifted to start at the current key
 		bool [] shiftedScale = new bool[12];
@@ -161,15 +162,15 @@ public class Fretboard : MonoBehaviour {
 		}
 		SetScale (0);
 
-		// set up for chord menu
-		List<string> list = new List<string> { "G", "Am", "C", "D" };
-		chordMenu.ClearOptions();
-
-
-		foreach (string option in list)
-		{
-			chordMenu.options.Add(new Dropdown.OptionData(option));
-		}
+//		// set up for chord menu
+//		List<string> list = new List<string> { "G", "Am", "C", "D" };
+//		chordMenu.ClearOptions();
+//
+//
+//		foreach (string option in list)
+//		{
+//			chordMenu.options.Add(new Dropdown.OptionData(option));
+//		}
 
 	}
 

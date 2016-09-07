@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Scale : MonoBehaviour {
 
@@ -7,6 +9,7 @@ public class Scale : MonoBehaviour {
 	public int[] scale;
 	public Chord[] chords;
 	public string[] chordNames; // chordNames duplicates chord.name, but allows viewing in Inspector
+	public Dropdown chordMenu;
 
 	private bool[] majorScalePattern;
 
@@ -65,7 +68,23 @@ public class Scale : MonoBehaviour {
 			chordNames [i] = chords [i].name;
 
 		}
+		ChordMenuSetup ();
+	}
 
+	void ChordMenuSetup() {
+		// set up for chord menu
+		List<string> list = new List<string> { "G", "Am", "Bm", "D" };
+		chordMenu.ClearOptions();
+
+		foreach (string option in chordNames)
+		{
+			chordMenu.options.Add(new Dropdown.OptionData(option));
+		}
+
+//		foreach (string option in list)
+//		{
+//			chordMenu.options.Add(new Dropdown.OptionData(option));
+//		}
 	}
 
 	private void GenerateMajorScale(int _rootIndex) {

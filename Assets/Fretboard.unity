@@ -1634,9 +1634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265628c541d8b46d285b0cb823039dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rootIndex: 7
+  rootIndex: 3
   scale: 
   chordNames: []
+  chordMenu: {fileID: 1489766135}
 --- !u!4 &1347609053
 Transform:
   m_ObjectHideFlags: 0
