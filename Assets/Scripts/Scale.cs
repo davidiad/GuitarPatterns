@@ -8,13 +8,14 @@ public class Scale : MonoBehaviour {
 	public int rootIndex;
 	public Dropdown chordMenu;
 	public Dropdown scaleMenu;
+	public Fretboard fretboard;
 	public int[] scale;
 	public Chord[] chords;
 	public string[] chordNames; // chordNames duplicates chord.name, but allows viewing in Inspector
 
 	private bool[] majorScalePattern;
+	public bool[] scalePattern;
 
-//	private string[] noteNames; // replace this with something linked to Note object ?
 
 	private NoteInfo noteInfo; // to retrieve basic info like the string associated with each note index
 
@@ -26,6 +27,7 @@ public class Scale : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		majorScalePattern = new bool[] {true, false, true, false, true, true, false, true, false, true, false, true};
+		scalePattern = new bool[12];
 		chordPrefix = new string[] {"I: ", "ii: ", "iii: ", "IV: ", "V: ", "vi: ", "vii: "};
 //		sharps = new string[] {"", "", "", "", "", "", ""}; // will be blank string unless the note is sharped
 		chordPostfix = new string[] {"", "m", "m", "", "", "m", " dim"};
@@ -89,6 +91,8 @@ public class Scale : MonoBehaviour {
 		GenerateMajorScale (_rootIndex);
 		GenerateChords ();
 		ChordMenuSetup ();
+		fretboard.SetActiveNotesForScale ();
+		fretboard.SetNoteColorsByChord (0); // by default, set to the root chord (TODO:- change to no chord selected, all notes in color
 	}
 
 	private void ScaleMenuSetup() {
@@ -156,7 +160,10 @@ public class Scale : MonoBehaviour {
 
 			}
 		}
-
+		scalePattern = shiftedScalePattern;
+//		for (int i = 0; i < scalePattern.Length; i++) {
+//			Debug.Log (scalePattern [i]);
+//		}
 	}
 		
 }

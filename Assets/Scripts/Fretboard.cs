@@ -37,7 +37,7 @@ public class Fretboard : MonoBehaviour {
 	public bool[] majorscale;
 	public int[] currentScale;
 
-	//public Dropdown chordMenu;
+	private Scale _scale;
 
 	// shouldn't need this -- moved to Scale.cs
 	public void generateMajorScale(int _rootIndex) {
@@ -70,6 +70,10 @@ public class Fretboard : MonoBehaviour {
 			Debug.Log(" " + currentScale[i] + " ");
 		}
 
+	}
+
+	void Awake() {
+		_scale = GameObject.FindGameObjectWithTag ("Scales").GetComponent<Scale> ();
 	}
 
 	// Use this for initialization
@@ -160,8 +164,8 @@ public class Fretboard : MonoBehaviour {
 				//notes [x, y].NoteComponent.SetPitch ((Note.PitchType)Random.Range (0, notes [x, y].NoteComponent.NumPitches));
 			}
 		}
-		SetScale (0);
-
+		//SetScale (10);
+		SetActiveNotesForScale ();
 //		// set up for chord menu
 //		List<string> list = new List<string> { "G", "Am", "C", "D" };
 //		chordMenu.ClearOptions();
@@ -174,46 +178,56 @@ public class Fretboard : MonoBehaviour {
 
 	}
 
-	public void SetScale(int _scaleID) {
 
-		/******************* Example of foreach to count multi-d array******************/
-		int counter = 0;
+//	// Old way, from an array of scales
+//	public void SetScale(int _scaleID) {
+//
+//		/******************* Example of foreach to count multi-d array******************/
+////		int counter = 0;
+////		foreach (Note note in notes) {
+////			Debug.Log (note.noteIdentifer + "  *  ");
+////			counter++;
+////		}
+////		Debug.Log ("Counter: " + counter);
+//		/*******************************************************************************/
+//
+//		// TODO:- use a foreach loop, and get the scale from the Scales object****************
+//
+//		bool[] scale = scales [_scaleID];
+//		for (int x = 0; x < xDim; x++) {
+//			for (int y = 0; y < yDim; y++) {
+//				notes [x, y].gameObject.SetActive (scale[notes [x, y].noteIdentifer]);
+//					
+//			}
+//		}
+//	}
+
+	public void SetActiveNotesForScale() {
 		foreach (Note note in notes) {
-			Debug.Log (note.noteIdentifer + "  *  ");
-			counter++;
-		}
-		Debug.Log ("Counter: " + counter);
-		/*******************************************************************************/
 
-
-		bool[] scale = scales [_scaleID];
-		for (int x = 0; x < xDim; x++) {
-			for (int y = 0; y < yDim; y++) {
-				notes [x, y].gameObject.SetActive (scale[notes [x, y].noteIdentifer]);
-					
-			}
+			//Debug.Log("Is it true? " + _scale.scalePattern[0]);
+			note.gameObject.SetActive (_scale.scalePattern[note.noteIdentifer]);
 		}
 	}
-		
 
 	public void SetNoteColorsByChord(int _chordID) {
-
+		//Debug.Log ("CHORD: " + _scale.chords [_chordID].name);
 		//need to pass in scale.chords[0] (for now)
 		// we are getting 0, 1, or 2 from the dropdownmenu
 		// ?Start with G major scale already instantiated? Including its chords? 
 		// Should scales be instantiated and saved as they are needed?
 		// Woulnd't want to have to recreate a scale each time it is switched to. or chords.
-		switch (_chordID) {
-		case 0: // G chord
-			_chordID = 10;
-			break;
-		case 1: // C chord
-			_chordID = 3;
-			break;
-		case 2: // D chord
-			_chordID = 5;
-			break;
-		}
+//		switch (_chordID) {
+//		case 0: // G chord
+//			_chordID = 10;
+//			break;
+//		case 1: // C chord
+//			_chordID = 3;
+//			break;
+//		case 2: // D chord
+//			_chordID = 5;
+//			break;
+//		}
 
 
 		// The question: Given the notes in a chord, how to find all the notes of a chord, and change their colors??
@@ -223,33 +237,33 @@ public class Fretboard : MonoBehaviour {
 		// Maybe a helper function that checks the noteID against all 3+ notes in the chord? A simple switch: case, or a simple loop
 		// What's the best way to iterate thru all the notes on the fretboard? foreach
 
-		for (int x = 0; x < xDim; x++) {
-			for (int y = 0; y < yDim; y++) {
-				if ( notes [x, y].noteIdentifer != _chordID && notes [x, y].noteIdentifer != 2 && notes [x, y].noteIdentifer != 5  )
-				{
-					notes [x, y].noteText.color = Color.gray;
-				}
-
-				if (notes [x, y].noteIdentifer == _chordID) {
-					notes [x, y].noteText.color = Color.HSVToRGB (notes [x, y].noteColor, 1.0f, 1.0f);
-				} else if (notes [x, y].noteIdentifer == ((_chordID + 4) % 12)) {
-					notes [x, y].noteText.color = Color.HSVToRGB (notes [x, y].noteColor, 1.0f, 1.0f);
-				} else if (notes [x, y].noteIdentifer == ((_chordID + 7) % 12)) {
-					notes [x, y].noteText.color = Color.HSVToRGB (notes [x, y].noteColor, 1.0f, 1.0f);
-				} else {
-					notes [x, y].noteText.color = Color.gray;
-				}
-			}
-		}
-
-
-//		foreach (Note note in notes) {
-//			if (isNoteInChord() == true) {
-//				note.colorOn (true);
-//			} else {
-//				note.colorOn (false);
+//		for (int x = 0; x < xDim; x++) {
+//			for (int y = 0; y < yDim; y++) {
+//				if ( notes [x, y].noteIdentifer != _chordID && notes [x, y].noteIdentifer != 2 && notes [x, y].noteIdentifer != 5  )
+//				{
+//					notes [x, y].noteText.color = Color.gray;
+//				}
+//
+//				if (notes [x, y].noteIdentifer == _chordID) {
+//					notes [x, y].noteText.color = Color.HSVToRGB (notes [x, y].noteColor, 1.0f, 1.0f);
+//				} else if (notes [x, y].noteIdentifer == ((_chordID + 4) % 12)) {
+//					notes [x, y].noteText.color = Color.HSVToRGB (notes [x, y].noteColor, 1.0f, 1.0f);
+//				} else if (notes [x, y].noteIdentifer == ((_chordID + 7) % 12)) {
+//					notes [x, y].noteText.color = Color.HSVToRGB (notes [x, y].noteColor, 1.0f, 1.0f);
+//				} else {
+//					notes [x, y].noteText.color = Color.gray;
+//				}
 //			}
 //		}
+
+
+		foreach (Note note in notes) {
+			if (isNoteInChord(_scale.chords[_chordID], note) == true) {
+				note.colorOn (true);
+			} else {
+				note.colorOn (false);
+			}
+		}
 
 	}
 

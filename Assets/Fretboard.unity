@@ -1617,7 +1617,7 @@ GameObject:
   - 114: {fileID: 1347609052}
   m_Layer: 0
   m_Name: Scales
-  m_TagString: Untagged
+  m_TagString: Scales
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1633,11 +1633,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265628c541d8b46d285b0cb823039dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rootIndex: 0
+  rootIndex: 10
   chordMenu: {fileID: 1489766135}
   scaleMenu: {fileID: 1979169735}
+  fretboard: {fileID: 492655165}
   scale: 
   chordNames: []
+  scalePattern: 
 --- !u!4 &1347609053
 Transform:
   m_ObjectHideFlags: 0

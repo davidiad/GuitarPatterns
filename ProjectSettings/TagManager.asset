@@ -7,6 +7,7 @@ TagManager:
   - GuitarNoteClips
   - NoteInfo
   - ChordsMenu
+  - Scales
   layers:
   - Default
   - TransparentFX
