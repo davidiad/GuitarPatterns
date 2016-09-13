@@ -346,11 +346,13 @@ MonoBehaviour:
   sharp: 0
   noteIdentifer: 0
   noteRichText: 
+  noteColor: 0
   pitchAdjust: 0
   clip: {fileID: 0}
   clips: {fileID: 0}
   noteSource: {fileID: 8231022}
   octave: 0
+  isColored: 0
   noteMeshObjects:
   - pitch: 0
     noteObject: {fileID: 199010, guid: 8e63b5f64a62a4342b9557ae74901457, type: 2}
@@ -376,6 +378,7 @@ MonoBehaviour:
     noteObject: {fileID: 0}
   - pitch: 10
     noteObject: {fileID: 0}
+  noteText: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

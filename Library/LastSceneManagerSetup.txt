@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Fretboard.unity
+- path: Assets/Scenes/Fretboard.unity
   isLoaded: 1
   isActive: 1
