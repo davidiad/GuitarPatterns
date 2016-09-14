@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04d59946b733455bac815c24ff59cd5, type: 3}
+  m_Name: SineCurve
+  m_EditorClassIdentifier: 
+  m_Id: 1570
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 0
+  m_StylesExpanded: 0
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Rotation: {x: 0, y: 0, z: 0}
+  m_Scale: {x: 1, y: 1, z: 1}
+  m_Styles: {fileID: 11470390}
+  m_ReverseDirection: 0
+  m_IsClosed: 0
+  m_EditorColor:
+    r: 0.5
+    g: 0.5
+    b: 0.5
+    a: 1
+  m_ShapeExpanded: 0
+  m_Points:
+  - m_Position: {x: -96, y: 64}
+    m_PointType: 2
+    m_HandleIn: {x: -30, y: 0}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 30, y: -0}
+    m_HasHandleOut: 1
+  - m_Position: {x: -32, y: -64}
+    m_PointType: 2
+    m_HandleIn: {x: -30, y: 0}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 30, y: -0}
+    m_HasHandleOut: 1
+  - m_Position: {x: 32, y: 64}
+    m_PointType: 2
+    m_HandleIn: {x: -30, y: 0}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 30, y: -0}
+    m_HasHandleOut: 1
+  - m_Position: {x: 96, y: -64}
+    m_PointType: 2
+    m_HandleIn: {x: -30, y: 0}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 30, y: -0}
+    m_HasHandleOut: 1
+  m_PathExpanded: 0
+--- !u!114 &11470390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e38fb3e9bc847e6b70f88c1fa01a38, type: 3}
+  m_Name: Styles
+  m_EditorClassIdentifier: 
+  m_Id: -1
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 0
+  m_StylesList: []
+  m_IsExpanded: 1

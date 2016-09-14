@@ -1,0 +1,264 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e38fb3e9bc847e6b70f88c1fa01a38, type: 3}
+  m_Name: TentacleStyle
+  m_EditorClassIdentifier: 
+  m_Id: -1
+  m_IsVisible: 1
+  m_StylesList:
+  - {fileID: 11422688}
+  - {fileID: 11449238}
+  - {fileID: 11497706}
+  - {fileID: 11487490}
+  - {fileID: 11439054}
+--- !u!114 &11422688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057d9d4e60bd94239ba35994b0826bab, type: 3}
+  m_Name: Stroke_Tentacle
+  m_EditorClassIdentifier: 
+  m_Id: 230700
+  m_IsVisible: 1
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_Material: {fileID: 0}
+  m_MainTexture: {fileID: 0}
+  m_PaintMode: 1
+  m_UvMode: 0
+  m_UvTiling: {x: 1, y: 1}
+  m_UvOffset: {x: 0, y: 0}
+  m_GradientColors:
+  - m_Value:
+      r: 0.5151295
+      g: 0.4379325
+      b: 0.5955882
+      a: 1
+    m_Percentage: 0
+  - m_Value:
+      r: 0.6845842
+      g: 0.5955882
+      b: 0.7941176
+      a: 1
+    m_Percentage: 0.15
+  - m_Value:
+      r: 0.37550554
+      g: 0.25270328
+      b: 0.41911763
+      a: 1
+    m_Percentage: 0.7
+  - m_Value:
+      r: 0.20588237
+      g: 0.20588237
+      b: 0.20588237
+      a: 1
+    m_Percentage: 0.745
+  - m_Value:
+      r: 0.68427473
+      g: 0.6061311
+      b: 0.74264705
+      a: 1
+    m_Percentage: 0.75
+  - m_Value:
+      r: 0.9338235
+      g: 0.9338235
+      b: 0.9338235
+      a: 1
+    m_Percentage: 1
+  m_GradientPosition: {x: 0, y: 0, z: 0}
+  m_GradientRotation: {x: 0, y: 0, z: 0}
+  m_GradientScale: {x: 1, y: 1, z: 1}
+  m_GradientSpreadMethod: 0
+  m_GradientUnits: 1
+  m_GradientStart: {x: 0, y: 0}
+  m_GradientEnd: {x: 0, y: 1}
+  m_Opacity: 1
+  m_GlobalWidth: 1.6628525
+  m_VariableWidths:
+  - m_Value: 10
+    m_Percentage: 0
+  - m_Value: 14
+    m_Percentage: 0.3
+  - m_Value: 14
+    m_Percentage: 0.4
+  - m_Value: 1
+    m_Percentage: 1
+  m_ScreenSpace: 0
+  m_Linecap: 2
+  m_Linejoin: 0
+  m_MiterLimit: 4
+  m_Justification: 1
+  m_Angle: 0
+--- !u!114 &11439054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd00407f8569463d9f525e7a497c83f, type: 3}
+  m_Name: Marker_Spot
+  m_EditorClassIdentifier: 
+  m_Id: 230636
+  m_IsVisible: 1
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_Graphic: {fileID: 11400000, guid: 51fc631714066497ea0ffd9361a812cb, type: 2}
+  m_Position: {x: 0, y: 0.15, z: 0}
+  m_EulerRotation: {x: 0, y: 0, z: 0}
+  m_Scale: {x: 0.005, y: 0.005, z: 1}
+  m_FaceForward: 1
+  m_Angle: 0
+  m_ScaleWithStroke: 1
+  m_Stroke: {fileID: 11422688}
+  m_VariableScales:
+  - m_Value: 1
+    m_Percentage: 0
+  m_AtStart: 1
+  m_FlipStart: 0
+  m_AtEnd: 0
+  m_FlipEnd: 0
+  m_AtMiddle: 1
+  m_PlacementMode: 0
+  m_FixedSpacingLength: 5
+  m_FixedJustification: 1
+  m_NumberOfMarkers: 8
+--- !u!114 &11449238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd00407f8569463d9f525e7a497c83f, type: 3}
+  m_Name: Marker_SuctionCup
+  m_EditorClassIdentifier: 
+  m_Id: 228620
+  m_IsVisible: 1
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_Graphic: {fileID: 11400000, guid: 32adbf81eebfa4e0d996bfeca536832f, type: 2}
+  m_Position: {x: 0, y: 0.5, z: 0}
+  m_EulerRotation: {x: 0, y: 0, z: 0}
+  m_Scale: {x: 0.02, y: 0.02, z: 1}
+  m_FaceForward: 1
+  m_Angle: 0
+  m_ScaleWithStroke: 1
+  m_Stroke: {fileID: 11422688}
+  m_VariableScales:
+  - m_Value: 13
+    m_Percentage: 0
+  - m_Value: 16
+    m_Percentage: 0.27
+  - m_Value: 16
+    m_Percentage: 0.42
+  - m_Value: 1
+    m_Percentage: 1
+  m_AtStart: 0
+  m_FlipStart: 0
+  m_AtEnd: 0
+  m_FlipEnd: 0
+  m_AtMiddle: 1
+  m_PlacementMode: 0
+  m_FixedSpacingLength: 5
+  m_FixedJustification: 1
+  m_NumberOfMarkers: 4
+--- !u!114 &11487490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd00407f8569463d9f525e7a497c83f, type: 3}
+  m_Name: Marker_Spot
+  m_EditorClassIdentifier: 
+  m_Id: 230648
+  m_IsVisible: 1
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_Graphic: {fileID: 11400000, guid: 51fc631714066497ea0ffd9361a812cb, type: 2}
+  m_Position: {x: 0, y: -0.3, z: 0}
+  m_EulerRotation: {x: 0, y: 0, z: 0}
+  m_Scale: {x: 0.008, y: 0.008, z: 1}
+  m_FaceForward: 1
+  m_Angle: 0
+  m_ScaleWithStroke: 1
+  m_Stroke: {fileID: 11422688}
+  m_VariableScales:
+  - m_Value: 1
+    m_Percentage: 0
+  m_AtStart: 1
+  m_FlipStart: 0
+  m_AtEnd: 0
+  m_FlipEnd: 0
+  m_AtMiddle: 1
+  m_PlacementMode: 0
+  m_FixedSpacingLength: 5
+  m_FixedJustification: 1
+  m_NumberOfMarkers: 4
+--- !u!114 &11497706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd00407f8569463d9f525e7a497c83f, type: 3}
+  m_Name: Marker_Spot
+  m_EditorClassIdentifier: 
+  m_Id: 230926
+  m_IsVisible: 1
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_Graphic: {fileID: 11400000, guid: 51fc631714066497ea0ffd9361a812cb, type: 2}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerRotation: {x: 0, y: 0, z: 0}
+  m_Scale: {x: 0.01, y: 0.01, z: 1}
+  m_FaceForward: 1
+  m_Angle: 0
+  m_ScaleWithStroke: 1
+  m_Stroke: {fileID: 11422688}
+  m_VariableScales:
+  - m_Value: 1
+    m_Percentage: 0
+  m_AtStart: 0
+  m_FlipStart: 0
+  m_AtEnd: 0
+  m_FlipEnd: 0
+  m_AtMiddle: 1
+  m_PlacementMode: 0
+  m_FixedSpacingLength: 5
+  m_FixedJustification: 1
+  m_NumberOfMarkers: 4

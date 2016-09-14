@@ -1,0 +1,440 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4cf3f7bf8d44d008a122d84632cea6, type: 3}
+  m_Name: SuctionCup
+  m_EditorClassIdentifier: 
+  m_Id: -1
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 11471046}
+  m_SelectedAppearance: {fileID: 11461170}
+  m_ElementExpanded: 1
+  m_StylesExpanded: 1
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Rotation: {x: 0, y: 0, z: 0}
+  m_Scale: {x: 1, y: 1, z: 1}
+  m_Styles: {fileID: 11444606}
+  m_GraphicsList:
+  - {fileID: 11471046}
+  - {fileID: 11463704}
+  m_IsExpanded: 1
+--- !u!114 &11425700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057d9d4e60bd94239ba35994b0826bab, type: 3}
+  m_Name: RingStroke
+  m_EditorClassIdentifier: 
+  m_Id: 7836
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 1
+  m_StyleExpanded: 0
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_PaintExpanded: 1
+  m_Material: {fileID: 0}
+  m_MainTexture: {fileID: 0}
+  m_PaintMode: 0
+  m_UvMode: 0
+  m_UvTiling: {x: 1, y: 1}
+  m_UvOffset: {x: 0, y: 0}
+  m_GradientColors:
+  - m_Value:
+      r: 0.9647059
+      g: 0.9117647
+      b: 1
+      a: 1
+    m_Percentage: 0
+  - m_Value:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    m_Percentage: 1
+  m_GradientPosition: {x: 0, y: 0, z: 0}
+  m_GradientRotation: {x: 0, y: 0, z: 0}
+  m_GradientScale: {x: 1, y: 1, z: 1}
+  m_GradientSpreadMethod: 0
+  m_GradientUnits: 1
+  m_GradientStart: {x: 0, y: 0}
+  m_GradientEnd: {x: 1, y: 0}
+  m_Opacity: 1
+  m_StrokeExpanded: 1
+  m_GlobalWidth: 1
+  m_VariableWidths:
+  - m_Value: 1
+    m_Percentage: 0
+  m_ScreenSpace: 0
+  m_Linecap: 0
+  m_Linejoin: 0
+  m_MiterLimit: 4
+  m_Justification: 1
+  m_Angle: 0
+--- !u!114 &11444606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e38fb3e9bc847e6b70f88c1fa01a38, type: 3}
+  m_Name: Styles
+  m_EditorClassIdentifier: 
+  m_Id: -1
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 0
+  m_StylesList: []
+  m_IsExpanded: 1
+--- !u!114 &11456456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e38fb3e9bc847e6b70f88c1fa01a38, type: 3}
+  m_Name: Styles
+  m_EditorClassIdentifier: 
+  m_Id: -1
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 0
+  m_StylesList:
+  - {fileID: 11464268}
+  - {fileID: 11471126}
+  m_IsExpanded: 1
+--- !u!114 &11461170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d617a4cec7614c9ea489e1704fc183b, type: 3}
+  m_Name: SidesFill
+  m_EditorClassIdentifier: 
+  m_Id: 7830
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 1
+  m_StyleExpanded: 0
+  m_SegmentationMultiplier: 0.1
+  m_SimplificationMultiplier: 0
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_PaintExpanded: 1
+  m_Material: {fileID: 0}
+  m_MainTexture: {fileID: 0}
+  m_PaintMode: 1
+  m_UvMode: 0
+  m_UvTiling: {x: 1, y: 1}
+  m_UvOffset: {x: 0, y: 0}
+  m_GradientColors:
+  - m_Value:
+      r: 0.9803922
+      g: 0.9725491
+      b: 0.9843138
+      a: 1
+    m_Percentage: 0
+  - m_Value:
+      r: 0.5339534
+      g: 0.42236158
+      b: 0.61764705
+      a: 1
+    m_Percentage: 0.709
+  - m_Value:
+      r: 0.70152634
+      g: 0.57807094
+      b: 0.7941176
+      a: 1
+    m_Percentage: 1
+  m_GradientPosition: {x: 0, y: 0, z: 0}
+  m_GradientRotation: {x: 0, y: 0, z: 0}
+  m_GradientScale: {x: 1, y: 1, z: 1}
+  m_GradientSpreadMethod: 0
+  m_GradientUnits: 1
+  m_GradientStart: {x: 0, y: 0}
+  m_GradientEnd: {x: 1, y: -0.13}
+  m_Opacity: 1
+  m_FillExpanded: 1
+  m_FillRule: 0
+  m_LandscapeDepth: 0
+--- !u!114 &11463704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04d59946b733455bac815c24ff59cd5, type: 3}
+  m_Name: Ring
+  m_EditorClassIdentifier: 
+  m_Id: 7826
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 1
+  m_StylesExpanded: 1
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Rotation: {x: 0, y: 0, z: 0}
+  m_Scale: {x: 1, y: 1, z: 1}
+  m_Styles: {fileID: 11456456}
+  m_ReverseDirection: 0
+  m_IsClosed: 1
+  m_EditorColor:
+    r: 1
+    g: 0
+    b: 1
+    a: 1
+  m_ShapeExpanded: 0
+  m_Points:
+  - m_Position: {x: -10, y: 0}
+    m_PointType: 2
+    m_HandleIn: {x: 0, y: 2}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: -0, y: -2}
+    m_HasHandleOut: 1
+  - m_Position: {x: 0, y: -3}
+    m_PointType: 2
+    m_HandleIn: {x: -4, y: 0}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 4, y: -0}
+    m_HasHandleOut: 1
+  - m_Position: {x: 10, y: 0}
+    m_PointType: 2
+    m_HandleIn: {x: 0, y: -2}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: -0, y: 2}
+    m_HasHandleOut: 1
+  - m_Position: {x: 0, y: 3}
+    m_PointType: 2
+    m_HandleIn: {x: 4, y: 0}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: -4, y: -0}
+    m_HasHandleOut: 1
+  m_PathExpanded: 0
+--- !u!114 &11464268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d617a4cec7614c9ea489e1704fc183b, type: 3}
+  m_Name: RingFill
+  m_EditorClassIdentifier: 
+  m_Id: 7834
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 1
+  m_StyleExpanded: 0
+  m_SegmentationMultiplier: 0.1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_PaintExpanded: 1
+  m_Material: {fileID: 0}
+  m_MainTexture: {fileID: 0}
+  m_PaintMode: 2
+  m_UvMode: 0
+  m_UvTiling: {x: 1, y: 1}
+  m_UvOffset: {x: 0, y: 0}
+  m_GradientColors:
+  - m_Value:
+      r: 0.67401344
+      g: 0.56244594
+      b: 0.75735295
+      a: 1
+    m_Percentage: 0
+  - m_Value:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    m_Percentage: 1
+  m_GradientPosition: {x: 0, y: 0, z: 0}
+  m_GradientRotation: {x: 0, y: 0, z: 0}
+  m_GradientScale: {x: 1, y: 1, z: 1}
+  m_GradientSpreadMethod: 0
+  m_GradientUnits: 1
+  m_GradientStart: {x: 0.5, y: 1}
+  m_GradientEnd: {x: 0, y: 0}
+  m_Opacity: 1
+  m_FillExpanded: 0
+  m_FillRule: 0
+  m_LandscapeDepth: 0
+--- !u!114 &11469244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e38fb3e9bc847e6b70f88c1fa01a38, type: 3}
+  m_Name: Styles
+  m_EditorClassIdentifier: 
+  m_Id: -1
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 0
+  m_StylesList:
+  - {fileID: 11461170}
+  m_IsExpanded: 1
+--- !u!114 &11471046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04d59946b733455bac815c24ff59cd5, type: 3}
+  m_Name: Sides
+  m_EditorClassIdentifier: 
+  m_Id: 7820
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 1
+  m_StylesExpanded: 1
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Rotation: {x: 0, y: 0, z: 0}
+  m_Scale: {x: 1, y: 1, z: 1}
+  m_Styles: {fileID: 11469244}
+  m_ReverseDirection: 0
+  m_IsClosed: 1
+  m_EditorColor:
+    r: 1
+    g: 0
+    b: 1
+    a: 1
+  m_ShapeExpanded: 0
+  m_Points:
+  - m_Position: {x: -10.3, y: 0}
+    m_PointType: 0
+    m_HandleIn: {x: -0.6792097, y: 3.3779736}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 0.53249836, y: 1.4364395}
+    m_HasHandleOut: 1
+  - m_Position: {x: 0, y: 3}
+    m_PointType: 2
+    m_HandleIn: {x: -4, y: 0}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 4, y: -0}
+    m_HasHandleOut: 1
+  - m_Position: {x: 10.3, y: 0}
+    m_PointType: 0
+    m_HandleIn: {x: -0.74475145, y: 1.4660217}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 0.40503883, y: 3.4692335}
+    m_HasHandleOut: 1
+  - m_Position: {x: 12.159409, y: 6.009407}
+    m_PointType: 1
+    m_HandleIn: {x: 2.2391014, y: -1.7158122}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: -1.5910797, y: 1.2192364}
+    m_HasHandleOut: 1
+  - m_Position: {x: 0, y: 9}
+    m_PointType: 2
+    m_HandleIn: {x: 5, y: 0}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: -5, y: -0}
+    m_HasHandleOut: 1
+  - m_Position: {x: -12.391548, y: 6.3420696}
+    m_PointType: 1
+    m_HandleIn: {x: 1.6396103, y: 1.2352118}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: -2.2241192, y: -1.6755556}
+    m_HasHandleOut: 1
+  m_PathExpanded: 1
+--- !u!114 &11471126
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057d9d4e60bd94239ba35994b0826bab, type: 3}
+  m_Name: Stroke
+  m_EditorClassIdentifier: 
+  m_Id: -426324
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 1
+  m_StyleExpanded: 0
+  m_SegmentationMultiplier: 0.2
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_PaintExpanded: 1
+  m_Material: {fileID: 0}
+  m_MainTexture: {fileID: 0}
+  m_PaintMode: 0
+  m_UvMode: 0
+  m_UvTiling: {x: 1, y: 1}
+  m_UvOffset: {x: 0, y: 0}
+  m_GradientColors:
+  - m_Value:
+      r: 0.909804
+      g: 0.90196085
+      b: 0.91372555
+      a: 1
+    m_Percentage: 0
+  - m_Value:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    m_Percentage: 1
+  m_GradientPosition: {x: 0, y: 0, z: 0}
+  m_GradientRotation: {x: 0, y: 0, z: 0}
+  m_GradientScale: {x: 1, y: 1, z: 1}
+  m_GradientSpreadMethod: 0
+  m_GradientUnits: 1
+  m_GradientStart: {x: 0, y: 0}
+  m_GradientEnd: {x: 1, y: 0}
+  m_Opacity: 1
+  m_StrokeExpanded: 1
+  m_GlobalWidth: 1
+  m_VariableWidths:
+  - m_Value: 1
+    m_Percentage: 0
+  m_ScreenSpace: 0
+  m_Linecap: 0
+  m_Linejoin: 0
+  m_MiterLimit: 4
+  m_Justification: 1
+  m_Angle: 0

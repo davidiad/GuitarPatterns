@@ -1,0 +1,224 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4cf3f7bf8d44d008a122d84632cea6, type: 3}
+  m_Name: Ball2D
+  m_EditorClassIdentifier: 
+  m_Id: 1634
+  m_IsVisible: 1
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerRotation: {x: 0, y: 0, z: 0}
+  m_Scale: {x: 1, y: 1, z: 1}
+  m_Styles: {fileID: 11400014}
+  m_GraphicsList:
+  - {fileID: 11444996}
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e38fb3e9bc847e6b70f88c1fa01a38, type: 3}
+  m_Name: Styles
+  m_EditorClassIdentifier: 
+  m_Id: -1
+  m_IsVisible: 1
+  m_StylesList:
+  - {fileID: 11479450}
+  - {fileID: 11451130}
+  - {fileID: 11478144}
+--- !u!114 &11444996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dceb12a43b6104f5991d4b097a4e0d11, type: 3}
+  m_Name: Circle
+  m_EditorClassIdentifier: 
+  m_Id: 44462
+  m_IsVisible: 1
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerRotation: {x: 0, y: 0, z: 0}
+  m_Scale: {x: 1, y: 1, z: 1}
+  m_Styles: {fileID: 11467252}
+  m_ReverseDirection: 0
+  m_IsClosed: 1
+  m_EditorColor:
+    r: 1
+    g: 0
+    b: 1
+    a: 1
+  m_Points:
+  - m_Position: {x: 0, y: 2.2850761}
+    m_PointType: 2
+    m_HandleIn: {x: 1.2620127, y: 0}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: -1.2620127, y: 0}
+    m_HasHandleOut: 1
+  - m_Position: {x: -2.2850761, y: 0}
+    m_PointType: 2
+    m_HandleIn: {x: 0, y: 1.2620127}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 0, y: -1.2620127}
+    m_HasHandleOut: 1
+  - m_Position: {x: 0, y: -2.2850761}
+    m_PointType: 2
+    m_HandleIn: {x: -1.2620127, y: 0}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 1.2620127, y: 0}
+    m_HasHandleOut: 1
+  - m_Position: {x: 2.2850761, y: 0}
+    m_PointType: 2
+    m_HandleIn: {x: 0, y: -1.2620127}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 0, y: 1.2620127}
+    m_HasHandleOut: 1
+  m_Center: {x: 0, y: 0}
+  m_Radius: 2.2850761
+--- !u!114 &11451130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057d9d4e60bd94239ba35994b0826bab, type: 3}
+  m_Name: Stroke
+  m_EditorClassIdentifier: 
+  m_Id: 44468
+  m_IsVisible: 1
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_Material: {fileID: 0}
+  m_MainTexture: {fileID: 0}
+  m_PaintMode: 0
+  m_UvMode: 0
+  m_UvTiling: {x: 1, y: 1}
+  m_UvOffset: {x: 0, y: 0}
+  m_GradientColors:
+  - m_Value:
+      r: 0.375
+      g: 0.090992644
+      b: 0.090992644
+      a: 1
+    m_Percentage: 0
+  - m_Value:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    m_Percentage: 1
+  m_GradientPosition: {x: 0, y: 0, z: 0}
+  m_GradientRotation: {x: 0, y: 0, z: 0}
+  m_GradientScale: {x: 1, y: 1, z: 1}
+  m_GradientSpreadMethod: 0
+  m_GradientUnits: 1
+  m_GradientStart: {x: 0, y: 0}
+  m_GradientEnd: {x: 1, y: 0}
+  m_Opacity: 1
+  m_GlobalWidth: 0.5
+  m_VariableWidths:
+  - m_Value: 1
+    m_Percentage: 0
+  m_ScreenSpace: 0
+  m_Linecap: 0
+  m_Linejoin: 0
+  m_MiterLimit: 4
+  m_Justification: 1
+  m_Angle: 0
+--- !u!114 &11467252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e38fb3e9bc847e6b70f88c1fa01a38, type: 3}
+  m_Name: Styles
+  m_EditorClassIdentifier: 
+  m_Id: -1
+  m_IsVisible: 1
+  m_StylesList: []
+--- !u!114 &11478144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9361a8b6087a47dbb98316a44b61664, type: 3}
+  m_Name: Collider
+  m_EditorClassIdentifier: 
+  m_Id: 44470
+  m_IsVisible: 1
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0.25
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_ColliderType: 0
+--- !u!114 &11479450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d617a4cec7614c9ea489e1704fc183b, type: 3}
+  m_Name: Fill
+  m_EditorClassIdentifier: 
+  m_Id: 44466
+  m_IsVisible: 1
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_Material: {fileID: 0}
+  m_MainTexture: {fileID: 0}
+  m_PaintMode: 2
+  m_UvMode: 0
+  m_UvTiling: {x: 1, y: 1}
+  m_UvOffset: {x: 0, y: 0}
+  m_GradientColors:
+  - m_Value:
+      r: 0.9333334
+      g: 0.95294124
+      b: 0.603
+      a: 1
+    m_Percentage: 0
+  - m_Value:
+      r: 1
+      g: 0
+      b: 0
+      a: 1
+    m_Percentage: 1
+  m_GradientPosition: {x: 0, y: 0, z: 0}
+  m_GradientRotation: {x: 0, y: 0, z: 0}
+  m_GradientScale: {x: 1, y: 1, z: 1}
+  m_GradientSpreadMethod: 0
+  m_GradientUnits: 1
+  m_GradientStart: {x: 0.65, y: 0.65}
+  m_GradientEnd: {x: 0.09, y: 0}
+  m_Opacity: 1
+  m_FillRule: 0
+  m_LandscapeDepth: 0

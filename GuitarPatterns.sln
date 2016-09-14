@@ -7,6 +7,8 @@ Project("{790075B6-91C7-44DE-34A9-5192386C3462}") = "GuitarPatterns", "Assembly-
 EndProject
 Project("{790075B6-91C7-44DE-34A9-5192386C3462}") = "GuitarPatterns", "Assembly-CSharp-Editor-firstpass.csproj", "{98C20DED-CB92-F33B-A4AF-AD9B53B28027}"
 EndProject
+Project("{790075B6-91C7-44DE-34A9-5192386C3462}") = "GuitarPatterns", "Assembly-CSharp-Editor.csproj", "{B3ACC45E-D32A-2021-2DA5-FE201EBDAA08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{98C20DED-CB92-F33B-A4AF-AD9B53B28027}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98C20DED-CB92-F33B-A4AF-AD9B53B28027}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98C20DED-CB92-F33B-A4AF-AD9B53B28027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3ACC45E-D32A-2021-2DA5-FE201EBDAA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3ACC45E-D32A-2021-2DA5-FE201EBDAA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3ACC45E-D32A-2021-2DA5-FE201EBDAA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3ACC45E-D32A-2021-2DA5-FE201EBDAA08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

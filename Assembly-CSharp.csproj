@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_4;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;ENABLE_RUNTIME_GI;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_NETWORK;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_TEXTUREID_MAP;PLAYERCONNECTION_LISTENS_FIXED_PORT;DEBUGGER_LISTENS_FIXED_PORT;PLATFORM_SUPPORTS_ADS_ID;SUPPORT_ENVIRONMENT_VARIABLES;PLATFORM_SUPPORTS_PROFILER;PLATFORM_HAS_NO_SUPPORT_FOR_BUCKET_ALLOCATOR;STRICTCPP_NEW_DELETE_SIGNATURES;WWW_USE_CURL;HAS_NEON_SKINNIG;UNITY_INPUT_SIMULATE_EVENTS;PLATFORM_ALWAYS_USES_STDOUT_FOR_LOG;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;UNITY_IOS;UNITY_IPHONE;UNITY_IPHONE_API;SUPPORT_MULTIPLE_DISPLAYS;ENABLE_IL2CPP;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;ENABLE_IOS_ON_DEMAND_RESOURCES;ENABLE_IOS_APP_SLICING</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_4_1;UNITY_5_4;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EDITOR_RETINA;ENABLE_RETINA_GUISTYLES;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;ENABLE_RUNTIME_GI;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_NETWORK;ENABLE_UNITYWEBREQUEST;ENABLE_TEXTUREID_MAP;PLAYERCONNECTION_LISTENS_FIXED_PORT;DEBUGGER_LISTENS_FIXED_PORT;PLATFORM_SUPPORTS_ADS_ID;SUPPORT_ENVIRONMENT_VARIABLES;PLATFORM_SUPPORTS_PROFILER;PLATFORM_HAS_NO_SUPPORT_FOR_BUCKET_ALLOCATOR;STRICTCPP_NEW_DELETE_SIGNATURES;HAS_NEON_SKINNIG;UNITY_INPUT_SIMULATE_EVENTS;PLATFORM_ALWAYS_USES_STDOUT_FOR_LOG;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;UNITY_IOS;UNITY_IPHONE;UNITY_IPHONE_API;SUPPORT_MULTIPLE_DISPLAYS;ENABLE_IL2CPP;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;ENABLE_IOS_ON_DEMAND_RESOURCES;ENABLE_IOS_APP_SLICING</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -38,10 +38,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +64,60 @@
      <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\SampleUI.cs" />
      <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\StartMenu.cs" />
      <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\SwipeParticlesEmitter.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\Ball2DSpawner.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\BallLauncher.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\ControlPointHandler.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\DrawUI.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\ImpactRings.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\LevelLoader.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\OffsetTexture.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\ParallaxScroller.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\PingPongPosition.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\PingPongScale.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\ResizeRect.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\ResizeWidth.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\Simplify.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\SphereOfLines.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\Spin.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\TentacleController.cs" />
+     <Compile Include="Assets\LineWorks\Examples\Scripts\Zoom.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Components\LW_Canvas.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Appearance.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Circle.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Collider.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Element.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Ellipse.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Fill.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Graphic.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Group.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Line.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Marker.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Path2D.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Path3D.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Polygon.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Polyline2D.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Polyline3D.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Rectangle.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Shape.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Star.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Stroke.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Style.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\ScriptableObjects\LW_Styles.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\LW_Buffer.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\LW_Pool.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\LW_SVGParser.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\LW_Simplifier.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\LW_Utilities.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\CssParser\CssParser.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\CssParser\TextParser.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\LibTessDotNet\Dict.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\LibTessDotNet\Geom.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\LibTessDotNet\Mesh.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\LibTessDotNet\MeshUtils.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\LibTessDotNet\PriorityHeap.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\LibTessDotNet\PriorityQueue.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\LibTessDotNet\Sweep.cs" />
+     <Compile Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\LibTessDotNet\Tess.cs" />
      <Compile Include="Assets\Scripts\Chord.cs" />
      <Compile Include="Assets\Scripts\Fretboard.cs" />
      <Compile Include="Assets\Scripts\GuitarNoteClips.cs" />
@@ -71,6 +125,11 @@
      <Compile Include="Assets\Scripts\NoteInfo.cs" />
      <Compile Include="Assets\Scripts\Scale.cs" />
      <None Include="Assets\Plugins\FingerGestures\Readme.txt" />
+     <None Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\LibTessDotNet\License.txt" />
+     <None Include="Assets\LineWorks\Shaders\Resources\LineWorks.cginc" />
+     <None Include="Assets\LineWorks\readme.txt" />
+     <None Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\CssParser\License.txt" />
+     <None Include="Assets\LineWorks\Shaders\Resources\LW_Shader.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

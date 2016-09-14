@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c578cee67a259492d9c62a76e81e5c21, type: 3}
+  m_Name: Spot
+  m_EditorClassIdentifier: 
+  m_Id: -616420
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 11434628}
+  m_ElementExpanded: 0
+  m_StylesExpanded: 1
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Rotation: {x: 0, y: 0, z: 0}
+  m_Scale: {x: 1, y: 1, z: 1}
+  m_Styles: {fileID: 11459534}
+  m_ReverseDirection: 0
+  m_IsClosed: 1
+  m_EditorColor:
+    r: 1
+    g: 0
+    b: 1
+    a: 1
+  m_ShapeExpanded: 0
+  m_Points:
+  - m_Position: {x: 0, y: 6}
+    m_PointType: 2
+    m_HandleIn: {x: 5.5228477, y: 0}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: -5.5228477, y: 0}
+    m_HasHandleOut: 1
+  - m_Position: {x: -10, y: 0}
+    m_PointType: 2
+    m_HandleIn: {x: 0, y: 3.3137088}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 0, y: -3.3137088}
+    m_HasHandleOut: 1
+  - m_Position: {x: 0, y: -6}
+    m_PointType: 2
+    m_HandleIn: {x: -5.5228477, y: 0}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 5.5228477, y: 0}
+    m_HasHandleOut: 1
+  - m_Position: {x: 10, y: 0}
+    m_PointType: 2
+    m_HandleIn: {x: 0, y: -3.3137088}
+    m_HasHandleIn: 1
+    m_HandleOut: {x: 0, y: 3.3137088}
+    m_HasHandleOut: 1
+  m_Center: {x: 0, y: 0}
+  m_RadiusX: 10
+  m_RadiusY: 6
+  m_EllipseExpanded: 1
+--- !u!114 &11434628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d617a4cec7614c9ea489e1704fc183b, type: 3}
+  m_Name: Fill
+  m_EditorClassIdentifier: 
+  m_Id: -616554
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 1
+  m_StyleExpanded: 0
+  m_SegmentationMultiplier: 0.1
+  m_SimplificationMultiplier: 0
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PresizeVBO: 0
+  m_PaintExpanded: 1
+  m_Material: {fileID: 0}
+  m_MainTexture: {fileID: 0}
+  m_PaintMode: 0
+  m_UvMode: 0
+  m_UvTiling: {x: 1, y: 1}
+  m_UvOffset: {x: 0, y: 0}
+  m_GradientColors:
+  - m_Value:
+      r: 0.81568635
+      g: 0.7803922
+      b: 0.8431373
+      a: 0.491
+    m_Percentage: 0
+  - m_Value:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    m_Percentage: 1
+  m_GradientPosition: {x: 0, y: 0, z: 0}
+  m_GradientRotation: {x: 0, y: 0, z: 0}
+  m_GradientScale: {x: 1, y: 1, z: 1}
+  m_GradientSpreadMethod: 0
+  m_GradientUnits: 1
+  m_GradientStart: {x: 0, y: 0}
+  m_GradientEnd: {x: 1, y: 0}
+  m_Opacity: 1
+  m_FillExpanded: 1
+  m_FillRule: 0
+  m_LandscapeDepth: 0
+--- !u!114 &11459534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e38fb3e9bc847e6b70f88c1fa01a38, type: 3}
+  m_Name: Styles
+  m_EditorClassIdentifier: 
+  m_Id: -1
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 0
+  m_StylesList:
+  - {fileID: 11434628}
+  m_IsExpanded: 1

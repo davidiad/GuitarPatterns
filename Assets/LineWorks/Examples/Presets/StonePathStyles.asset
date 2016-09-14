@@ -1,0 +1,320 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e38fb3e9bc847e6b70f88c1fa01a38, type: 3}
+  m_Name: StonePathStyles
+  m_EditorClassIdentifier: 
+  m_Id: -1
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 0
+  m_StylesList:
+  - {fileID: 11443042}
+  - {fileID: 11468582}
+  - {fileID: 11427642}
+  - {fileID: 11434620}
+  m_IsExpanded: 0
+--- !u!114 &11427642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057d9d4e60bd94239ba35994b0826bab, type: 3}
+  m_Name: Stroke
+  m_EditorClassIdentifier: 
+  m_Id: 7796
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 1
+  m_StyleExpanded: 0
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 8
+  m_VerticalOffset: 0
+  m_PaintExpanded: 1
+  m_Material: {fileID: 2100000, guid: 2a3cd8da8a165457f935a3df9637ba7a, type: 2}
+  m_MainTexture: {fileID: 0}
+  m_PaintMode: 0
+  m_UvMode: 0
+  m_UvTiling: {x: 1, y: 1}
+  m_UvOffset: {x: 0, y: 0}
+  m_GradientColors:
+  - m_Color:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    m_Percentage: 0
+  - m_Color:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    m_Percentage: 1
+  m_GradientTransform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_GradientSpreadMethod: 0
+  m_GradientUnits: 1
+  m_GradientStart: {x: 0, y: 0}
+  m_GradientEnd: {x: 1, y: 0}
+  m_Opacity: 1
+  m_StrokeExpanded: 1
+  m_GlobalWidth: 1
+  m_VariableWidths:
+  - m_Width: 1
+    m_Percentage: 0
+  m_ScreenSpace: 0
+  m_Linecap: 0
+  m_Linejoin: 0
+  m_MiterLimit: 4
+  m_Justification: 0
+  m_Angle: 0
+--- !u!114 &11434620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057d9d4e60bd94239ba35994b0826bab, type: 3}
+  m_Name: Stroke
+  m_EditorClassIdentifier: 
+  m_Id: 7764
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 1
+  m_StyleExpanded: 0
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: -8
+  m_VerticalOffset: 0
+  m_PaintExpanded: 0
+  m_Material: {fileID: 2100000, guid: 2a3cd8da8a165457f935a3df9637ba7a, type: 2}
+  m_MainTexture: {fileID: 0}
+  m_PaintMode: 0
+  m_UvMode: 0
+  m_UvTiling: {x: 1, y: 1}
+  m_UvOffset: {x: 0, y: 0}
+  m_GradientColors:
+  - m_Color:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    m_Percentage: 0
+  - m_Color:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    m_Percentage: 1
+  m_GradientTransform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_GradientSpreadMethod: 0
+  m_GradientUnits: 1
+  m_GradientStart: {x: 0, y: 0}
+  m_GradientEnd: {x: 1, y: 0}
+  m_Opacity: 1
+  m_StrokeExpanded: 1
+  m_GlobalWidth: 1
+  m_VariableWidths:
+  - m_Width: 1
+    m_Percentage: 0
+  m_ScreenSpace: 0
+  m_Linecap: 0
+  m_Linejoin: 0
+  m_MiterLimit: 4
+  m_Justification: 2
+  m_Angle: 0
+--- !u!114 &11443042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057d9d4e60bd94239ba35994b0826bab, type: 3}
+  m_Name: Stroke
+  m_EditorClassIdentifier: 
+  m_Id: 7762
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 0
+  m_StyleExpanded: 1
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0
+  m_VerticalOffset: 0
+  m_PaintExpanded: 0
+  m_Material: {fileID: 2100000, guid: e9baeb3f27ffe4de6b601f4f9564df44, type: 2}
+  m_MainTexture: {fileID: 0}
+  m_PaintMode: 0
+  m_UvMode: 0
+  m_UvTiling: {x: 1, y: 1}
+  m_UvOffset: {x: 0, y: 0}
+  m_GradientColors:
+  - m_Color:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    m_Percentage: 0
+  - m_Color:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    m_Percentage: 1
+  m_GradientTransform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_GradientSpreadMethod: 0
+  m_GradientUnits: 1
+  m_GradientStart: {x: 0, y: 0}
+  m_GradientEnd: {x: 1, y: 0}
+  m_Opacity: 1
+  m_StrokeExpanded: 1
+  m_GlobalWidth: 16
+  m_VariableWidths:
+  - m_Width: 1
+    m_Percentage: 0
+  m_ScreenSpace: 0
+  m_Linecap: 0
+  m_Linejoin: 0
+  m_MiterLimit: 4
+  m_Justification: 1
+  m_Angle: 0
+--- !u!114 &11468582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057d9d4e60bd94239ba35994b0826bab, type: 3}
+  m_Name: Stroke
+  m_EditorClassIdentifier: 
+  m_Id: 7774
+  m_IsVisible: 1
+  m_SelectedGraphic: {fileID: 0}
+  m_SelectedAppearance: {fileID: 0}
+  m_ElementExpanded: 1
+  m_StyleExpanded: 1
+  m_SegmentationMultiplier: 1
+  m_SimplificationMultiplier: 1
+  m_LateralOffset: 0
+  m_VerticalOffset: 0.5
+  m_PaintExpanded: 1
+  m_Material: {fileID: 2100000, guid: 822f64e043285452a94698331e82cf51, type: 2}
+  m_MainTexture: {fileID: 0}
+  m_PaintMode: 0
+  m_UvMode: 0
+  m_UvTiling: {x: 1, y: 1}
+  m_UvOffset: {x: 0, y: 0}
+  m_GradientColors:
+  - m_Color:
+      r: 0.3455882
+      g: 0.9458419
+      b: 1
+      a: 1
+    m_Percentage: 0
+  - m_Color:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    m_Percentage: 1
+  m_GradientTransform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_GradientSpreadMethod: 0
+  m_GradientUnits: 1
+  m_GradientStart: {x: 0, y: 0}
+  m_GradientEnd: {x: 1, y: 0}
+  m_Opacity: 1
+  m_StrokeExpanded: 1
+  m_GlobalWidth: 6
+  m_VariableWidths:
+  - m_Width: 1
+    m_Percentage: 0
+  m_ScreenSpace: 0
+  m_Linecap: 0
+  m_Linejoin: 0
+  m_MiterLimit: 4
+  m_Justification: 1
+  m_Angle: 0
