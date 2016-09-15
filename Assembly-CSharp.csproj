@@ -64,6 +64,7 @@
      <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\SampleUI.cs" />
      <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\StartMenu.cs" />
      <Compile Include="Assets\FingerGestures Samples\Assets\Scripts\SwipeParticlesEmitter.cs" />
+     <Compile Include="Assets\LW_ExampleScript.cs" />
      <Compile Include="Assets\LineWorks\Examples\Scripts\Ball2DSpawner.cs" />
      <Compile Include="Assets\LineWorks\Examples\Scripts\BallLauncher.cs" />
      <Compile Include="Assets\LineWorks\Examples\Scripts\ControlPointHandler.cs" />
