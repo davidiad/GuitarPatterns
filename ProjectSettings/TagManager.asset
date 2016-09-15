@@ -8,6 +8,8 @@ TagManager:
   - NoteInfo
   - ChordsMenu
   - Scales
+  - ChordShapes
+  - Fretboard
   layers:
   - Default
   - TransparentFX

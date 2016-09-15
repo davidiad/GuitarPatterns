@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 316bc54816dba49d78e825bee15c1684
+labels:
+- Audio
 timeCreated: 1472093649
 licenseType: Pro
 AudioImporter:

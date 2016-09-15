@@ -120,6 +120,7 @@
      <Compile Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\LibTessDotNet\Sweep.cs" />
      <Compile Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\LibTessDotNet\Tess.cs" />
      <Compile Include="Assets\Scripts\Chord.cs" />
+     <Compile Include="Assets\Scripts\ChordShape.cs" />
      <Compile Include="Assets\Scripts\Fretboard.cs" />
      <Compile Include="Assets\Scripts\GuitarNoteClips.cs" />
      <Compile Include="Assets\Scripts\Note.cs" />

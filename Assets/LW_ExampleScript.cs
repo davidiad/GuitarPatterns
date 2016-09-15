@@ -5,8 +5,16 @@ public class LW_ExampleScript : MonoBehaviour {
 	public LW_Canvas linework;
 	private LW_Circle circle;
 	private LW_Stroke stroke;
-	private LW_Polyline3D chordShape;
+	private LW_Polyline3D testLine;
+	private LW_Polyline3D chordShapeLine;
 	private Material material;
+
+	private ChordShape chordShape;
+
+	void Awake() {
+		chordShape = GameObject.FindGameObjectWithTag ("ChordShapes").GetComponent<ChordShape> ();
+	}
+
 	void Start () {
 		// Create the LineWorks Components and Scriptable Objects.
 		//linework = LW_Canvas.Create(gameObject, "MyFirstLineWork");
@@ -16,7 +24,9 @@ public class LW_ExampleScript : MonoBehaviour {
 		Vector2 pt2 = new Vector2 (5f, 6f);
 		Vector2 pt3 = new Vector2 (8f, -2f);
 		Vector2[] pts = new Vector2[] { pt1, pt2, pt3 };
-		chordShape = LW_Polyline3D.Create (pts ,false);
+		testLine = LW_Polyline3D.Create (pts ,false);
+
+		chordShapeLine = LW_Polyline3D.Create (chordShape.chordPoints ,false);
 
 		// Adjust the segmenetation to get a smoother looking line.
 		linework.segmentation = 20;
@@ -33,8 +43,11 @@ public class LW_ExampleScript : MonoBehaviour {
 		// Apply the stroke to the circle and add the circle to the cavas.
 		circle.styles.Add(stroke);
 		//linework.graphic.Add(circle);
-		chordShape.styles.Add (stroke);
-		linework.graphic.Add (chordShape);
+		testLine.styles.Add (stroke);
+		//linework.graphic.Add (testLine);
+
+		chordShapeLine.styles.Add (stroke);
+		linework.graphic.Add (chordShapeLine);
 	}
 	void Update () {
 		// While you can modify the width and color of the stroke directly on the LW_Stroke 

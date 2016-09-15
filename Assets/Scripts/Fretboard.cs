@@ -27,7 +27,7 @@ public class Fretboard : MonoBehaviour {
 
 	private Dictionary<PieceType, GameObject> piecePrefabDict;
 
-	private Note[,] notes;
+	public Note[,] notes;
 	public string[] noteArray;
 
 	public bool[] gmajor;
@@ -39,7 +39,7 @@ public class Fretboard : MonoBehaviour {
 
 	private Scale _scale;
 
-	// shouldn't need this -- moved to Scale.cs
+	// shouldn't need this -- moved to Scale.cs -- but still in use???
 	public void generateMajorScale(int _rootIndex) {
 		// The pattern of the major scale, shifted to start at the current key
 		bool [] shiftedScale = new bool[12];
@@ -65,11 +65,6 @@ public class Fretboard : MonoBehaviour {
 
 			}
 		}
-		Debug.Log("The Scale:   ");
-		for (int i=0; i<currentScale.Length; i++) {
-			Debug.Log(" " + currentScale[i] + " ");
-		}
-
 	}
 
 	void Awake() {
