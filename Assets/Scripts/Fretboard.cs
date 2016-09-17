@@ -4,6 +4,8 @@ using System.Collections.Generic;
 //using UnityEngine.UI;
 
 public class Fretboard : MonoBehaviour {
+	
+
 
 	public enum PieceType 
 	{
@@ -18,6 +20,11 @@ public class Fretboard : MonoBehaviour {
 		public PieceType type;
 		public GameObject prefab;
 	};
+
+
+	public GameObject stringPrefab;
+	public int numStrings;
+	public int numFrets;
 
 	public int xDim;
 	public int yDim;
@@ -39,36 +46,70 @@ public class Fretboard : MonoBehaviour {
 
 	private Scale _scale;
 
-	// shouldn't need this -- moved to Scale.cs -- but still in use???
-	public void generateMajorScale(int _rootIndex) {
-		// The pattern of the major scale, shifted to start at the current key
-		bool [] shiftedScale = new bool[12];
-		int j = 0;
-		for (int i = 0; i < 12; i++) {
-			shiftedScale [(_rootIndex + j) % 12] = majorscale [j];
-			j++;
-		}
+	private GuitarString[] strings;
 
-
-		int k = 0;
-		for (int i=_rootIndex; i<12; i++) {
-			if (shiftedScale[i]) {
-				currentScale[k] = i;
-				k++;
-			}
-		}
-		for (int i=0; i<_rootIndex; i++) {
-			if (shiftedScale[i]) {
-				
-				currentScale[k] = i;
-				k++;
-
-			}
-		}
-	}
+//	// shouldn't need this -- moved to Scale.cs -- but still in use???
+//	public void generateMajorScale(int _rootIndex) {
+//		// The pattern of the major scale, shifted to start at the current key
+//		bool [] shiftedScale = new bool[12];
+//		int j = 0;
+//		for (int i = 0; i < 12; i++) {
+//			shiftedScale [(_rootIndex + j) % 12] = majorscale [j];
+//			j++;
+//		}
+//
+//
+//		int k = 0;
+//		for (int i=_rootIndex; i<12; i++) {
+//			if (shiftedScale[i]) {
+//				currentScale[k] = i;
+//				k++;
+//			}
+//		}
+//		for (int i=0; i<_rootIndex; i++) {
+//			if (shiftedScale[i]) {
+//				
+//				currentScale[k] = i;
+//				k++;
+//
+//			}
+//		}
+//	}
 
 	void Awake() {
+		numStrings = 6;
+		strings = new GuitarString[numStrings];
 		_scale = GameObject.FindGameObjectWithTag ("Scales").GetComponent<Scale> ();
+//		for (int i = 0; i < numStrings; i++) {
+//			strings[i] = new GuitarString();
+//		
+//			switch (i) {
+//			case 0: // high E string
+//				strings [i].openNoteID = 7;
+//				strings [i].octave = 4;
+//				break;
+//			case 1: // B string
+//				strings[i].openNoteID = 2;
+//				strings[i].octave = 3;
+//				break;
+//			case 2: // G string
+//
+//				break;
+//			case 3: // D string
+//
+//				break;
+//			case 4: // A string
+//
+//				break;
+//			case 5: // low E string
+//				strings[i].openNoteID = 7;
+//				strings[i].octave = 2;
+//				break;
+//			default: // either E string
+//				
+//				break;
+//			}
+//		}
 	}
 
 	// Use this for initialization
@@ -79,21 +120,17 @@ public class Fretboard : MonoBehaviour {
 		cmajor = new bool[] {true, false, true, true, false, true, false, true, true, false, true, false};
 		scales = new bool[][] { gmajor, cmajor };
 		currentScale = new int[7];
-		generateMajorScale (10);
-		// start from the root eg G = 10
-//		/g_major = new int [7];
-//		for 10 to end
-//			if true, add ThreadSafeAttribute index Touch gmaj
-//				again, from 0 til 10
+		_scale.GenerateMajorScale (10);
 
-		//noteArray = ["A", "A#", "B", "C", "C#", 
 		piecePrefabDict = new Dictionary <PieceType, GameObject> ();
+
 
 		for (int i = 0; i < piecePrefabs.Length; i++) {
 			if (!piecePrefabDict.ContainsKey (piecePrefabs [i].type)) {
 				piecePrefabDict.Add (piecePrefabs [i].type, piecePrefabs [i].prefab);
 			}
 		}
+
 
 		for (int x = 0; x < xDim; x++) {
 			for (int y = 0; y < yDim; y++) {
@@ -105,6 +142,18 @@ public class Fretboard : MonoBehaviour {
 
 		notes = new Note[xDim, yDim];
 		int octave = 2;
+
+		/************************ Generate the strings **********************/
+		int[] openNoteIDs = new int[]{ 7, 2, 10, 5, 0, 7 }; // the ID of the note that each string starts on.
+		int[] octaves = new int[]{ 4, 3, 3, 3, 3, 2 }; // the octave that each string starts at. Double check to make sure they're right.
+		for (int i = 0; i < numStrings; i++) {
+			GameObject newString = (GameObject)Instantiate (stringPrefab, new Vector3 (20f, 0.3f, 1.3f * i), Quaternion.Euler(0f, 0f, 90f));
+
+			strings [i] = newString.GetComponent<GuitarString> (); // add the new string to the fretboards array of strings
+			strings [i].Init (numFrets, openNoteIDs [i], octaves [i]);
+			//TODO: add the spacing between frets to the Init, so that the notes can be generated within each GuitarString object
+		}
+		/********************************************************************/
 
 		for (int x = 0; x < xDim; x++) {
 			for (int y = 0; y < yDim; y++) {
@@ -156,7 +205,6 @@ public class Fretboard : MonoBehaviour {
 				}
 				notes[x,y].Init(this, PieceType.NORMAL, pitchShift + x, octave);
 
-				//notes [x, y].NoteComponent.SetPitch ((Note.PitchType)Random.Range (0, notes [x, y].NoteComponent.NumPitches));
 			}
 		}
 		//SetScale (10);

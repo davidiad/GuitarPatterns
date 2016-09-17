@@ -29,7 +29,6 @@ public class Scale : MonoBehaviour {
 		majorScalePattern = new bool[] {true, false, true, false, true, true, false, true, false, true, false, true};
 		scalePattern = new bool[12];
 		chordPrefix = new string[] {"I: ", "ii: ", "iii: ", "IV: ", "V: ", "vi: ", "vii: "};
-//		sharps = new string[] {"", "", "", "", "", "", ""}; // will be blank string unless the note is sharped
 		chordPostfix = new string[] {"", "m", "m", "", "", "m", " dim"};
 
 		scale = new int[7];
@@ -53,38 +52,8 @@ public class Scale : MonoBehaviour {
 		// For instance, G Major contains  the 7 notes (G, A, B, C, D, E, F#) so
 		// the pattern by index is (10, 0, 2, 3, 5, 7, 9)
 
-		/**********************
-		Next, need to get the letter name of the chord from the index number, and use it to build the chord name
-		// and then, make it so that the scale can be updated in GenerateMajorScale(), so just one Scale object can be used in game 
-		***********************/
-
-
-		//TODO: - set up the scale menu here (keep in Start) //		ScaleMenuSetup ();
-		// then. put all these into a separate func: SetScale() ? ChangeScale() ? SetupScale() ? ScaleSetUp() ?
-		// except scale munu setup should probably not be inside set scale
-
-//		GenerateMajorScale (rootIndex);
-//		GenerateChords ();
-//		ChordMenuSetup ();
-
 		ChangeScale (rootIndex);
-//		// Generate the Chords for the Scale
-//		for (int i = 0; i < 7; i++) {
-//			// each chord is made up of the 1st root note, followed by one 2 notes above in the scale, followed by 2 notes above that
-//			// circling back to the first one after the 7th, hence the modulus operation
-//			int j = (i + 2) % 7;
-//			int k = (i + 4) % 7;
-//			chords [i].Init (scale [i], scale [j], scale [k]);
-//
-//			if (noteInfo.Sharps[scale[i]]) {
-//				sharps [i] += "#";
-//			}
-//
-//			chords[i].name = chordPrefix[i] + noteInfo.PitchNames [scale [i]] + sharps[i] + chordPostfix[i];
-//			chordNames [i] = chords [i].name;
-//		}
 
-//		ChordMenuSetup ();
 	}
 
 	public void ChangeScale(int _rootIndex) {
@@ -136,7 +105,7 @@ public class Scale : MonoBehaviour {
 		}
 	}
 
-	private void GenerateMajorScale(int _rootIndex) {
+	public void GenerateMajorScale(int _rootIndex) {
 		// The pattern of the major scale, shifted to start at the current key
 		bool [] shiftedScalePattern = new bool[12];
 		int j = 0;
@@ -161,9 +130,6 @@ public class Scale : MonoBehaviour {
 			}
 		}
 		scalePattern = shiftedScalePattern;
-//		for (int i = 0; i < scalePattern.Length; i++) {
-//			Debug.Log (scalePattern [i]);
-//		}
 	}
 		
 }

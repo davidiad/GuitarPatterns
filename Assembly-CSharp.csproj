@@ -123,6 +123,7 @@
      <Compile Include="Assets\Scripts\ChordShape.cs" />
      <Compile Include="Assets\Scripts\Fretboard.cs" />
      <Compile Include="Assets\Scripts\GuitarNoteClips.cs" />
+     <Compile Include="Assets\Scripts\GuitarString.cs" />
      <Compile Include="Assets\Scripts\Note.cs" />
      <Compile Include="Assets\Scripts\NoteInfo.cs" />
      <Compile Include="Assets\Scripts\Scale.cs" />
