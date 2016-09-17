@@ -25,7 +25,8 @@ public class Fretboard : MonoBehaviour {
 	public GameObject stringPrefab;
 	public int numStrings;
 	public int numFrets;
-
+	public float spacing; // the distance between frets
+	public float offset; // the shift of note positions left, so they are positioned in between frets
 	public int xDim;
 	public int yDim;
 
@@ -78,6 +79,9 @@ public class Fretboard : MonoBehaviour {
 
 	void Awake() {
 		numStrings = 6;
+		spacing = 3.01f;
+		offset = -1.0f;
+
 		strings = new GuitarString[numStrings];
 		_scale = GameObject.FindGameObjectWithTag ("Scales").GetComponent<Scale> ();
 //		for (int i = 0; i < numStrings; i++) {
@@ -150,7 +154,7 @@ public class Fretboard : MonoBehaviour {
 			GameObject newString = (GameObject)Instantiate (stringPrefab, new Vector3 (20f, 0.3f, 1.3f * i), Quaternion.Euler(0f, 0f, 90f));
 
 			strings [i] = newString.GetComponent<GuitarString> (); // add the new string to the fretboards array of strings
-			strings [i].Init (numFrets, openNoteIDs [i], octaves [i]);
+			strings [i].Init (numFrets, openNoteIDs [i], octaves [i], spacing, offset);
 			//TODO: add the spacing between frets to the Init, so that the notes can be generated within each GuitarString object
 		}
 		/********************************************************************/
