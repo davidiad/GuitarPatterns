@@ -23,6 +23,7 @@ public class Fretboard : MonoBehaviour {
 
 
 	public GameObject stringPrefab;
+	public GameObject chordShapePrefab;
 	public int numStrings;
 	public int numFrets;
 	public float spacing; // the distance between frets
@@ -266,9 +267,12 @@ public class Fretboard : MonoBehaviour {
 		}
 	}
 
-	public void SetNoteColorsByChord(int _chordID) {
+	public void DisplayChords(int _chordRootID) {
+		SetNoteColorsByChord (_chordRootID);
+		MakeChordShapes (_chordRootID);
+	}
 
-		//foreach (Note note in notes) {
+	public void SetNoteColorsByChord(int _chordID) {
 		foreach (GuitarString guitarString in strings) {
 			foreach (Note note in guitarString.notes) {
 				if (isNoteInChord (_scale.chords [_chordID], note) == true) {
@@ -278,6 +282,25 @@ public class Fretboard : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	private void MakeChordShapes(int _chordRootID) {
+		List <int> currentRootFrets = strings [0].GetFrets (_scale.chords [_chordRootID].noteIDs[0]);
+		// Get the root note of the G shape
+		Note shapeNote0 = strings[0].GetNote(currentRootFrets[0]);
+		Note shapeNote1 = strings[5].GetNote(currentRootFrets[0]);
+		Note shapeNote2 = strings[4].GetNote(currentRootFrets[0] - 1);
+
+		Vector2 pt0 = new Vector2 (shapeNote0.transform.position.x, shapeNote0.transform.position.z);
+		Vector2 pt1 = new Vector2 (shapeNote1.transform.position.x, shapeNote1.transform.position.z);
+		Vector2 pt2 = new Vector2 (shapeNote2.transform.position.x, shapeNote2.transform.position.z);
+
+		Vector2[] chordPoints = new Vector2[] {pt0, pt1, pt2};
+
+		GameObject chordShapeObject = (GameObject)Instantiate (chordShapePrefab, new Vector3 (0f, 0f, 0f), Quaternion.identity);
+		ChordShape chordShape = chordShapeObject.GetComponent<ChordShape> ();
+		chordShape.Init (chordPoints);
+		GetComponent<VectorChord> ().DrawChord (chordShape);
 	}
 
 	// helper function to check whether a note is in the currently active chord

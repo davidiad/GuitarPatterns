@@ -127,6 +127,7 @@
      <Compile Include="Assets\Scripts\Note.cs" />
      <Compile Include="Assets\Scripts\NoteInfo.cs" />
      <Compile Include="Assets\Scripts\Scale.cs" />
+     <Compile Include="Assets\Scripts\VectorChord.cs" />
      <None Include="Assets\Plugins\FingerGestures\Readme.txt" />
      <None Include="Assets\LineWorks\Plugins\Support\Third Party Libraries\LibTessDotNet\License.txt" />
      <None Include="Assets\LineWorks\Shaders\Resources\LineWorks.cginc" />

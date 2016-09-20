@@ -62,6 +62,7 @@ public class Scale : MonoBehaviour {
 		ChordMenuSetup ();
 		fretboard.SetActiveNotesForScale ();
 		fretboard.SetNoteColorsByChord (0); // by default, set to the root chord (TODO:- change to no chord selected, all notes in color
+
 	}
 
 	private void ScaleMenuSetup() {
