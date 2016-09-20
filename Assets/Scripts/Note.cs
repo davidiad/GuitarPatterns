@@ -4,20 +4,6 @@ using System.Collections.Generic;
 
 public class Note : MonoBehaviour {
 
-//	public enum PitchName
-//	{
-//		A, B, C, D, E, F, G, COUNT 
-//	};
-
-//	public struct NoteData {
-//		public GameObject note;
-//		//public PitchName notePitch;
-////		public bool sharp;
-////		public int noteIdentifer; // needed?
-////		public string noteRichText;
-//		public AudioClip clip;
-//		public int octave;
-//	};
 		
 	public PitchName notePitch;
 	public bool sharp;
@@ -26,7 +12,6 @@ public class Note : MonoBehaviour {
 	public float noteColor;
 		
 	public float pitchAdjust;
-	//private NoteData noteData; // to be deprecated in favor of NoteInfo object
 	private NoteInfo noteInfo;
 
 	public AudioClip clip;
@@ -44,13 +29,7 @@ public class Note : MonoBehaviour {
 	bool[] gmajor = new bool[] {true, false, true, true, false, true, false, true, false, true, true, false};
 	bool[] cmajor = new bool[] {true, false, true, true, false, true, false, true, true, false, true, false};
 
-	//public TextMesh noteTextMesh;
 
-//	private int noteID;
-//	public int NoteID
-//	{
-//		get { return noteID; }
-//	}
 	private int notemeshText;
 
 	private Fretboard fretboard;
@@ -69,7 +48,6 @@ public class Note : MonoBehaviour {
 
 	public enum PitchType
 	{
-		//C, CSHARP, D, DSHARP, E, F, FSHARP, G, GSHARP, A, ASHARP, B, COUNT 
 		C, CSHARP, D, DSHARP, E, F, FSHARP, G, GSHARP, A, ASHARP, B, COUNT
 	};
 		
@@ -86,12 +64,6 @@ public class Note : MonoBehaviour {
 
 	private PitchType pitch;
 
-//	public PitchType Pitch
-//	{
-//		get { return pitch; }
-//		set { SetPitch (value); }
-//	}
-
 	public int NumPitches
 	{
 		get { return noteMeshObjects.Length; }
@@ -107,12 +79,6 @@ public class Note : MonoBehaviour {
 		get { return noteComponent; }
 	}
 
-//	void Awake()
-//	{
-//
-//		movableComponent = GetComponent<MovablePiece> ();
-//		colorComponent = GetComponent<ColorPiece> ();
-//	}
 
 	void Awake()
 	{
@@ -191,7 +157,24 @@ public class Note : MonoBehaviour {
 		}
 	}
 
-	public void Init(Fretboard _fret, Fretboard.PieceType _type, int xValue, int _octave)
+	public void Init (int _noteID) {
+		notePitch = noteInfo.PitchNames [_noteID];
+		sharp = noteInfo.Sharps [_noteID];
+		noteIdentifer = noteInfo.Identifiers [_noteID];
+
+		noteText.richText = true;
+		noteRichText = "<b>" + noteInfo.NoteRichTexts [_noteID] + "</b>";
+		if (noteInfo.Sharps [_noteID] == true) {
+			noteRichText += "<size=38>#</size>";
+		}
+
+		noteColor = (_noteID / 12.0f) - 0.1f;
+		noteText.text = noteRichText;
+		noteText.color = Color.HSVToRGB (noteColor, 1.0f, 1.0f);
+		isColored = true;
+	}
+
+	public void InitFromFretboard(Fretboard _fret, Fretboard.PieceType _type, int xValue, int _octave)
 	{
 		//noteData.note = transform.gameObject;
 		int xpos = (xValue) % 12;

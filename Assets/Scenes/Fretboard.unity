@@ -727,6 +727,9 @@ MonoBehaviour:
   stringPrefab: {fileID: 1000010200179156, guid: 863dbf86b32464a38adb5764ff8e5b6e,
     type: 2}
   numStrings: 6
+  numFrets: 21
+  spacing: 0
+  offset: 0
   xDim: 12
   yDim: 6
   piecePrefabs:
@@ -738,7 +741,6 @@ MonoBehaviour:
   cmajor: 
   majorscale: 
   currentScale: 
-  numFrets: 17
 --- !u!4 &492655166
 Transform:
   m_ObjectHideFlags: 0

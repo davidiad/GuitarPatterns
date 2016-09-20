@@ -7,8 +7,8 @@ public class LW_ExampleScript : MonoBehaviour {
 	private LW_Stroke stroke;
 	private LW_Stroke strokeOutline;
 	private LW_Polyline3D testLine;
-	private LW_Polyline3D chordShapeLine;
-	private LW_Polyline3D chordShapeLineOutline;
+	private LW_Polyline2D chordShapeLine;
+	private LW_Polyline2D chordShapeLineOutline;
 	private Material material;
 
 	private ChordShape chordShape;
@@ -29,8 +29,8 @@ public class LW_ExampleScript : MonoBehaviour {
 		Vector2[] pts = new Vector2[] { pt1, pt2, pt3 };
 		testLine = LW_Polyline3D.Create (pts ,false);
 
-		chordShapeLine = LW_Polyline3D.Create (chordShape.chordPoints ,false);
-		chordShapeLineOutline = LW_Polyline3D.Create (chordShape.chordPoints ,false);
+		chordShapeLine = LW_Polyline2D.Create (chordShape.chordPoints ,false);
+		chordShapeLineOutline = LW_Polyline2D.Create (chordShape.chordPoints ,false);
 
 		// Adjust the segmenetation to get a smoother looking line.
 		linework.segmentation = 20;

@@ -151,11 +151,12 @@ public class Fretboard : MonoBehaviour {
 		int[] openNoteIDs = new int[]{ 7, 2, 10, 5, 0, 7 }; // the ID of the note that each string starts on.
 		int[] octaves = new int[]{ 4, 3, 3, 3, 3, 2 }; // the octave that each string starts at. Double check to make sure they're right.
 		for (int i = 0; i < numStrings; i++) {
-			GameObject newString = (GameObject)Instantiate (stringPrefab, new Vector3 (20f, 0.3f, 1.3f * i), Quaternion.Euler(0f, 0f, 90f));
-
+			GameObject newString = (GameObject)Instantiate (stringPrefab, new Vector3 (0f, 0.3f, 1.3f * i), Quaternion.identity);
+			newString.transform.parent = transform;
 			strings [i] = newString.GetComponent<GuitarString> (); // add the new string to the fretboards array of strings
 			strings [i].Init (numFrets, openNoteIDs [i], octaves [i], spacing, offset);
-			//TODO: add the spacing between frets to the Init, so that the notes can be generated within each GuitarString object
+
+
 		}
 		/********************************************************************/
 
@@ -207,7 +208,7 @@ public class Fretboard : MonoBehaviour {
 					pitchShift = 8;
 					break;
 				}
-				notes[x,y].Init(this, PieceType.NORMAL, pitchShift + x, octave);
+				notes[x,y].InitFromFretboard(this, PieceType.NORMAL, pitchShift + x, octave);
 
 			}
 		}
