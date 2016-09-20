@@ -137,7 +137,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 28}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &147795722
@@ -727,7 +727,7 @@ MonoBehaviour:
   stringPrefab: {fileID: 1000010200179156, guid: 863dbf86b32464a38adb5764ff8e5b6e,
     type: 2}
   numStrings: 6
-  numFrets: 21
+  numFrets: 17
   spacing: 0
   offset: 0
   xDim: 12
@@ -785,7 +785,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 28}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &600924804

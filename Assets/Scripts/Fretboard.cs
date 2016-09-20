@@ -139,7 +139,7 @@ public class Fretboard : MonoBehaviour {
 		for (int x = 0; x < xDim; x++) {
 			for (int y = 0; y < yDim; y++) {
 				
-				GameObject background = (GameObject)Instantiate (backgroundPrefab, new Vector3 (3.01f * x + 3.0f + 0, 0, y + 0.8f), Quaternion.identity);
+				GameObject background = (GameObject)Instantiate (backgroundPrefab, new Vector3 (3.01f * x + 3.0f + 0, 0, -y - 0.8f), Quaternion.identity);
 				background.transform.parent = transform;
 			}
 		}
@@ -149,9 +149,9 @@ public class Fretboard : MonoBehaviour {
 
 		/************************ Generate the strings **********************/
 		int[] openNoteIDs = new int[]{ 7, 2, 10, 5, 0, 7 }; // the ID of the note that each string starts on.
-		int[] octaves = new int[]{ 4, 3, 3, 3, 3, 2 }; // the octave that each string starts at. Double check to make sure they're right.
+		int[] octaves = new int[]{ 4, 4, 3, 3, 3, 2 }; // the octave that each string starts at. Double check to make sure they're right.
 		for (int i = 0; i < numStrings; i++) {
-			GameObject newString = (GameObject)Instantiate (stringPrefab, new Vector3 (0f, 0.3f, 1.3f * i), Quaternion.identity);
+			GameObject newString = (GameObject)Instantiate (stringPrefab, new Vector3 (0f, 0.3f, -1.3f * i), Quaternion.identity);
 			newString.transform.parent = transform;
 			strings [i] = newString.GetComponent<GuitarString> (); // add the new string to the fretboards array of strings
 			strings [i].Init (numFrets, openNoteIDs [i], octaves [i], spacing, offset);
@@ -160,6 +160,9 @@ public class Fretboard : MonoBehaviour {
 		}
 		/********************************************************************/
 
+
+		//***********deprecated, Init Notes from the Fretboard********************
+		/*
 		for (int x = 0; x < xDim; x++) {
 			for (int y = 0; y < yDim; y++) {
 				GameObject newNote = (GameObject)Instantiate (piecePrefabDict [PieceType.NORMAL], new Vector3 (3.01f * x, 0, 1.3f * y), Quaternion.identity);
@@ -212,7 +215,10 @@ public class Fretboard : MonoBehaviour {
 
 			}
 		}
-		//SetScale (10);
+		*/
+		//********************************************************************/
+
+
 		SetActiveNotesForScale ();
 //		// set up for chord menu
 //		List<string> list = new List<string> { "G", "Am", "C", "D" };
@@ -251,68 +257,27 @@ public class Fretboard : MonoBehaviour {
 //	}
 
 	public void SetActiveNotesForScale() {
-		foreach (Note note in notes) {
+		//foreach (Note note in notes) { // when using the Notes init'd from Fretboard
 
-			//Debug.Log("Is it true? " + _scale.scalePattern[0]);
-			note.gameObject.SetActive (_scale.scalePattern[note.noteIdentifer]);
+		foreach (GuitarString guitarString in strings) {
+			foreach (Note note in guitarString.notes) {
+				note.gameObject.SetActive (_scale.scalePattern[note.noteIdentifer]);
+			}
 		}
 	}
 
 	public void SetNoteColorsByChord(int _chordID) {
-		//Debug.Log ("CHORD: " + _scale.chords [_chordID].name);
-		//need to pass in scale.chords[0] (for now)
-		// we are getting 0, 1, or 2 from the dropdownmenu
-		// ?Start with G major scale already instantiated? Including its chords? 
-		// Should scales be instantiated and saved as they are needed?
-		// Woulnd't want to have to recreate a scale each time it is switched to. or chords.
-//		switch (_chordID) {
-//		case 0: // G chord
-//			_chordID = 10;
-//			break;
-//		case 1: // C chord
-//			_chordID = 3;
-//			break;
-//		case 2: // D chord
-//			_chordID = 5;
-//			break;
-//		}
 
-
-		// The question: Given the notes in a chord, how to find all the notes of a chord, and change their colors??
-		// Add a bool property to Note that turns the color on or off? Better than recalculating the color each time.
-		// How to check whether a note is in the current chord. If this was Swift, would probably use a Set to check inclusion.
-		// But only checking 3 or so values, so maybe a loop is ok
-		// Maybe a helper function that checks the noteID against all 3+ notes in the chord? A simple switch: case, or a simple loop
-		// What's the best way to iterate thru all the notes on the fretboard? foreach
-
-//		for (int x = 0; x < xDim; x++) {
-//			for (int y = 0; y < yDim; y++) {
-//				if ( notes [x, y].noteIdentifer != _chordID && notes [x, y].noteIdentifer != 2 && notes [x, y].noteIdentifer != 5  )
-//				{
-//					notes [x, y].noteText.color = Color.gray;
-//				}
-//
-//				if (notes [x, y].noteIdentifer == _chordID) {
-//					notes [x, y].noteText.color = Color.HSVToRGB (notes [x, y].noteColor, 1.0f, 1.0f);
-//				} else if (notes [x, y].noteIdentifer == ((_chordID + 4) % 12)) {
-//					notes [x, y].noteText.color = Color.HSVToRGB (notes [x, y].noteColor, 1.0f, 1.0f);
-//				} else if (notes [x, y].noteIdentifer == ((_chordID + 7) % 12)) {
-//					notes [x, y].noteText.color = Color.HSVToRGB (notes [x, y].noteColor, 1.0f, 1.0f);
-//				} else {
-//					notes [x, y].noteText.color = Color.gray;
-//				}
-//			}
-//		}
-
-
-		foreach (Note note in notes) {
-			if (isNoteInChord(_scale.chords[_chordID], note) == true) {
-				note.colorOn (true);
-			} else {
-				note.colorOn (false);
+		//foreach (Note note in notes) {
+		foreach (GuitarString guitarString in strings) {
+			foreach (Note note in guitarString.notes) {
+				if (isNoteInChord (_scale.chords [_chordID], note) == true) {
+					note.colorOn (true);
+				} else {
+					note.colorOn (false);
+				}
 			}
 		}
-
 	}
 
 	// helper function to check whether a note is in the currently active chord

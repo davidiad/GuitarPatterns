@@ -10,7 +10,7 @@ public class GuitarString : MonoBehaviour {
 	private float spacing; // the width from the nut to the first fret
 	private float offset; // the distance to shift the notes left relative to the string, so they are positioned between the frets
 	private int[] frets; // not sure if this will be needed
-	private Note[] notes;
+	public Note[] notes;
 
 	// Use this for initialization
 	public void Awake () {
