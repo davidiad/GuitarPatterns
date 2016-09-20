@@ -5,7 +5,7 @@ public class GuitarString : MonoBehaviour {
 
 	public int numFrets;
 	public int openNoteID;
-	public int octave;
+	public int octave; // the octave at the first note (open string)
 	public GameObject notePrefab;
 	private float spacing; // the width from the nut to the first fret
 	private float offset; // the distance to shift the notes left relative to the string, so they are positioned between the frets
@@ -32,7 +32,9 @@ public class GuitarString : MonoBehaviour {
 			// Init() the notes
 			notes[i] = newNote.GetComponent<Note>();
 			int noteID = (_openNoteID + i) % 12;
-			notes[i].Init(noteID);
+			// determine when the string changes octave
+			int noteOctave = octave + ((openNoteID + i) / 12); // a truncated int is rounded down towards 0
+			notes[i].Init(noteID, noteOctave);
 		}
 	}
 

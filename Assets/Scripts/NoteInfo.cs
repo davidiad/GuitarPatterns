@@ -6,6 +6,7 @@ public enum PitchName
 	A, B, C, D, E, F, G, COUNT 
 };
 
+// This class is a holder for info that is common to all the notes
 public class NoteInfo : MonoBehaviour {
 
 

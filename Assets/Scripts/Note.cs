@@ -157,7 +157,8 @@ public class Note : MonoBehaviour {
 		}
 	}
 
-	public void Init (int _noteID) {
+	// Init called from the GuitarString object that holds the notes
+	public void Init (int _noteID, int _octave) {
 		notePitch = noteInfo.PitchNames [_noteID];
 		sharp = noteInfo.Sharps [_noteID];
 		noteIdentifer = noteInfo.Identifiers [_noteID];
@@ -172,6 +173,11 @@ public class Note : MonoBehaviour {
 		noteText.text = noteRichText;
 		noteText.color = Color.HSVToRGB (noteColor, 1.0f, 1.0f);
 		isColored = true;
+
+		octave = _octave;
+		noteSource = gameObject.GetComponent<AudioSource>();
+		clip = clips.audioClips [octave];
+		noteSource.clip = clip;
 	}
 
 	public void InitFromFretboard(Fretboard _fret, Fretboard.PieceType _type, int xValue, int _octave)
