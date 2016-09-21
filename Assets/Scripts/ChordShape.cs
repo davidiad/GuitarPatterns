@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ChordShape : MonoBehaviour {
+public class ChordShape : MonoBehaviour { // TODO: remove inheritance from Monobehavior
 
 	public Vector2[] chordPoints;
 	public Fretboard fretboard;
