@@ -48,8 +48,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010444782908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d05266e98688a4382af5b9c4691ac3d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e56af3d2a2e44801a24497667ffde32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chordPoints: []
-  fretboard: {fileID: 0}

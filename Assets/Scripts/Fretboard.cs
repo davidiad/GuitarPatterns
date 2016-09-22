@@ -23,7 +23,7 @@ public class Fretboard : MonoBehaviour {
 
 
 	public GameObject stringPrefab;
-	public GameObject chordShapePrefab;
+	private ChordShapes chordShapes;
 	public int numStrings;
 	public int numFrets;
 	public float spacing; // the distance between frets
@@ -48,7 +48,7 @@ public class Fretboard : MonoBehaviour {
 
 	private Scale _scale;
 
-	private GuitarString[] strings;
+	public GuitarString[] strings;
 
 //	// shouldn't need this -- moved to Scale.cs -- but still in use???
 //	public void generateMajorScale(int _rootIndex) {
@@ -85,6 +85,7 @@ public class Fretboard : MonoBehaviour {
 
 		strings = new GuitarString[numStrings];
 		_scale = GameObject.FindGameObjectWithTag ("Scales").GetComponent<Scale> ();
+
 //		for (int i = 0; i < numStrings; i++) {
 //			strings[i] = new GuitarString();
 //		
@@ -120,9 +121,9 @@ public class Fretboard : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// scales
-		majorscale = new bool[] {true, false, true, false, true, true, false, true, false, true, false, true};
-		gmajor = new bool[] {true, false, true, true, false, true, false, true, false, true, true, false};
-		cmajor = new bool[] {true, false, true, true, false, true, false, true, true, false, true, false};
+		majorscale = new bool[] { true, false, true, false, true, true, false, true, false, true, false, true };
+		gmajor = new bool[] { true, false, true, true, false, true, false, true, false, true, true, false };
+		cmajor = new bool[] { true, false, true, true, false, true, false, true, true, false, true, false };
 		scales = new bool[][] { gmajor, cmajor };
 		currentScale = new int[7];
 		_scale.GenerateMajorScale (10);
@@ -160,102 +161,8 @@ public class Fretboard : MonoBehaviour {
 
 		}
 		/********************************************************************/
-
-
-		//***********deprecated, Init Notes from the Fretboard********************
-		/*
-		for (int x = 0; x < xDim; x++) {
-			for (int y = 0; y < yDim; y++) {
-				GameObject newNote = (GameObject)Instantiate (piecePrefabDict [PieceType.NORMAL], new Vector3 (3.01f * x, 0, 1.3f * y), Quaternion.identity);
-				newNote.name = "Notes(" + x + "," + y + ")";
-				newNote.transform.parent = transform;
-
-				notes[x, y] = newNote.GetComponent<Note>();
-
-				int pitchShift = 0;
-
-				switch (y) {
-				case 0: // low E string
-					pitchShift = 7;
-					if (x > 3) {
-						octave = 3;
-					} else { octave = 2; }
-					break;
-				case 1: // A string
-					pitchShift = 0;
-					octave = 3;
-					break;
-				case 2: // D string
-					pitchShift = 5;
-					if (x > 5) {octave = 4;}
-					else {octave = 3;}
-					break;
-				case 3: // G string
-					pitchShift = 10;
-					if (x == 0) {octave = 3;}
-					else {octave = 4;}
-					break;
-				case 4: // B string
-					pitchShift = 2;
-					if (x > 8) {octave = 5;}
-					else {octave = 4;}
-					break;
-				case 5: // high E string
-					pitchShift = 7;
-					if (x > 3) {
-						octave = 5;
-					} else {
-						octave = 4;
-					}
-					break;
-				default: // either E string
-					pitchShift = 8;
-					break;
-				}
-				notes[x,y].InitFromFretboard(this, PieceType.NORMAL, pitchShift + x, octave);
-
-			}
-		}
-		*/
-		//********************************************************************/
-
-
-		SetActiveNotesForScale ();
-//		// set up for chord menu
-//		List<string> list = new List<string> { "G", "Am", "C", "D" };
-//		chordMenu.ClearOptions();
-//
-//
-//		foreach (string option in list)
-//		{
-//			chordMenu.options.Add(new Dropdown.OptionData(option));
-//		}
-
+		chordShapes = GameObject.FindGameObjectWithTag ("ChordShapes").GetComponent<ChordShapes> ();
 	}
-
-
-//	// Old way, from an array of scales
-//	public void SetScale(int _scaleID) {
-//
-//		/******************* Example of foreach to count multi-d array******************/
-////		int counter = 0;
-////		foreach (Note note in notes) {
-////			Debug.Log (note.noteIdentifer + "  *  ");
-////			counter++;
-////		}
-////		Debug.Log ("Counter: " + counter);
-//		/*******************************************************************************/
-//
-//		// TODO:- use a foreach loop, and get the scale from the Scales object****************
-//
-//		bool[] scale = scales [_scaleID];
-//		for (int x = 0; x < xDim; x++) {
-//			for (int y = 0; y < yDim; y++) {
-//				notes [x, y].gameObject.SetActive (scale[notes [x, y].noteIdentifer]);
-//					
-//			}
-//		}
-//	}
 
 	public void SetActiveNotesForScale() {
 		//foreach (Note note in notes) { // when using the Notes init'd from Fretboard
@@ -285,6 +192,7 @@ public class Fretboard : MonoBehaviour {
 	}
 
 	private void MakeChordShapes(int _chordRootID) {
+		//chordShapes.UpdateChordShapes (_chordRootID);
 		List <int> currentRootFrets = strings [0].GetFrets (_scale.chords [_chordRootID].noteIDs[0]);
 		// Get the root note of the G shape
 		Note shapeNote0 = strings[0].GetNote(currentRootFrets[0]);
@@ -296,11 +204,19 @@ public class Fretboard : MonoBehaviour {
 		Vector2 pt2 = new Vector2 (shapeNote2.transform.position.x, shapeNote2.transform.position.z);
 
 		Vector2[] chordPoints = new Vector2[] {pt0, pt1, pt2};
-
-		GameObject chordShapeObject = (GameObject)Instantiate (chordShapePrefab, new Vector3 (0f, 0f, 0f), Quaternion.identity);
-		ChordShape chordShape = chordShapeObject.GetComponent<ChordShape> ();
-		chordShape.Init (chordPoints);
+		ChordShape chordShape = new ChordShape();
+		chordShape.SetPoints (chordPoints);
 		GetComponent<VectorChord> ().DrawChord (chordShape);
+
+		Vector2[] chordPointsA = chordShapes.Ashape (currentRootFrets[0]);
+		ChordShape chordShapeA = new ChordShape();
+		chordShapeA.SetPoints (chordPointsA);
+		GetComponent<VectorChord> ().DrawChord (chordShapeA);
+
+		Vector2[] chordPointsC = chordShapes.Cshape (currentRootFrets[0]);
+		ChordShape chordShapeC = new ChordShape();
+		chordShapeC.SetPoints (chordPointsC);
+		GetComponent<VectorChord> ().DrawChord (chordShapeC);
 	}
 
 	// helper function to check whether a note is in the currently active chord
@@ -313,26 +229,12 @@ public class Fretboard : MonoBehaviour {
 		}
 		return false;
 	}
-
-//	void ResetNoteColors() {
-//		for (int x = 0; x < xDim; x++) {
-//			for (int y = 0; y < yDim; y++) {
-//				notes [x, y].noteText.color = Color.HSVToRGB (notes[x, y].noteColor, 1.0f, 1.0f);
-//			}
-//		}
-//	}
-
-//	Vector2 GetWorldPosition(int x, int y) {
-//		return new Vector2 (transform.position.x - xDim / 2.0f + x, transform.position.y + yDim / 2.0f - y);
-//
-//	}
+			
 	Vector3 GetWorldPosition(int x, int y) {
 		return new Vector3 (transform.position.x - xDim / 2.0f + (3.01f * x), 0.0f, transform.position.y + yDim / 2.0f - y);
 
 	}
-
-
-	
+			
 
 }
  

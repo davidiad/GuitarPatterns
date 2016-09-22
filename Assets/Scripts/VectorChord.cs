@@ -87,6 +87,8 @@ public class VectorChord : MonoBehaviour {
 		}
 
 	public void DrawChord(ChordShape _chordShape) {
+		//linework.ForceTotalRebuild ();
+
 		stroke = LW_Stroke.Create(Color.magenta, 1.6f);
 		strokeOutline = LW_Stroke.Create(Color.red, 2.2f);
 		chordShapeLine = LW_Polyline2D.Create (_chordShape.chordPoints ,false);
