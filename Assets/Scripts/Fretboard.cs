@@ -206,17 +206,17 @@ public class Fretboard : MonoBehaviour {
 		Vector2[] chordPoints = new Vector2[] {pt0, pt1, pt2};
 		ChordShape chordShape = new ChordShape();
 		chordShape.SetPoints (chordPoints);
-		GetComponent<VectorChord> ().DrawChord (chordShape);
+		GetComponent<VectorChord> ().DrawChord (chordShape, 0);
 
 		Vector2[] chordPointsA = chordShapes.Ashape (currentRootFrets[0]);
 		ChordShape chordShapeA = new ChordShape();
 		chordShapeA.SetPoints (chordPointsA);
-		GetComponent<VectorChord> ().DrawChord (chordShapeA);
+		GetComponent<VectorChord> ().DrawChord (chordShapeA, 1);
 
 		Vector2[] chordPointsC = chordShapes.Cshape (currentRootFrets[0]);
 		ChordShape chordShapeC = new ChordShape();
 		chordShapeC.SetPoints (chordPointsC);
-		GetComponent<VectorChord> ().DrawChord (chordShapeC);
+		GetComponent<VectorChord> ().DrawChord (chordShapeC, 2);
 	}
 
 	// helper function to check whether a note is in the currently active chord

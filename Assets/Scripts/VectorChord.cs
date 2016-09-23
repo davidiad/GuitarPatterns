@@ -11,14 +11,54 @@ public class VectorChord : MonoBehaviour {
 //	private LW_Polyline3D testLine;
 	private LW_Polyline2D chordShapeLine;
 	private LW_Polyline2D chordShapeLineOutline;
+	// Create an array to hold the 5 chordshapes
+	private LW_Polyline2D[] chordShapeLines;
+
 	private Material material;
 	public ChordShape chordShape;
 
-		void Awake() {
-			//chordShape = GameObject.FindGameObjectWithTag ("ChordShapes").GetComponent<ChordShape> ();
+	void Awake() {
+		//chordShape = GameObject.FindGameObjectWithTag ("ChordShapes").GetComponent<ChordShape> ();
+		chordShapeLines = new LW_Polyline2D[5];
+	}
+
+	void Start () {
+			
+		stroke = LW_Stroke.Create(Color.magenta, 1.6f);
+		strokeOutline = LW_Stroke.Create(Color.red, 2.2f);
+		chordShapeLine = LW_Polyline2D.Create (new Vector2[0] ,false);
+		chordShapeLineOutline = LW_Polyline2D.Create (new Vector2[0] ,false);
+
+		// Adjust the segmenetation to get a smoother looking line.
+		linework.segmentation = 20;
+		// If you want to use any of the advanced shader features you have to set featureMode to Advanced.
+		linework.featureMode = FeatureMode.Advanced;
+		// If you would like the stroke to be 3D. ie. always face the camera.
+		linework.strokeDrawMode = StrokeDrawMode.Draw2D;
+		// If you would like to have the shader provide anti-aliasing
+		linework.antiAliasingMode = AntiAliasingMode.On;
+		// It is recommended for 3D lines to use the 'Round' Linejoin.
+		linework.joinsAndCapsMode = JoinsAndCapsMode.Shader;
+		stroke.linejoin = Linejoin.Round;
+		stroke.linecap = Linecap.Round;
+		strokeOutline.linejoin = Linejoin.Round;
+		strokeOutline.linecap = Linecap.Round;
+		stroke.opacity = 0.3f;
+		strokeOutline.opacity = 0.5f;
+			
+		for (int i = 0; i < 5; i++) { // creating a chordshape for each of the 5 CAGED shapes
+			chordShapeLines[i] = LW_Polyline2D.Create (new Vector2[0] ,false);
+			chordShapeLines[i].styles.Add (strokeOutline);
+			linework.graphic.Add (chordShapeLines [i]);
 		}
 
-		void Start () {
+
+
+			chordShapeLine.styles.Add (stroke);
+			chordShapeLineOutline.styles.Add (strokeOutline);
+			linework.graphic.Add (chordShapeLine);
+			linework.graphic.Add (chordShapeLineOutline);
+
 //			// Create the LineWorks Components and Scriptable Objects.
 //			//linework = LW_Canvas.Create(gameObject, "MyFirstLineWork");
 //			circle = LW_Circle.Create(Vector2.zero, 10f);
@@ -86,35 +126,36 @@ public class VectorChord : MonoBehaviour {
 			//transform.localRotation = Quaternion.Euler(new Vector3(40f,40f,0) * Time.time);
 		}
 
-	public void DrawChord(ChordShape _chordShape) {
-		//linework.ForceTotalRebuild ();
-
-		stroke = LW_Stroke.Create(Color.magenta, 1.6f);
-		strokeOutline = LW_Stroke.Create(Color.red, 2.2f);
-		chordShapeLine = LW_Polyline2D.Create (_chordShape.chordPoints ,false);
-		chordShapeLineOutline = LW_Polyline2D.Create (_chordShape.chordPoints ,false);
-
-		// Adjust the segmenetation to get a smoother looking line.
-		linework.segmentation = 20;
-		// If you want to use any of the advanced shader features you have to set featureMode to Advanced.
-		linework.featureMode = FeatureMode.Advanced;
-		// If you would like the stroke to be 3D. ie. always face the camera.
-		linework.strokeDrawMode = StrokeDrawMode.Draw3D;
-		// If you would like to have the shader provide anti-aliasing
-		linework.antiAliasingMode = AntiAliasingMode.On;
-		// It is recommended for 3D lines to use the 'Round' Linejoin.
-		linework.joinsAndCapsMode = JoinsAndCapsMode.Shader;
-		stroke.linejoin = Linejoin.Round;
-		stroke.linecap = Linecap.Round;
-		strokeOutline.linejoin = Linejoin.Round;
-		strokeOutline.linecap = Linecap.Round;
-		stroke.opacity = 0.3f;
-		strokeOutline.opacity = 0.5f;
-
-		chordShapeLine.styles.Add (stroke);
-		chordShapeLineOutline.styles.Add (strokeOutline);
-		linework.graphic.Add (chordShapeLine);
-		linework.graphic.Add (chordShapeLineOutline);
+	public void DrawChord(ChordShape _chordShape, int _index) {
+//		chordShapeLine.Set (_chordShape.chordPoints ,false);
+//		chordShapeLineOutline.Set (_chordShape.chordPoints ,false);
+		chordShapeLines [_index].Set (_chordShape.chordPoints, false);
+//		stroke = LW_Stroke.Create(Color.magenta, 1.6f);
+//		strokeOutline = LW_Stroke.Create(Color.red, 2.2f);
+//		chordShapeLine = LW_Polyline2D.Create (_chordShape.chordPoints ,false);
+//		chordShapeLineOutline = LW_Polyline2D.Create (_chordShape.chordPoints ,false);
+//
+//		// Adjust the segmenetation to get a smoother looking line.
+//		linework.segmentation = 20;
+//		// If you want to use any of the advanced shader features you have to set featureMode to Advanced.
+//		linework.featureMode = FeatureMode.Advanced;
+//		// If you would like the stroke to be 3D. ie. always face the camera.
+//		linework.strokeDrawMode = StrokeDrawMode.Draw2D;
+//		// If you would like to have the shader provide anti-aliasing
+//		linework.antiAliasingMode = AntiAliasingMode.On;
+//		// It is recommended for 3D lines to use the 'Round' Linejoin.
+//		linework.joinsAndCapsMode = JoinsAndCapsMode.Shader;
+//		stroke.linejoin = Linejoin.Round;
+//		stroke.linecap = Linecap.Round;
+//		strokeOutline.linejoin = Linejoin.Round;
+//		strokeOutline.linecap = Linecap.Round;
+//		stroke.opacity = 0.3f;
+//		strokeOutline.opacity = 0.5f;
+//
+//		chordShapeLine.styles.Add (stroke);
+//		chordShapeLineOutline.styles.Add (strokeOutline);
+//		linework.graphic.Add (chordShapeLine);
+//		linework.graphic.Add (chordShapeLineOutline);
 	}
 }
 
