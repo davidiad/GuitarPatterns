@@ -25,7 +25,7 @@ public class VectorChord : MonoBehaviour {
 	void Start () {
 			
 		stroke = LW_Stroke.Create(Color.magenta, 1.6f);
-		strokeOutline = LW_Stroke.Create(Color.red, 2.2f);
+		strokeOutline = LW_Stroke.Create(Color.red, 1.4f);
 		chordShapeLine = LW_Polyline2D.Create (new Vector2[0] ,false);
 		chordShapeLineOutline = LW_Polyline2D.Create (new Vector2[0] ,false);
 
@@ -44,7 +44,7 @@ public class VectorChord : MonoBehaviour {
 		strokeOutline.linejoin = Linejoin.Round;
 		strokeOutline.linecap = Linecap.Round;
 		stroke.opacity = 0.3f;
-		strokeOutline.opacity = 0.5f;
+		strokeOutline.opacity = 0.4f;
 			
 		for (int i = 0; i < 5; i++) { // creating a chordshape for each of the 5 CAGED shapes
 			chordShapeLines[i] = LW_Polyline2D.Create (new Vector2[0] ,false);

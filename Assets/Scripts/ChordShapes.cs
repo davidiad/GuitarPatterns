@@ -42,7 +42,8 @@ public class ChordShapes : MonoBehaviour {
 		Vector2 pt0 = GetPoint(fretboard.strings[1].GetNote(_rootFret + 5));
 		Vector2 pt1 = GetPoint(fretboard.strings[3].GetNote(_rootFret + 6));
 		Vector2 pt2 = GetPoint(fretboard.strings[4].GetNote(_rootFret + 7));
-		Vector2[] chordPoints = new Vector2[] {pt0, pt1, pt2};
+		Vector2 pt3 = GetPoint(fretboard.strings[5].GetNote(_rootFret + 7));
+		Vector2[] chordPoints = new Vector2[] {pt0, pt1, pt2, pt3};
 		//chordShapes[0].SetPoints (chordPoints);
 		return chordPoints;
 	}
@@ -54,8 +55,18 @@ public class ChordShapes : MonoBehaviour {
 		Vector2[] chordPoints = new Vector2[] {pt0, pt1, pt2};
 		//chordShapes[1].SetPoints (chordPoints);
 		return chordPoints;
-
 	}
+
+	public Vector2[] Eshape(int _rootFret) {
+		Vector2 pt0 = GetPoint(fretboard.strings[0].GetNote(_rootFret));
+		Vector2 pt1 = GetPoint(fretboard.strings[1].GetNote(_rootFret));
+		Vector2 pt2 = GetPoint(fretboard.strings[2].GetNote(_rootFret + 1));
+		Vector2 pt3 = GetPoint(fretboard.strings[3].GetNote(_rootFret + 2));
+		Vector2 pt4 = GetPoint(fretboard.strings[4].GetNote(_rootFret + 2));
+		Vector2[] chordPoints = new Vector2[] {pt0, pt1, pt2, pt3, pt4};
+		return chordPoints;
+	}
+		
 
 	// Define the G shape chord
 	private void Gshape(int _rootFret) {
@@ -72,10 +83,16 @@ public class ChordShapes : MonoBehaviour {
 	}
 
 	// Define the D shape chord
-	private void Dshape(int _rootFret) {
+	public Vector2[] Dshape(int _rootFret) {
 		// the first note is the 1st string, root fret -1
 		// 2nd note is 2nd string, root fret
 		// 3rd note is 3rd string, root fret - 1
+		Vector2 pt0 = GetPoint(fretboard.strings[0].GetNote(_rootFret + 4));
+		Vector2 pt1 = GetPoint(fretboard.strings[1].GetNote(_rootFret + 5));
+		Vector2 pt2 = GetPoint(fretboard.strings[2].GetNote(_rootFret + 4));
+		Vector2 pt3 = GetPoint(fretboard.strings[5].GetNote(_rootFret + 4));
+		Vector2[] chordPoints = new Vector2[] {pt0, pt1, pt2, pt3};
+		return chordPoints;
 	}
 
 	// helper to get Vector2 from a Note
