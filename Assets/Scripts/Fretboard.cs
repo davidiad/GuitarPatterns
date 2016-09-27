@@ -192,41 +192,63 @@ public class Fretboard : MonoBehaviour {
 	}
 
 	private void MakeChordShapes(int _chordRootID) {
-		//chordShapes.UpdateChordShapes (_chordRootID);
-		List <int> currentRootFrets = strings [0].GetFrets (_scale.chords [_chordRootID].noteIDs[0]);
+		
+
+		// was using the 1st string to determine root fret
+		//List <int> currentRootFrets = strings [0].GetFrets (_scale.chords [_chordRootID].noteIDs[0]);
+
+		// getting the root note on the 2nd string
+		List <int> currentRootFrets = strings [2].GetFrets (_scale.chords [_chordRootID].noteIDs[0]);
+
+		// Get all of the chordPaths
+		Vector2[][] chordPaths = chordShapes.GetChordShapes (currentRootFrets[0]);
+
+		for (int i = 0; i < chordPaths.Length; i++) {
+			ChordShape chordShape = new ChordShape();
+			chordShape.SetPoints (chordPaths[i]);
+			GetComponent<VectorChord> ().DrawChord (chordShape, i);
+		}
+
+
+
 		// Get the root note of the G shape
-		Note shapeNote0 = strings[0].GetNote(currentRootFrets[0]);
-		Note shapeNote1 = strings[5].GetNote(currentRootFrets[0]);
-		Note shapeNote2 = strings[4].GetNote(currentRootFrets[0] - 1);
+//		Note shapeNote0 = strings[0].GetNote(currentRootFrets[0]);
+//		Note shapeNote1 = strings[5].GetNote(currentRootFrets[0]);
+//		Note shapeNote2 = strings[4].GetNote(currentRootFrets[0] - 1);
+//
+//		Vector2 pt0 = new Vector2 (shapeNote0.transform.position.x, shapeNote0.transform.position.z);
+//		Vector2 pt1 = new Vector2 (shapeNote1.transform.position.x, shapeNote1.transform.position.z);
+//		Vector2 pt2 = new Vector2 (shapeNote2.transform.position.x, shapeNote2.transform.position.z);
+//
+//		Vector2[] chordPoints = new Vector2[] {pt0, pt1, pt2};
+//		ChordShape chordShape = new ChordShape();
+//		chordShape.SetPoints (chordPoints);
+//		GetComponent<VectorChord> ().DrawChord (chordShape, 0);
+//
+//		Vector2[] chordPointsA = chordShapes.Ashape (currentRootFrets[0]);
+//		ChordShape chordShapeA = new ChordShape();
+//		chordShapeA.SetPoints (chordPointsA);
+//		GetComponent<VectorChord> ().DrawChord (chordShapeA, 1);
+//
+//		Vector2[] chordPointsC = chordShapes.Cshape (currentRootFrets[0]);
+//		ChordShape chordShapeC = new ChordShape();
+//		chordShapeC.SetPoints (chordPointsC);
+//		GetComponent<VectorChord> ().DrawChord (chordShapeC, 2);
+//
+//		Vector2[] chordPointsE = chordShapes.Eshape (currentRootFrets[0]);
+//		ChordShape chordShapeE = new ChordShape();
+//		chordShapeE.SetPoints (chordPointsE);
+//		GetComponent<VectorChord> ().DrawChord (chordShapeE, 3);
+//
+//		Vector2[] chordPointsD = chordShapes.Dshape (currentRootFrets[0]);
+//		ChordShape chordShapeD = new ChordShape();
+//		chordShapeD.SetPoints (chordPointsD);
+//		GetComponent<VectorChord> ().DrawChord (chordShapeD, 4);
 
-		Vector2 pt0 = new Vector2 (shapeNote0.transform.position.x, shapeNote0.transform.position.z);
-		Vector2 pt1 = new Vector2 (shapeNote1.transform.position.x, shapeNote1.transform.position.z);
-		Vector2 pt2 = new Vector2 (shapeNote2.transform.position.x, shapeNote2.transform.position.z);
+		// the the generic chord shape function
 
-		Vector2[] chordPoints = new Vector2[] {pt0, pt1, pt2};
-		ChordShape chordShape = new ChordShape();
-		chordShape.SetPoints (chordPoints);
-		GetComponent<VectorChord> ().DrawChord (chordShape, 0);
 
-		Vector2[] chordPointsA = chordShapes.Ashape (currentRootFrets[0]);
-		ChordShape chordShapeA = new ChordShape();
-		chordShapeA.SetPoints (chordPointsA);
-		GetComponent<VectorChord> ().DrawChord (chordShapeA, 1);
 
-		Vector2[] chordPointsC = chordShapes.Cshape (currentRootFrets[0]);
-		ChordShape chordShapeC = new ChordShape();
-		chordShapeC.SetPoints (chordPointsC);
-		GetComponent<VectorChord> ().DrawChord (chordShapeC, 2);
-
-		Vector2[] chordPointsE = chordShapes.Eshape (currentRootFrets[0]);
-		ChordShape chordShapeE = new ChordShape();
-		chordShapeE.SetPoints (chordPointsE);
-		GetComponent<VectorChord> ().DrawChord (chordShapeE, 3);
-
-		Vector2[] chordPointsD = chordShapes.Dshape (currentRootFrets[0]);
-		ChordShape chordShapeD = new ChordShape();
-		chordShapeD.SetPoints (chordPointsD);
-		GetComponent<VectorChord> ().DrawChord (chordShapeD, 4);
 	}
 
 	// helper function to check whether a note is in the currently active chord
