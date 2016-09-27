@@ -12,13 +12,17 @@ public class VectorChord : MonoBehaviour {
 	// Create an array to hold the 5 chordshapes
 	private LW_Polyline3D[] chordShapeLines;
 	private LW_Polyline3D[] chordShapeOutlines;
+	// array to hold up to 5 more chord shapes, one octave below
+	//private LW_Polyline3D[] chordShapesLower;
 
 	private Material material;
 	public ChordShape chordShape;
 
 	void Awake() {
-		chordShapeLines = new LW_Polyline3D[5];
-		chordShapeOutlines = new LW_Polyline3D[5];
+		chordShapeLines = new LW_Polyline3D[10];
+		chordShapeOutlines = new LW_Polyline3D[10];
+
+		//chordShapesLower = new LW_Polyline3D[10];
 	}
 
 	void Start () {
@@ -47,7 +51,7 @@ public class VectorChord : MonoBehaviour {
 		stroke.opacity = 1.0f;
 		strokeOutline.opacity = 1.0f;
 			
-		for (int i = 0; i < 5; i++) { // creating a chordshape for each of the 5 CAGED shapes
+		for (int i = 0; i < 10; i++) { // creating a chordshape for each of the 5 CAGED shapes
 			chordShapeLines[i] = LW_Polyline3D.Create (new Vector2[0] ,false);
 			chordShapeLines[i].styles.Add (stroke);
 			linework.graphic.Add (chordShapeLines [i]);

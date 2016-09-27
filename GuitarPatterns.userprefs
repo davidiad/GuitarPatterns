@@ -9,9 +9,9 @@
       <File FileName="Assets/Scripts/Chord.cs" Line="1" Column="1" />
       <File FileName="Assets/LW_ExampleScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ChordShape.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Fretboard.cs" Line="4" Column="3" />
-      <File FileName="Assets/Scripts/VectorChord.cs" Line="12" Column="46" />
-      <File FileName="Assets/Scripts/ChordShapes.cs" Line="44" Column="108" />
+      <File FileName="Assets/Scripts/Fretboard.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/VectorChord.cs" Line="54" Column="25" />
+      <File FileName="Assets/Scripts/ChordShapes.cs" Line="63" Column="47" />
       <File FileName="Assets/LineWorks/Examples/Scripts/SphereOfLines.cs" Line="1" Column="1" />
       <File FileName="Assets/LineWorks/Shaders/Resources/LW_Shader.shader" Line="1" Column="1" />
     </Files>

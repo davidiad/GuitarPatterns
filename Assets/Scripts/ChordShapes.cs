@@ -11,7 +11,7 @@ public class ChordShapes : MonoBehaviour {
 	private Vector2[][] CAGED_shapeInfo;
 
 	void Awake () {
-		chordShapes = new ChordShape[5];
+		chordShapes = new ChordShape[10];
 		fretboard = fretboardObject.GetComponent<Fretboard> ();
 	}
 
@@ -32,18 +32,32 @@ public class ChordShapes : MonoBehaviour {
 
 	public Vector2[][] GetChordShapes(int _rootFret) {
 		// Start with A shape for G chord. _rootFret = 0 (on the 3rd string)
-		Vector2[][] chordPaths = new Vector2[5][];
+		Vector2[][] chordPaths = new Vector2[10][];
 
 		for (int i = 0; i < 5; i++) {
 			int length = CAGED_shapeInfo [i].Length;
 			Vector2[] chordPath = new Vector2[length];
-			//Vector2[][] chord_shapeInfo = new Vector2[][] {CAGED_shapeInfo[i] };
 
 			for (int j = 0; j < length; j++) {
 				// generate the points for each chord
-				// first, check that the note will be in existance, not below the 0 fret and not above the highest fret
+				// first, check that the note will be in existence, not below the 0 fret and not above the highest fret
 				if (IsInRange (_rootFret + (int)CAGED_shapeInfo [i] [j].y)) {
 					chordPath [j] = GetPoint (fretboard.strings [(int)CAGED_shapeInfo [i] [j].x].GetNote (_rootFret + (int)CAGED_shapeInfo [i] [j].y));
+				}
+			}
+			// add chordPath to the array of chordpaths
+			chordPaths[i] = chordPath;
+		}
+
+		for (int i = 5; i < 10; i++) {
+			int length = CAGED_shapeInfo [i % 5].Length;
+			Vector2[] chordPath = new Vector2[length];
+
+			for (int j = 0; j < length; j++) {
+				// generate the points for each chord
+				// first, check that the note will be in existence, not below the 0 fret and not above the highest fret
+				if (IsInRange (_rootFret - 12 + (int)CAGED_shapeInfo [i%5] [j].y)) {
+					chordPath [j] = GetPoint (fretboard.strings [(int)CAGED_shapeInfo [i%5] [j].x].GetNote (_rootFret - 12 + (int)CAGED_shapeInfo [i%5] [j].y));
 				}
 			}
 			// add chordPath to the array of chordpaths
