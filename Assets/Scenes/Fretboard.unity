@@ -1259,8 +1259,8 @@ MonoBehaviour:
   minYaw: -2
   maxYaw: 2
   clampPitchAngle: 1
-  minPitch: 75
-  maxPitch: 105
+  minPitch: 5
+  maxPitch: 175
   allowPinchZoom: 1
   pinchZoomSensitivity: 5
   smoothMotion: 1
@@ -1994,7 +1994,7 @@ MonoBehaviour:
   m_SelectedGraphic: {fileID: 960612699}
   m_SelectedAppearance: {fileID: 0}
   m_CanvasExpanded: 1
-  m_RendererExpanded: 0
+  m_RendererExpanded: 1
   m_AppearanceExpanded: 0
   m_LODExpanded: 0
   m_IsLineWorksShader: 1
@@ -2055,7 +2055,7 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  m_UseAccurateRaycasting: 0
+  m_UseAccurateRaycasting: 1
   m_Segmentation: 8
   m_Optimize: 0
   m_Simplification: 0
@@ -2063,10 +2063,10 @@ MonoBehaviour:
   m_UvTiling: {x: 1, y: 1}
   m_UvOffset: {x: 0, y: 0}
   m_BlendMode: 2
-  m_FeatureMode: 0
+  m_FeatureMode: 1
   m_StrokeDrawMode: 0
   m_StrokeScaleMode: 0
-  m_JoinsAndCapsMode: 0
+  m_JoinsAndCapsMode: 1
   m_GradientsMode: 0
   m_AntiAliasingMode: 0
   m_Graphic: {fileID: 960612699}

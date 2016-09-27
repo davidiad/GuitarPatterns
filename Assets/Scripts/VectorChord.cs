@@ -9,26 +9,31 @@ public class VectorChord : MonoBehaviour {
 	private LW_Stroke stroke;
 	private LW_Stroke strokeOutline;
 //	private LW_Polyline3D testLine;
-	private LW_Polyline2D chordShapeLine;
-	private LW_Polyline2D chordShapeLineOutline;
+	private LW_Polyline3D chordShapeLine;
+	private LW_Polyline3D chordShapeLineOutline;
 	// Create an array to hold the 5 chordshapes
-	private LW_Polyline2D[] chordShapeLines;
+	private LW_Polyline3D[] chordShapeLines;
+	private LW_Polyline3D[] chordShapeOutlines;
 
 	private Material material;
 	public ChordShape chordShape;
 
 	void Awake() {
 		//chordShape = GameObject.FindGameObjectWithTag ("ChordShapes").GetComponent<ChordShape> ();
-		chordShapeLines = new LW_Polyline2D[5];
+		chordShapeLines = new LW_Polyline3D[5];
+		chordShapeOutlines = new LW_Polyline3D[5];
 	}
 
 	void Start () {
 			
-		stroke = LW_Stroke.Create(Color.magenta, 1.6f);
-		strokeOutline = LW_Stroke.Create(Color.red, 1.4f);
-		chordShapeLine = LW_Polyline2D.Create (new Vector2[0] ,false);
-		chordShapeLineOutline = LW_Polyline2D.Create (new Vector2[0] ,false);
+		stroke = LW_Stroke.Create(Color.red, 1.4f);
+		strokeOutline = LW_Stroke.Create(Color.white, 1.6f);
+		chordShapeLine = LW_Polyline3D.Create (new Vector2[0] ,false);
+		chordShapeLineOutline = LW_Polyline3D.Create (new Vector2[0] ,false);
+		//stroke.capTexture = 
 
+
+		stroke.verticalOffset = 0.1f;
 		// Adjust the segmenetation to get a smoother looking line.
 		linework.segmentation = 20;
 		// If you want to use any of the advanced shader features you have to set featureMode to Advanced.
@@ -43,13 +48,17 @@ public class VectorChord : MonoBehaviour {
 		stroke.linecap = Linecap.Round;
 		strokeOutline.linejoin = Linejoin.Round;
 		strokeOutline.linecap = Linecap.Round;
-		stroke.opacity = 0.3f;
-		strokeOutline.opacity = 0.4f;
+		stroke.opacity = 1.0f;
+		strokeOutline.opacity = 1.0f;
 			
 		for (int i = 0; i < 5; i++) { // creating a chordshape for each of the 5 CAGED shapes
-			chordShapeLines[i] = LW_Polyline2D.Create (new Vector2[0] ,false);
-			chordShapeLines[i].styles.Add (strokeOutline);
+			chordShapeLines[i] = LW_Polyline3D.Create (new Vector2[0] ,false);
+			chordShapeLines[i].styles.Add (stroke);
 			linework.graphic.Add (chordShapeLines [i]);
+
+			chordShapeOutlines[i] = LW_Polyline3D.Create (new Vector2[0] ,false);
+			chordShapeOutlines[i].styles.Add (strokeOutline);
+			linework.graphic.Add (chordShapeOutlines [i]);
 		}
 
 
@@ -130,6 +139,7 @@ public class VectorChord : MonoBehaviour {
 //		chordShapeLine.Set (_chordShape.chordPoints ,false);
 //		chordShapeLineOutline.Set (_chordShape.chordPoints ,false);
 		chordShapeLines [_index].Set (_chordShape.chordPoints, false);
+		chordShapeOutlines [_index].Set (_chordShape.chordPoints, false);
 //		stroke = LW_Stroke.Create(Color.magenta, 1.6f);
 //		strokeOutline = LW_Stroke.Create(Color.red, 2.2f);
 //		chordShapeLine = LW_Polyline2D.Create (_chordShape.chordPoints ,false);

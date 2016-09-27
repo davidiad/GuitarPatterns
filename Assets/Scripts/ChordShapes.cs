@@ -17,26 +17,46 @@ public class ChordShapes : MonoBehaviour {
 		for (int i = 0; i < chordShapes.Length; i++) {
 			chordShapes [i] = new ChordShape ();
 		}
-		//UpdateChordShapes (10);
 	}
 
-//	public void UpdateChordShapes(int _rootNote) {
-//		// Fretboard>strings[0]> GetFrets() to return a list of the root fret
-//		Debug.Log("strings: " + fretboard.strings);
-//		Debug.Log("strings[0]: " + fretboard.strings[0]);
-//		int rootFret = fretboard.strings[0].GetFrets(_rootNote)[0];
+	public Vector2[][] GetChordShapes(int _rootFret) {
+		// Start with A shape for G chord. _rootFret = 0 (on the 3rd string)
+		Vector2[][] points = new Vector2[5][];
+
+//		int[][] chordRelationships = new int[5][];
+//		int[] chordStringsA = new int[] { 1, 2, 3 };
+//		int[] chordFretsA = new int[] { 0, 0, 0 }; // the root fret passed in needs to be for the open strings
 //
-//		Debug.Log ("rootFret: " + rootFret);
-//		Debug.Log (fretboard);
-//
-//		Cshape (rootFret);
-//		Ashape (rootFret);
-//		Gshape (rootFret);
-//		Debug.Log (chordShapes [0]);
-//		GetComponent<VectorChord> ().DrawChord (chordShapes[0]);
-//		GetComponent<VectorChord> ().DrawChord (chordShapes[1]);
-//		GetComponent<VectorChord> ().DrawChord (chordShapes[2]);
-//	}
+//		int[][] C_relations = new int[][] { new int[]{1,8}, new int[]{3,9}, new int[]{4,10}, new int[]{5,10} };
+//		int[][] A_relations = new int[][] { new int[]{1,0}, new int[]{2,0}, new int[]{3,0} };
+//		int[][] G_relations = new int[][] { new int[]{0,3}, new int[]{1,3}, new int[]{5,3}, new int[]{4,2} };
+//		int[][] E_relations = new int[][] { new int[]{0,3}, new int[]{1,3}, new int[]{2,4}, new int[]{3,5}, new int[]{4,5} };
+//		int[][] D_relations = new int[][] { new int[]{0,7}, new int[]{1,8}, new int[]{2,7} };
+
+		Vector2[] C_relations = new Vector2[4] { new Vector2(1,8), new Vector2(3,9), new Vector2(4,10), new Vector2(5,10) };
+		Vector2[] A_relations = new Vector2[3] { new Vector2(1,0), new Vector2(2,0), new Vector2(3,0) };
+		Vector2[] G_relations = new Vector2[4] { new Vector2(0,3), new Vector2(1,3), new Vector2(5,3), new Vector2(4,2) };
+		Vector2[] E_relations = new Vector2[5] { new Vector2(0,3), new Vector2(1,3), new Vector2(2,4), new Vector2(3,5), new Vector2(4,5) };
+		Vector2[] D_relations = new Vector2[3] { new Vector2(0,7), new Vector2(1,8), new Vector2 (2, 7) };
+
+		//int[][][] CAGED_relations = new int [5][][] { C_relations, A_relations, G_relations, E_relations, D_relations };
+		Vector2[][] CAGED_relations = new Vector2[5][] { C_relations, A_relations, G_relations, E_relations, D_relations };
+
+
+		for (int i = 0; i < 5; i++) {
+			int length = CAGED_relations [i].Length;
+			Vector2[] chordPoints = new Vector2[] {CAGED_relations[i] };
+
+			for (int j = 0; j < length; j++) {
+				// generate the points for each chord
+				//Vector2 pt0 = GetPoint(fretboard.strings[CAGED_relations [i][j[0]]].GetNote(_rootFret + 5));
+
+				}
+			}
+
+
+		return points;
+	}
 
 	public Vector2[] Cshape(int _rootFret) {
 		Vector2 pt0 = GetPoint(fretboard.strings[1].GetNote(_rootFret + 5));
