@@ -50,34 +50,6 @@ public class Fretboard : MonoBehaviour {
 
 	public GuitarString[] strings;
 
-//	// shouldn't need this -- moved to Scale.cs -- but still in use???
-//	public void generateMajorScale(int _rootIndex) {
-//		// The pattern of the major scale, shifted to start at the current key
-//		bool [] shiftedScale = new bool[12];
-//		int j = 0;
-//		for (int i = 0; i < 12; i++) {
-//			shiftedScale [(_rootIndex + j) % 12] = majorscale [j];
-//			j++;
-//		}
-//
-//
-//		int k = 0;
-//		for (int i=_rootIndex; i<12; i++) {
-//			if (shiftedScale[i]) {
-//				currentScale[k] = i;
-//				k++;
-//			}
-//		}
-//		for (int i=0; i<_rootIndex; i++) {
-//			if (shiftedScale[i]) {
-//				
-//				currentScale[k] = i;
-//				k++;
-//
-//			}
-//		}
-//	}
-
 	void Awake() {
 		numStrings = 6;
 		spacing = 3.01f;
@@ -86,36 +58,6 @@ public class Fretboard : MonoBehaviour {
 		strings = new GuitarString[numStrings];
 		_scale = GameObject.FindGameObjectWithTag ("Scales").GetComponent<Scale> ();
 
-//		for (int i = 0; i < numStrings; i++) {
-//			strings[i] = new GuitarString();
-//		
-//			switch (i) {
-//			case 0: // high E string
-//				strings [i].openNoteID = 7;
-//				strings [i].octave = 4;
-//				break;
-//			case 1: // B string
-//				strings[i].openNoteID = 2;
-//				strings[i].octave = 3;
-//				break;
-//			case 2: // G string
-//
-//				break;
-//			case 3: // D string
-//
-//				break;
-//			case 4: // A string
-//
-//				break;
-//			case 5: // low E string
-//				strings[i].openNoteID = 7;
-//				strings[i].octave = 2;
-//				break;
-//			default: // either E string
-//				
-//				break;
-//			}
-//		}
 	}
 
 	// Use this for initialization
@@ -194,9 +136,6 @@ public class Fretboard : MonoBehaviour {
 	private void MakeChordShapes(int _chordRootID) {
 		
 
-		// was using the 1st string to determine root fret
-		//List <int> currentRootFrets = strings [0].GetFrets (_scale.chords [_chordRootID].noteIDs[0]);
-
 		// getting the root note on the 2nd string
 		List <int> currentRootFrets = strings [2].GetFrets (_scale.chords [_chordRootID].noteIDs[0]);
 
@@ -208,47 +147,7 @@ public class Fretboard : MonoBehaviour {
 			chordShape.SetPoints (chordPaths[i]);
 			GetComponent<VectorChord> ().DrawChord (chordShape, i);
 		}
-
-
-
-		// Get the root note of the G shape
-//		Note shapeNote0 = strings[0].GetNote(currentRootFrets[0]);
-//		Note shapeNote1 = strings[5].GetNote(currentRootFrets[0]);
-//		Note shapeNote2 = strings[4].GetNote(currentRootFrets[0] - 1);
-//
-//		Vector2 pt0 = new Vector2 (shapeNote0.transform.position.x, shapeNote0.transform.position.z);
-//		Vector2 pt1 = new Vector2 (shapeNote1.transform.position.x, shapeNote1.transform.position.z);
-//		Vector2 pt2 = new Vector2 (shapeNote2.transform.position.x, shapeNote2.transform.position.z);
-//
-//		Vector2[] chordPoints = new Vector2[] {pt0, pt1, pt2};
-//		ChordShape chordShape = new ChordShape();
-//		chordShape.SetPoints (chordPoints);
-//		GetComponent<VectorChord> ().DrawChord (chordShape, 0);
-//
-//		Vector2[] chordPointsA = chordShapes.Ashape (currentRootFrets[0]);
-//		ChordShape chordShapeA = new ChordShape();
-//		chordShapeA.SetPoints (chordPointsA);
-//		GetComponent<VectorChord> ().DrawChord (chordShapeA, 1);
-//
-//		Vector2[] chordPointsC = chordShapes.Cshape (currentRootFrets[0]);
-//		ChordShape chordShapeC = new ChordShape();
-//		chordShapeC.SetPoints (chordPointsC);
-//		GetComponent<VectorChord> ().DrawChord (chordShapeC, 2);
-//
-//		Vector2[] chordPointsE = chordShapes.Eshape (currentRootFrets[0]);
-//		ChordShape chordShapeE = new ChordShape();
-//		chordShapeE.SetPoints (chordPointsE);
-//		GetComponent<VectorChord> ().DrawChord (chordShapeE, 3);
-//
-//		Vector2[] chordPointsD = chordShapes.Dshape (currentRootFrets[0]);
-//		ChordShape chordShapeD = new ChordShape();
-//		chordShapeD.SetPoints (chordPointsD);
-//		GetComponent<VectorChord> ().DrawChord (chordShapeD, 4);
-
-		// the the generic chord shape function
-
-
-
+			
 	}
 
 	// helper function to check whether a note is in the currently active chord
