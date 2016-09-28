@@ -1216,7 +1216,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 747025899}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 1545, y: 4398, z: -804}
+  m_LocalPosition: {x: 926, y: 4398, z: -804}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -1240,8 +1240,8 @@ MonoBehaviour:
   yawSensitivity: 45
   pitchSensitivity: 45
   clampYawAngle: 1
-  minYaw: -2
-  maxYaw: 2
+  minYaw: -200
+  maxYaw: 200
   clampPitchAngle: 1
   minPitch: 5
   maxPitch: 175

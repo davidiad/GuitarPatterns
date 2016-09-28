@@ -7,6 +7,7 @@ public class VectorChord : MonoBehaviour {
 	public LW_Canvas linework;
 	private LW_Stroke stroke;
 	private LW_Stroke strokeOutline;
+	private LW_Stroke testLine;
 	private LW_Polyline3D chordShapeLine;
 	private LW_Polyline3D chordShapeLineOutline;
 	// Create an array to hold the 5 chordshapes
@@ -19,16 +20,16 @@ public class VectorChord : MonoBehaviour {
 	public ChordShape chordShape;
 
 	void Awake() {
-		chordShapeLines = new LW_Polyline3D[10];
-		chordShapeOutlines = new LW_Polyline3D[10];
+		chordShapeLines = new LW_Polyline3D[15];
+		chordShapeOutlines = new LW_Polyline3D[15];
 
-		//chordShapesLower = new LW_Polyline3D[10];
 	}
 
 	void Start () {
 			
 		stroke = LW_Stroke.Create(Color.red, 1.4f);
-		strokeOutline = LW_Stroke.Create(Color.white, 1.6f);
+		strokeOutline = LW_Stroke.Create(Color.red, 1.4f);
+		testLine = LW_Stroke.Create (Color.magenta, 1.0f);
 		chordShapeLine = LW_Polyline3D.Create (new Vector2[0] ,false);
 		chordShapeLineOutline = LW_Polyline3D.Create (new Vector2[0] ,false);
 
@@ -48,24 +49,30 @@ public class VectorChord : MonoBehaviour {
 		stroke.linecap = Linecap.Round;
 		strokeOutline.linejoin = Linejoin.Round;
 		strokeOutline.linecap = Linecap.Round;
+		testLine.linejoin = Linejoin.Round;
+		testLine.linecap = Linecap.Round;
 		stroke.opacity = 1.0f;
 		strokeOutline.opacity = 1.0f;
 			
-		for (int i = 0; i < 10; i++) { // creating a chordshape for each of the 5 CAGED shapes
+		for (int i = 0; i < 15; i++) { // creating a chordshape for each of the 5 CAGED shapes
 			chordShapeLines[i] = LW_Polyline3D.Create (new Vector2[0] ,false);
 			chordShapeLines[i].styles.Add (stroke);
 			linework.graphic.Add (chordShapeLines [i]);
 
 			chordShapeOutlines[i] = LW_Polyline3D.Create (new Vector2[0] ,false);
-			chordShapeOutlines[i].styles.Add (strokeOutline);
+			chordShapeOutlines[i].styles.Add (testLine);
+
 			linework.graphic.Add (chordShapeOutlines [i]);
+
 		}
 
 
 
-			chordShapeLine.styles.Add (stroke);
+			chordShapeLine.styles.Add (testLine);
 			chordShapeLineOutline.styles.Add (strokeOutline);
+
 			linework.graphic.Add (chordShapeLine);
+		
 			linework.graphic.Add (chordShapeLineOutline);
 
 
