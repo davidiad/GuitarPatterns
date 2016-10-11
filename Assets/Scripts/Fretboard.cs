@@ -34,7 +34,7 @@ public class Fretboard : MonoBehaviour {
 	public float fretSpacing; // the distance bet nut and first fret (may not need this if computing from scaleLength)
 	public Vector2 fretScaling; // x scales the x position; y scale the z scale
 	public float spacing; // the distance between frets, deprecated
-	private float[] fretPositions; // the x position of each fret
+
 
 	public float offset; // the shift of note positions left, so they are positioned in between frets
 	public int xDim;
@@ -58,16 +58,11 @@ public class Fretboard : MonoBehaviour {
 	private Scale _scale;
 
 	public GuitarString[] strings;
+	public float[] fretPositions; // the x position of each fret
 
 	void Awake() {
-		numStrings = 6;
-		spacing = 3.01f;
-		offset = -1.0f;
-
-		strings = new GuitarString[numStrings];
+		
 		fretPositions = new float[numFrets + 1]; // the number of frets plus 1 for the nut at position 0
-		_scale = GameObject.FindGameObjectWithTag ("Scales").GetComponent<Scale> ();
-
 		//************* Calculate fret positions ****************************************
 		fretPositions[0] = 0; // the position of the nut, open strings
 		for (int i = 1; i <= numFrets; i++) {
@@ -75,6 +70,14 @@ public class Fretboard : MonoBehaviour {
 			fretPositions [i] = (bridgeToPreviousFret / 18.3f) + fretPositions [i - 1];
 		}
 		//*******************************************************************************
+
+
+		numStrings = 6;
+		spacing = 3.01f;
+		offset = -1.0f;
+
+		strings = new GuitarString[numStrings];
+		_scale = GameObject.FindGameObjectWithTag ("Scales").GetComponent<Scale> ();
 
 	}
 
@@ -88,24 +91,24 @@ public class Fretboard : MonoBehaviour {
 		currentScale = new int[7];
 		_scale.GenerateMajorScale (10);
 
-		piecePrefabDict = new Dictionary <PieceType, GameObject> ();
-
-
-
-		for (int i = 0; i < piecePrefabs.Length; i++) {
-			if (!piecePrefabDict.ContainsKey (piecePrefabs [i].type)) {
-				piecePrefabDict.Add (piecePrefabs [i].type, piecePrefabs [i].prefab);
-			}
-		}
-
-
-		for (int x = 0; x < xDim; x++) {
-			for (int y = 0; y < yDim; y++) {
-				
-				GameObject background = (GameObject)Instantiate (backgroundPrefab, new Vector3 (3.01f * x + 3.0f + 0, 0, -y - 0.8f), Quaternion.identity);
-				background.transform.parent = transform;
-			}
-		}
+//		piecePrefabDict = new Dictionary <PieceType, GameObject> ();
+//
+//
+//
+//		for (int i = 0; i < piecePrefabs.Length; i++) {
+//			if (!piecePrefabDict.ContainsKey (piecePrefabs [i].type)) {
+//				piecePrefabDict.Add (piecePrefabs [i].type, piecePrefabs [i].prefab);
+//			}
+//		}
+//
+//
+//		for (int x = 0; x < xDim; x++) {
+//			for (int y = 0; y < yDim; y++) {
+//				
+//				GameObject background = (GameObject)Instantiate (backgroundPrefab, new Vector3 (3.01f * x + 3.0f + 0, 0, -y - 0.8f), Quaternion.identity);
+//				background.transform.parent = transform;
+//			}
+//		}
 
 		notes = new Note[xDim, yDim];
 		int octave = 2;
@@ -123,8 +126,10 @@ public class Fretboard : MonoBehaviour {
 		int[] openNoteIDs = new int[]{ 7, 2, 10, 5, 0, 7 }; // the ID of the note that each string starts on.
 		int[] octaves = new int[]{ 4, 4, 3, 3, 3, 2 }; // the octave that each string starts at. Double check to make sure they're right.
 		for (int i = 0; i < numStrings; i++) {
-			GameObject newString = (GameObject)Instantiate (stringPrefab, new Vector3 (0f, 0.3f, -1.3f * i), Quaternion.identity);
-			newString.transform.parent = transform;
+			//GameObject newString = (GameObject)Instantiate (stringPrefab, new Vector3 (0f, 0.3f, -1.3f * i), Quaternion.identity);
+			GameObject newString = (GameObject)Instantiate (stringPrefab, neckPrefab.transform);
+			//newString.transform.parent = neckPrefab.transform;
+			newString.transform.localPosition = new Vector3(offset * 0.01f, .004f, -0.012f * i + .03f);
 			strings [i] = newString.GetComponent<GuitarString> (); // add the new string to the fretboards array of strings
 			strings [i].Init (numFrets, openNoteIDs [i], octaves [i], spacing, offset);
 
