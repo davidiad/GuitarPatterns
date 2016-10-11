@@ -9,7 +9,7 @@
       <File FileName="Assets/Scripts/Chord.cs" Line="1" Column="1" />
       <File FileName="Assets/LW_ExampleScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ChordShape.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Fretboard.cs" Line="104" Column="79" />
+      <File FileName="Assets/Scripts/Fretboard.cs" Line="53" Column="25" />
       <File FileName="Assets/Scripts/VectorChord.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ChordShapes.cs" Line="1" Column="1" />
       <File FileName="Assets/LineWorks/Examples/Scripts/SphereOfLines.cs" Line="1" Column="1" />
