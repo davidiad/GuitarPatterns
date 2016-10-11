@@ -681,9 +681,9 @@ MonoBehaviour:
   fretPrefab: {fileID: 100000, guid: 636d729211ef74da79b3771a3f6a35bd, type: 3}
   numStrings: 6
   numFrets: 21
-  scaleLength: 0.90656
+  scaleLength: 0.9076
   fretSpacing: 0.05016
-  fretScaling: {x: 0.9, y: 1.014}
+  fretScaling: {x: 0.9, y: 1.012}
   spacing: 0
   offset: 0
   xDim: 12
@@ -2632,6 +2632,10 @@ Prefab:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: f55ece8e52c0448069aa0dd50e7701b3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 62c0e3c4de1724672bf9c4448045ce62, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f55ece8e52c0448069aa0dd50e7701b3, type: 3}
   m_IsPrefabParent: 0
