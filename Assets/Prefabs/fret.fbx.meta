@@ -1,32 +1,15 @@
 fileFormatVersion: 2
-guid: 307f0efa359ba4a77a5950bb3d3c2afb
-timeCreated: 1475987706
+guid: 636d729211ef74da79b3771a3f6a35bd
+timeCreated: 1476139483
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: 01-fretboard
-    100004: 02-fret
-    100006: 01a-fretboard-symm
     400000: //RootNode
-    400002: 01-fretboard
-    400004: 02-fret
-    400006: 01a-fretboard-symm
     2300000: //RootNode
-    2300002: 01-fretboard
-    2300004: 02-fret
-    2300006: 01a-fretboard-symm
     3300000: //RootNode
-    3300002: 01-fretboard
-    3300004: 02-fret
-    3300006: 01a-fretboard-symm
-    4300000: Cube_001
-    4300002: 02-fret
-    4300004: 01-fretboard
-    4300006: 01a-fretboard-symm
-    7400000: Default Take
-    9500000: //RootNode
+    4300000: 02-fret
   materials:
     importMaterials: 1
     materialName: 0
@@ -85,7 +68,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

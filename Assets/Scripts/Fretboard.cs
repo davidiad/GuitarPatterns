@@ -23,6 +23,7 @@ public class Fretboard : MonoBehaviour {
 
 
 	public GameObject stringPrefab;
+	public GameObject fretPrefab;
 	private ChordShapes chordShapes;
 	public int numStrings;
 	public int numFrets;
