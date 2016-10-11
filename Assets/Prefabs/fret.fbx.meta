@@ -6,10 +6,28 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: 01-fretboard
+    100004: 01a-fretboard-symm
+    100006: 02-fret
+    100008: Camera
+    100010: Lamp
     400000: //RootNode
+    400002: 01-fretboard
+    400004: 01a-fretboard-symm
+    400006: 02-fret
+    400008: Camera
+    400010: Lamp
     2300000: //RootNode
+    2300002: 01-fretboard
+    2300004: 01a-fretboard-symm
+    2300006: 02-fret
     3300000: //RootNode
+    3300002: 01-fretboard
+    3300004: 01a-fretboard-symm
+    3300006: 02-fret
     4300000: 02-fret
+    4300002: 01a-fretboard-symm
+    4300004: 01-fretboard
   materials:
     importMaterials: 1
     materialName: 0
@@ -39,7 +57,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

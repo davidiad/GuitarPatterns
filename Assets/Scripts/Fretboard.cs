@@ -23,11 +23,14 @@ public class Fretboard : MonoBehaviour {
 
 
 	public GameObject stringPrefab;
+	public GameObject neckPrefab;
 	public GameObject fretPrefab;
 	private ChordShapes chordShapes;
 	public int numStrings;
 	public int numFrets;
-	public float spacing; // the distance between frets
+	public float fretSpacing; // the distance bet nut and first fret
+	public Vector2 fretScaling; // x scales the x position; y scale the z scale
+	public float spacing; // the distance between frets, deprecated
 	public float offset; // the shift of note positions left, so they are positioned in between frets
 	public int xDim;
 	public int yDim;
@@ -74,6 +77,7 @@ public class Fretboard : MonoBehaviour {
 		piecePrefabDict = new Dictionary <PieceType, GameObject> ();
 
 
+
 		for (int i = 0; i < piecePrefabs.Length; i++) {
 			if (!piecePrefabDict.ContainsKey (piecePrefabs [i].type)) {
 				piecePrefabDict.Add (piecePrefabs [i].type, piecePrefabs [i].prefab);
@@ -91,6 +95,15 @@ public class Fretboard : MonoBehaviour {
 
 		notes = new Note[xDim, yDim];
 		int octave = 2;
+
+		/************************ Generate the frets **********************/
+		for (int i=0; i < numFrets; i++) {
+			GameObject fret = (GameObject)Instantiate (fretPrefab, neckPrefab.transform);
+			fret.transform.rotation = Quaternion.identity; 
+			fret.transform.localPosition = new Vector3 (fretSpacing * i, 0f, 0f);
+			fret.transform.localScale = new Vector3 ( 1f, 1f, Mathf.Pow(fretScaling.y, i) );
+		}
+		/********************************************************************/
 
 		/************************ Generate the strings **********************/
 		int[] openNoteIDs = new int[]{ 7, 2, 10, 5, 0, 7 }; // the ID of the note that each string starts on.
