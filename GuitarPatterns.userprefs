@@ -4,12 +4,12 @@
     <Files>
       <File FileName="Assets/Scripts/GuitarString.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/NoteInfo.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Note.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Note.cs" Line="208" Column="26" />
       <File FileName="Assets/Scripts/Scale.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Chord.cs" Line="1" Column="1" />
       <File FileName="Assets/LW_ExampleScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ChordShape.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Fretboard.cs" Line="132" Column="72" />
+      <File FileName="Assets/Scripts/Fretboard.cs" Line="159" Column="2" />
       <File FileName="Assets/Scripts/VectorChord.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ChordShapes.cs" Line="1" Column="1" />
       <File FileName="Assets/LineWorks/Examples/Scripts/SphereOfLines.cs" Line="1" Column="1" />

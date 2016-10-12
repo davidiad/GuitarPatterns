@@ -144,7 +144,15 @@ public class Fretboard : MonoBehaviour {
 
 		foreach (GuitarString guitarString in strings) {
 			foreach (Note note in guitarString.notes) {
-				note.gameObject.SetActive (_scale.scalePattern[note.noteIdentifer]);
+				//note.gameObject.SetActive (_scale.scalePattern[note.noteIdentifer]);
+
+				bool visibility = _scale.scalePattern [note.noteIdentifer];
+				// Turn off the visibility of the notes not in the scale, but leave them playable
+				Renderer rend = note.gameObject.GetComponent<Renderer>();
+				rend.enabled = visibility;
+				// get the mesh renderer of the note text mesh, and turn that on/off as well
+				Renderer text_rend = note.noteText.GetComponent<Renderer>();
+				text_rend.enabled = visibility;
 			}
 		}
 	}
