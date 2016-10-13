@@ -4,23 +4,6 @@ using System.Collections.Generic;
 
 public class Fretboard : MonoBehaviour {
 	
-
-
-//	public enum PieceType 
-//	{
-//		NORMAL,
-//		COUNT,
-//	};
-
-//	[System.Serializable]
-
-//	public struct PiecePrefab 
-//	{
-//		public PieceType type;
-//		public GameObject prefab;
-//	};
-
-
 	public GameObject stringPrefab;
 	public GameObject neckPrefab;
 	public GameObject fretPrefab;
@@ -34,25 +17,19 @@ public class Fretboard : MonoBehaviour {
 	public Vector2 fretScaling; // x scales the x position; y scale the z scale
 	public float spacing; // the distance between frets, deprecated
 
-
 	public float offset; // the shift of note positions left, so they are positioned in between frets
-	public int xDim;
-	public int yDim;
+//	public int xDim;
+//	public int yDim;
 
-//	public PiecePrefab[] piecePrefabs;
-//	public GameObject backgroundPrefab;
-
-//	private Dictionary<PieceType, GameObject> piecePrefabDict;
-
-	public Note[,] notes;
+//	public Note[,] notes;
 	public string[] noteArray;
 
-	public bool[] gmajor;
-	public bool[] cmajor;
-	public bool[][] scales;
-
-	public bool[] majorscale;
-	public int[] currentScale;
+//	public bool[] gmajor;
+//	public bool[] cmajor;
+//	public bool[][] scales;
+//
+//	public bool[] majorscale;
+//	public int[] currentScale;
 
 	private Scale _scale;
 
@@ -83,33 +60,14 @@ public class Fretboard : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// scales
-		majorscale = new bool[] { true, false, true, false, true, true, false, true, false, true, false, true };
-		gmajor = new bool[] { true, false, true, true, false, true, false, true, false, true, true, false };
-		cmajor = new bool[] { true, false, true, true, false, true, false, true, true, false, true, false };
-		scales = new bool[][] { gmajor, cmajor };
-		currentScale = new int[7];
-		_scale.GenerateMajorScale (10);
+//		majorscale = new bool[] { true, false, true, false, true, true, false, true, false, true, false, true };
+//		gmajor = new bool[] { true, false, true, true, false, true, false, true, false, true, true, false };
+//		cmajor = new bool[] { true, false, true, true, false, true, false, true, true, false, true, false };
+//		scales = new bool[][] { gmajor, cmajor };
+//		currentScale = new int[7];
+//		_scale.GenerateMajorScale (10);
 
-//		piecePrefabDict = new Dictionary <PieceType, GameObject> ();
-//
-//
-//
-//		for (int i = 0; i < piecePrefabs.Length; i++) {
-//			if (!piecePrefabDict.ContainsKey (piecePrefabs [i].type)) {
-//				piecePrefabDict.Add (piecePrefabs [i].type, piecePrefabs [i].prefab);
-//			}
-//		}
-//
-//
-//		for (int x = 0; x < xDim; x++) {
-//			for (int y = 0; y < yDim; y++) {
-//				
-//				GameObject background = (GameObject)Instantiate (backgroundPrefab, new Vector3 (3.01f * x + 3.0f + 0, 0, -y - 0.8f), Quaternion.identity);
-//				background.transform.parent = transform;
-//			}
-//		}
-
-		notes = new Note[xDim, yDim];
+//		notes = new Note[xDim, yDim];
 		int octave = 2;
 
 		/************************ Generate the frets **********************/
@@ -135,15 +93,13 @@ public class Fretboard : MonoBehaviour {
 			newString.transform.localScale = new Vector3 (0.01f, stringScale, stringScale);
 			strings [i] = newString.GetComponent<GuitarString> (); // add the new string to the fretboards array of strings
 			strings [i].Init (numFrets, openNoteIDs [i], octaves [i], spacing, offset);
-
-
 		}
 		/********************************************************************/
+
 		chordShapes = GameObject.FindGameObjectWithTag ("ChordShapes").GetComponent<ChordShapes> ();
 	}
 
 	public void SetActiveNotesForScale() {
-		//foreach (Note note in notes) { // when using the Notes init'd from Fretboard
 
 		foreach (GuitarString guitarString in strings) {
 			foreach (Note note in guitarString.notes) {
@@ -179,7 +135,6 @@ public class Fretboard : MonoBehaviour {
 
 	private void MakeChordShapes(int _chordRootID) {
 		
-
 		// getting the root note on the 2nd string
 		List <int> currentRootFrets = strings [2].GetFrets (_scale.chords [_chordRootID].noteIDs[0]);
 
@@ -205,10 +160,10 @@ public class Fretboard : MonoBehaviour {
 		return false;
 	}
 			
-	Vector3 GetWorldPosition(int x, int y) {
-		return new Vector3 (transform.position.x - xDim / 2.0f + (3.01f * x), 0.0f, transform.position.y + yDim / 2.0f - y);
-
-	}
+//	Vector3 GetWorldPosition(int x, int y) {
+//		return new Vector3 (transform.position.x - xDim / 2.0f + (3.01f * x), 0.0f, transform.position.y + yDim / 2.0f - y);
+//
+//	}
 			
 
 }

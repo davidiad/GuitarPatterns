@@ -38,14 +38,7 @@ public class Note : MonoBehaviour {
 	{
 		get { return fretboard; }
 	}
-
-//	private Fretboard.PieceType type;
-//
-//	public Fretboard.PieceType Type
-//	{
-//		get { return type; }
-//	}
-//
+		
 	public enum PitchType
 	{
 		C, CSHARP, D, DSHARP, E, F, FSHARP, G, GSHARP, A, ASHARP, B, COUNT
@@ -70,7 +63,6 @@ public class Note : MonoBehaviour {
 	}
 
 	public TextMesh noteText; // should be the color ot the pitch?
-	//private Dictionary<PitchType, NoteData> noteMeshDict;
 
 	private Note noteComponent;
 
@@ -84,68 +76,22 @@ public class Note : MonoBehaviour {
 	{
 		pitchAdjust = 1.05946f;
 		noteComponent = GetComponent<Note> ();
-		//note = transform.Find ("piece").GetComponent<SpriteRenderer> ();
 		noteText = transform.Find("NoteText").GetComponent<TextMesh>();
 
-		//noteMeshDict = new Dictionary<PitchType, NoteData> ();
-
-
-
-//		for (int i = 0; i < 12; i++) {
-//			if (!noteMeshDict.ContainsKey (NoteData[i].PitchName.A)) {
-//				noteMeshDict.Add (NoteData [i].pitch, noteMeshObjects [i].noteObject);
-//			}
-//		}
-
-		// careful -- seems like every clips will be in every note when only need one
+		// careful -- seems like every clip will be in every note when only need one
 		clips = GameObject.FindGameObjectWithTag ("GuitarNoteClips").GetComponent<GuitarNoteClips> (); 
 		noteInfo = GameObject.FindGameObjectWithTag ("NoteInfo").GetComponent<NoteInfo> ();
 	}
 
 	// Use this for initialization
 	void Start () {
-		
-//		noteSource = gameObject.AddComponent<AudioSource>();
 
 		Renderer rend = GetComponent<Renderer>();
-		//rend.material.shader = Shader.Find("_Color");
 		rend.material.SetColor("_Color", Color.black);
-		//Debug.Log ("THIS one is: " + pitch);
-		//noteText.tex = "x";
-
-		//noteText.color = Color.gray;
-		//SetNote ();
-	
-
-		//noteTextMesh = this.gameObject.transform.GetChild(0);
-
-
-
-		//noteData.note.SetActive (gmajor [noteIdentifer]);
-		//this.gameObject.SetActive(cmajor[noteIdentifer]);
-
-
-
 
 
 	}
-
-
-//	// Update is called once per frame
-//	void Update () {
-//		if (Input.GetKeyDown(KeyCode.C)) {
-//			noteSource.PlayOneShot (noteSource.clip, 0.05f);
-//		}
-//	}
-
-//	public void SetPitch(PitchType newPitch)
-//	{
-//		pitch = newPitch;
-//
-//		if (noteMeshDict.ContainsKey (newPitch)) {
-//			//noteText.richText = noteMeshDict [newPitch];
-//		}
-//	}
+		
 
 	public void colorOn(bool _isColored) {
 		if (_isColored) {
@@ -179,40 +125,6 @@ public class Note : MonoBehaviour {
 		clip = clips.audioClips [octave];
 		noteSource.clip = clip;
 	}
-
-//	public void InitFromFretboard(Fretboard _fret, Fretboard.PieceType _type, int xValue, int _octave)
-//	{
-//		//noteData.note = transform.gameObject;
-//		int xpos = (xValue) % 12;
-//		fretboard = _fret;
-//		type = _type;
-//		//this.noteID = xpos;  // not needed?
-//		notePitch = noteInfo.PitchNames [xpos];
-//		sharp = noteInfo.Sharps [xpos];
-//		noteIdentifer = noteInfo.Identifiers [xpos];
-//
-//		noteText.richText = true;
-//		noteRichText = "<b>" + noteInfo.NoteRichTexts [xpos] + "</b>";
-//		if (noteInfo.Sharps [xpos] == true) {
-//			noteRichText += "<size=38>#</size>";
-//		}
-//
-//		noteColor = (xpos / 12.0f) - 0.1f;
-//		noteText.text = noteRichText;
-//		noteText.color = Color.HSVToRGB (noteColor, 1.0f, 1.0f);
-//		isColored = true;
-//
-//		noteSource = gameObject.GetComponent<AudioSource>();
-//
-//		clip = clips.audioClips [_octave];
-//		noteSource.clip = clip;
-//
-//		octave = _octave; 
-//
-//		 
-//	}
-
-
 
 	void OnMouseDown() {
 
