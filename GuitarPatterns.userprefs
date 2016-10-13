@@ -1,15 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Fretboard.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GuitarString.cs">
     <Files>
-      <File FileName="Assets/Scripts/GuitarString.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GuitarString.cs" Line="37" Column="63" />
       <File FileName="Assets/Scripts/NoteInfo.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Note.cs" Line="208" Column="26" />
+      <File FileName="Assets/Scripts/Note.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Scale.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Chord.cs" Line="1" Column="1" />
       <File FileName="Assets/LW_ExampleScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ChordShape.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Fretboard.cs" Line="159" Column="2" />
+      <File FileName="Assets/Scripts/Fretboard.cs" Line="135" Column="40" />
       <File FileName="Assets/Scripts/VectorChord.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ChordShapes.cs" Line="1" Column="1" />
       <File FileName="Assets/LineWorks/Examples/Scripts/SphereOfLines.cs" Line="1" Column="1" />

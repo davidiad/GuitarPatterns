@@ -34,7 +34,7 @@ public class GuitarString : MonoBehaviour {
 			} else {
 				noteXPos = 0;
 			}
-			newNote.transform.localPosition = new Vector3(noteXPos, 0f, 0f);
+			newNote.transform.localPosition = new Vector3(noteXPos, 0.2f, 0f);
 
 			// Init() the notes
 			notes[i] = newNote.GetComponent<Note>();

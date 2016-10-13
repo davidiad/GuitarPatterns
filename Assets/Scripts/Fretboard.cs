@@ -129,7 +129,11 @@ public class Fretboard : MonoBehaviour {
 			//GameObject newString = (GameObject)Instantiate (stringPrefab, new Vector3 (0f, 0.3f, -1.3f * i), Quaternion.identity);
 			GameObject newString = (GameObject)Instantiate (stringPrefab, neckPrefab.transform);
 			//newString.transform.parent = neckPrefab.transform;
-			newString.transform.localPosition = new Vector3(offset * 0.01f, .005f, -0.012f * i + .03f);
+			newString.transform.localPosition = new Vector3(offset * 0.01f, .005f, -0.0105f * i + .026f);
+			// the strings rotate slightly to match the neck starting narrow and getting wider
+			newString.transform.localRotation = Quaternion.Euler(new Vector3( 0f, ((float)i * 1.6f / 5f) - 0.8f, 0f));
+			float stringScale = 0.01f * (i * 0.3f + 1f);
+			newString.transform.localScale = new Vector3 (0.01f, stringScale, stringScale);
 			strings [i] = newString.GetComponent<GuitarString> (); // add the new string to the fretboards array of strings
 			strings [i].Init (numFrets, openNoteIDs [i], octaves [i], spacing, offset);
 
