@@ -39,13 +39,13 @@ public class Note : MonoBehaviour {
 		get { return fretboard; }
 	}
 
-	private Fretboard.PieceType type;
-
-	public Fretboard.PieceType Type
-	{
-		get { return type; }
-	}
-
+//	private Fretboard.PieceType type;
+//
+//	public Fretboard.PieceType Type
+//	{
+//		get { return type; }
+//	}
+//
 	public enum PitchType
 	{
 		C, CSHARP, D, DSHARP, E, F, FSHARP, G, GSHARP, A, ASHARP, B, COUNT
@@ -180,37 +180,37 @@ public class Note : MonoBehaviour {
 		noteSource.clip = clip;
 	}
 
-	public void InitFromFretboard(Fretboard _fret, Fretboard.PieceType _type, int xValue, int _octave)
-	{
-		//noteData.note = transform.gameObject;
-		int xpos = (xValue) % 12;
-		fretboard = _fret;
-		type = _type;
-		//this.noteID = xpos;  // not needed?
-		notePitch = noteInfo.PitchNames [xpos];
-		sharp = noteInfo.Sharps [xpos];
-		noteIdentifer = noteInfo.Identifiers [xpos];
-
-		noteText.richText = true;
-		noteRichText = "<b>" + noteInfo.NoteRichTexts [xpos] + "</b>";
-		if (noteInfo.Sharps [xpos] == true) {
-			noteRichText += "<size=38>#</size>";
-		}
-
-		noteColor = (xpos / 12.0f) - 0.1f;
-		noteText.text = noteRichText;
-		noteText.color = Color.HSVToRGB (noteColor, 1.0f, 1.0f);
-		isColored = true;
-
-		noteSource = gameObject.GetComponent<AudioSource>();
-
-		clip = clips.audioClips [_octave];
-		noteSource.clip = clip;
-
-		octave = _octave; 
-
-		 
-	}
+//	public void InitFromFretboard(Fretboard _fret, Fretboard.PieceType _type, int xValue, int _octave)
+//	{
+//		//noteData.note = transform.gameObject;
+//		int xpos = (xValue) % 12;
+//		fretboard = _fret;
+//		type = _type;
+//		//this.noteID = xpos;  // not needed?
+//		notePitch = noteInfo.PitchNames [xpos];
+//		sharp = noteInfo.Sharps [xpos];
+//		noteIdentifer = noteInfo.Identifiers [xpos];
+//
+//		noteText.richText = true;
+//		noteRichText = "<b>" + noteInfo.NoteRichTexts [xpos] + "</b>";
+//		if (noteInfo.Sharps [xpos] == true) {
+//			noteRichText += "<size=38>#</size>";
+//		}
+//
+//		noteColor = (xpos / 12.0f) - 0.1f;
+//		noteText.text = noteRichText;
+//		noteText.color = Color.HSVToRGB (noteColor, 1.0f, 1.0f);
+//		isColored = true;
+//
+//		noteSource = gameObject.GetComponent<AudioSource>();
+//
+//		clip = clips.audioClips [_octave];
+//		noteSource.clip = clip;
+//
+//		octave = _octave; 
+//
+//		 
+//	}
 
 
 

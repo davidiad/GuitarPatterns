@@ -1,25 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-//using UnityEngine.UI;
 
 public class Fretboard : MonoBehaviour {
 	
 
 
-	public enum PieceType 
-	{
-		NORMAL,
-		COUNT,
-	};
+//	public enum PieceType 
+//	{
+//		NORMAL,
+//		COUNT,
+//	};
 
-	[System.Serializable]
+//	[System.Serializable]
 
-	public struct PiecePrefab 
-	{
-		public PieceType type;
-		public GameObject prefab;
-	};
+//	public struct PiecePrefab 
+//	{
+//		public PieceType type;
+//		public GameObject prefab;
+//	};
 
 
 	public GameObject stringPrefab;
@@ -40,10 +39,10 @@ public class Fretboard : MonoBehaviour {
 	public int xDim;
 	public int yDim;
 
-	public PiecePrefab[] piecePrefabs;
-	public GameObject backgroundPrefab;
+//	public PiecePrefab[] piecePrefabs;
+//	public GameObject backgroundPrefab;
 
-	private Dictionary<PieceType, GameObject> piecePrefabDict;
+//	private Dictionary<PieceType, GameObject> piecePrefabDict;
 
 	public Note[,] notes;
 	public string[] noteArray;
