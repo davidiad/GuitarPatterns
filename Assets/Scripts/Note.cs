@@ -88,8 +88,6 @@ public class Note : MonoBehaviour {
 
 		Renderer rend = GetComponent<Renderer>();
 		rend.material.SetColor("_Color", Color.black);
-
-
 	}
 		
 
