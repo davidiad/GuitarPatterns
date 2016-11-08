@@ -339,4 +339,13 @@ public class TBOrbit : MonoBehaviour
     {
         IdealPanOffset = Vector3.zero;
     }
+
+	public void LockCamera() {
+
+		if (isActiveAndEnabled) {
+			enabled = false;
+		} else {
+			enabled = true;
+		}
+	}
 }
