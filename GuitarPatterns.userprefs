@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/FingerGestures/Scripts/FingerGestures.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Assets/Plugins/FingerGestures/Scripts/FingerGestures.cs" Line="146" Column="1" />
+      <File FileName="Assets/Plugins/FingerGestures/Scripts/Toolbox/Camera/TBOrbit.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/FingerGestures/Scripts/FingerGestures.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GuitarString.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/NoteInfo.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Note.cs" Line="1" Column="1" />

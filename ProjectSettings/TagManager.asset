@@ -11,6 +11,7 @@ TagManager:
   - ChordShapes
   - Fretboard
   - ChordShape
+  - canvas
   layers:
   - Default
   - TransparentFX

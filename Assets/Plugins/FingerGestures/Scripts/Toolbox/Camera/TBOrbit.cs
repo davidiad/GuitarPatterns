@@ -256,6 +256,13 @@ public class TBOrbit : MonoBehaviour
         {
             IdealDistance -= gesture.Delta.Centimeters() * pinchZoomSensitivity;
             nextDragTime = Time.time + 0.25f;
+
+			// use the vertical pan to keep the fretboard aligned with edge
+			Camera cam = GetComponent<Camera>();
+			Debug.Log(cam.ViewportToWorldPoint (new Vector3(0.5f, 1, 0.5f)) + " and the target is at: " + target.transform.position);
+			float panShift = cam.ViewportToWorldPoint (new Vector3(0.5f, 1, 4f)).y + target.transform.position.z;
+			idealPanOffset = new Vector3(idealPanOffset.x, idealPanOffset.y, -0.01f * panShift);
+			// END
         }
     }
 
@@ -263,12 +270,21 @@ public class TBOrbit : MonoBehaviour
     {
         if( allowPanning )
         {
-            Vector3 move = -panningSensitivity * ( panningPlane.right * gesture.DeltaMove.x.Centimeters() + panningPlane.up * gesture.DeltaMove.y.Centimeters() );
+			Vector3 move = -panningSensitivity * ( panningPlane.right * gesture.DeltaMove.x.Centimeters() + panningPlane.up * gesture.DeltaMove.y.Centimeters() );
 
             if( invertPanningDirections )
                 IdealPanOffset -= move;
             else
                 IdealPanOffset += move;
+
+
+//			// use the vertical pan to keep the fretboard aligned with edge
+//			Camera cam = GetComponent<Camera>();
+//			Debug.Log(cam.ViewportToWorldPoint (new Vector3(0.5f, 1, 0.5f)) + " and the target is at: " + target.transform.position);
+//			float panShift = cam.ViewportToWorldPoint (new Vector3(0.5f, 1, 4f)).y + target.transform.position.z;
+//			idealPanOffset += new Vector3(0, 0, panShift);
+//			// END
+
 
             nextDragTime = Time.time + 0.25f;
         }
@@ -278,6 +294,8 @@ public class TBOrbit : MonoBehaviour
 
     void Apply()
     {
+
+
         if( smoothMotion )
         {
             distance = Mathf.Lerp( distance, IdealDistance, Time.deltaTime * smoothZoomSpeed );
@@ -340,6 +358,8 @@ public class TBOrbit : MonoBehaviour
         IdealPanOffset = Vector3.zero;
     }
 
+
+	// added by DF to enable locking via a UI toggle
 	public void LockCamera() {
 
 		if (isActiveAndEnabled) {
