@@ -1,7 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/FingerGestures/Scripts/Toolbox/Camera/TBOrbit.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Fretboard.cs">
     <Files>
+      <File FileName="Assets/Scripts/Fretboard.cs" Line="148" Column="83" />
       <File FileName="Assets/Plugins/FingerGestures/Scripts/Toolbox/Camera/TBOrbit.cs" Line="205" Column="16" />
       <File FileName="Assets/Plugins/FingerGestures/Scripts/FingerGestures.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GuitarString.cs" Line="1" Column="1" />
@@ -11,8 +12,7 @@
       <File FileName="Assets/Scripts/Chord.cs" Line="1" Column="1" />
       <File FileName="Assets/LW_ExampleScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ChordShape.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Fretboard.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/VectorChord.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/VectorChord.cs" Line="75" Column="51" />
       <File FileName="Assets/Scripts/ChordShapes.cs" Line="1" Column="1" />
       <File FileName="Assets/LineWorks/Examples/Scripts/SphereOfLines.cs" Line="1" Column="1" />
       <File FileName="Assets/LineWorks/Shaders/Resources/LW_Shader.shader" Line="1" Column="1" />
