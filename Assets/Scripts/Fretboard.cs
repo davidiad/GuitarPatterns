@@ -142,6 +142,7 @@ public class Fretboard : MonoBehaviour {
 		Vector2[][] chordPaths = chordShapes.GetChordShapes (currentRootFrets[0]);
 
 		for (int i = 0; i < chordPaths.Length; i++) {
+			Debug.Log ("Drawing a chord shape: " + i);
 			ChordShape chordShape = new ChordShape();
 			chordShape.SetPoints (chordPaths[i]);
 			GetComponent<VectorChord> ().DrawChord (chordShape, i, _scale.chords [_chordRootID].noteIDs[0]);

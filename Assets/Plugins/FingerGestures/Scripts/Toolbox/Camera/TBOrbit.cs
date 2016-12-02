@@ -202,7 +202,7 @@ public class TBOrbit : MonoBehaviour
         // Make the rigid body not change rotation
         if( GetComponent<Rigidbody>() )
             GetComponent<Rigidbody>().freezeRotation = true;
-
+		AdjustPan ();
         Apply();
     }
 
@@ -255,16 +255,20 @@ public class TBOrbit : MonoBehaviour
         if( allowPinchZoom )
         {
             IdealDistance -= gesture.Delta.Centimeters() * pinchZoomSensitivity;
+			AdjustPan ();
             nextDragTime = Time.time + 0.25f;
 
-			// use the vertical pan to keep the fretboard aligned with edge
-			Camera cam = GetComponent<Camera>();
-			Debug.Log(cam.ViewportToWorldPoint (new Vector3(0.5f, 1, 0.5f)) + " and the target is at: " + target.transform.position);
-			float panShift = cam.ViewportToWorldPoint (new Vector3(0.5f, 1, 4f)).y + target.transform.position.z;
-			idealPanOffset = new Vector3(idealPanOffset.x, idealPanOffset.y, -0.01f * panShift);
-			// END
         }
     }
+
+	void AdjustPan() {
+		// use the vertical pan to keep the fretboard aligned with edge
+		Camera cam = GetComponent<Camera>();
+		//Debug.Log(cam.ViewportToWorldPoint (new Vector3(0.5f, 1, 0.5f)) + " and the target is at: " + target.transform.position);
+		float panShift = cam.ViewportToWorldPoint (new Vector3(0.5f, 1, 4f)).y + target.transform.position.z;
+		idealPanOffset = new Vector3(idealPanOffset.x, idealPanOffset.y, -0.22f * panShift);
+		// END
+	}
 
     void OnTwoFingerDrag( DragGesture gesture )
     {

@@ -311,7 +311,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 27.999996}
+  m_AnchoredPosition: {x: 0, y: -0.0000038146973}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &72932636
@@ -695,7 +695,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 27.999996}
+  m_AnchoredPosition: {x: 0, y: -0.0000038146973}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &192992870
@@ -1407,7 +1407,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 27.999996}
+  m_AnchoredPosition: {x: 0, y: -0.0000038146973}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &539070823 stripped
@@ -1455,18 +1455,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: 316bc54816dba49d78e825bee15c1684, type: 3}
-  - {fileID: 8300000, guid: e4bb72bf13eff48a5b8722d762476444, type: 3}
-  - {fileID: 8300000, guid: 316bc54816dba49d78e825bee15c1684, type: 3}
-  - {fileID: 8300000, guid: e4bb72bf13eff48a5b8722d762476444, type: 3}
-  - {fileID: 8300000, guid: d5b4d4e4afc8f4665bb5497826b73716, type: 3}
-  - {fileID: 8300000, guid: 61432ab71a5744564b1d05ae869cd513, type: 3}
-  - {fileID: 8300000, guid: 316bc54816dba49d78e825bee15c1684, type: 3}
-  - {fileID: 8300000, guid: e4bb72bf13eff48a5b8722d762476444, type: 3}
-  - {fileID: 8300000, guid: 61432ab71a5744564b1d05ae869cd513, type: 3}
-  - {fileID: 8300000, guid: 316bc54816dba49d78e825bee15c1684, type: 3}
-  - {fileID: 8300000, guid: 316bc54816dba49d78e825bee15c1684, type: 3}
-  - {fileID: 8300000, guid: 316bc54816dba49d78e825bee15c1684, type: 3}
+  - {fileID: 8300000, guid: e4d00cae0fc464df4afe1033f2218e9e, type: 3}
+  - {fileID: 8300000, guid: a84ff720c128f4e53a8356741fb71b17, type: 3}
+  - {fileID: 8300000, guid: e4d00cae0fc464df4afe1033f2218e9e, type: 3}
+  - {fileID: 8300000, guid: a84ff720c128f4e53a8356741fb71b17, type: 3}
+  - {fileID: 8300000, guid: b4a934becd3cf46ae81bc66ed74e6718, type: 3}
+  - {fileID: 8300000, guid: 280ca8d9c0f6e4631be4dfdf7a2d0c36, type: 3}
+  - {fileID: 8300000, guid: e4d00cae0fc464df4afe1033f2218e9e, type: 3}
+  - {fileID: 8300000, guid: a84ff720c128f4e53a8356741fb71b17, type: 3}
+  - {fileID: 8300000, guid: 280ca8d9c0f6e4631be4dfdf7a2d0c36, type: 3}
+  - {fileID: 8300000, guid: e4d00cae0fc464df4afe1033f2218e9e, type: 3}
+  - {fileID: 8300000, guid: e4d00cae0fc464df4afe1033f2218e9e, type: 3}
+  - {fileID: 8300000, guid: e4d00cae0fc464df4afe1033f2218e9e, type: 3}
 --- !u!4 &600924806
 Transform:
   m_ObjectHideFlags: 0
@@ -2772,7 +2772,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1129075993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0022, y: 0, z: -0.1}
+  m_LocalPosition: {x: -0.0022, y: 0, z: 0.033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
