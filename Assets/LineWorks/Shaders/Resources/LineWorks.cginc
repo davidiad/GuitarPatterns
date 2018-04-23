@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 #include "UnityCG.cginc"
 
 // Unpacks one float into two halfs. Used to fit more data in the vertex data.
@@ -165,13 +167,13 @@ inline v2f SetupVert(inout appdata i) {
 	// Calculate Screenspace Data
 	half4 prevVertPosition = half4(msVertPosition.xyz - msPrevTangent, msVertPosition.w);
 	half4 nextVertPosition = half4(msVertPosition.xyz + msNextTangent, msVertPosition.w);
-	half4 prevHPosition = ComputeScreenPos(mul (UNITY_MATRIX_MVP, prevVertPosition));
+	half4 prevHPosition = ComputeScreenPos(UnityObjectToClipPos (prevVertPosition));
 	prevHPosition = half4((prevHPosition.xy/prevHPosition.w), 0, 1);
 	half2 ssPrevPosition = prevHPosition * _ScreenParams.xy;
-	half4 currHPosition = ComputeScreenPos(mul (UNITY_MATRIX_MVP, msVertPosition));
+	half4 currHPosition = ComputeScreenPos(UnityObjectToClipPos (msVertPosition));
 	currHPosition = half4((currHPosition.xy/currHPosition.w), 0, 1);
 	half2 ssCurrPosition = currHPosition * _ScreenParams.xy;
-	half4 nextHPosition = ComputeScreenPos(mul (UNITY_MATRIX_MVP, nextVertPosition));
+	half4 nextHPosition = ComputeScreenPos(UnityObjectToClipPos (nextVertPosition));
 	nextHPosition = half4((nextHPosition.xy/nextHPosition.w), 0, 1);
 	half2 ssNextPosition = nextHPosition * _ScreenParams.xy;
 	half2 ssPrevTangent = normalize (ssCurrPosition - ssPrevPosition);
@@ -343,7 +345,7 @@ inline v2f SetupVert(inout appdata i) {
 
 	#endif // end _ADVANCED_ON
 	
-	o.vertex = mul(UNITY_MATRIX_MVP, i.vertex);
+	o.vertex = UnityObjectToClipPos(i.vertex);
 	o.color = i.color;
 	o.fragData1 = fragData1;
     o.fragData2 = fragData2;

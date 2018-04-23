@@ -1497,7 +1497,7 @@ namespace LineWorks {
 			// Get the needed data before the handle
 			int someHashCode = GetHashCode();
 			int controlIDBeforeHandle = GUIUtility.GetControlID(someHashCode, FocusType.Passive);
-			bool isEventUsedBeforeHandle = (Event.current.type == EventType.used);
+			bool isEventUsedBeforeHandle = (Event.current.type == EventType.Used);
 			bool isSelected = m_SelectedPointIndex == pointIndex;
 
 			Vector3 oldTransformedPosition = matrix.MultiplyPoint3x4(oldPosition);
@@ -1545,7 +1545,7 @@ namespace LineWorks {
 
 			// Get the needed data after the handle
 			int controlIDAfterHandle = GUIUtility.GetControlID(someHashCode, FocusType.Passive);
-			bool isEventUsedByHandle = !isEventUsedBeforeHandle && (Event.current.type == EventType.used);
+			bool isEventUsedByHandle = !isEventUsedBeforeHandle && (Event.current.type == EventType.Used);
 
 			if ((controlIDBeforeHandle < GUIUtility.hotControl && GUIUtility.hotControl < controlIDAfterHandle) || isEventUsedByHandle) {
 				m_SelectedPointIndex = pointIndex;
