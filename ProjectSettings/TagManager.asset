@@ -12,6 +12,7 @@ TagManager:
   - Fretboard
   - ChordShape
   - canvas
+  - GuitarString
   layers:
   - Default
   - TransparentFX

@@ -160,6 +160,17 @@ public class Fretboard : MonoBehaviour {
 		}
 		return false;
 	}
+
+    public void ShowNotes(bool show)
+    {
+        foreach (GuitarString s in strings)
+        {
+            foreach (Transform note in s.transform)
+            {
+                note.gameObject.SetActive(show);
+            }
+        }
+    }
 			
 //	Vector3 GetWorldPosition(int x, int y) {
 //		return new Vector3 (transform.position.x - xDim / 2.0f + (3.01f * x), 0.0f, transform.position.y + yDim / 2.0f - y);

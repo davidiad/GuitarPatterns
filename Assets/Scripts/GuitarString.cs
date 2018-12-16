@@ -36,6 +36,9 @@ public class GuitarString : MonoBehaviour {
 			}
 			newNote.transform.localPosition = new Vector3(noteXPos, 0.2f, 0f);
 
+            // scale the notes back down relative to parent string so they're round
+            newNote.transform.localScale = new Vector3(1f, 1f, 0.01f / transform.localScale.z);
+
 			// Init() the notes
 			notes[i] = newNote.GetComponent<Note>();
 			int noteID = (_openNoteID + i) % 12;
