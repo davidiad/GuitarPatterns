@@ -12,7 +12,7 @@ public class SwipeParticlesEmitter : MonoBehaviour
         if( !emitter )
             emitter = GetComponent<ParticleEmitter>();
 
-        emitter.emit = false;
+        //emitter.emit = false;
     }
 
     public void Emit( Vector3 heading, float swipeVelocity )
@@ -20,12 +20,12 @@ public class SwipeParticlesEmitter : MonoBehaviour
         // orient our emitter towards the swipe direction
         emitter.transform.rotation = Quaternion.LookRotation( heading );
 
-        Vector3 localEmitVelocity = emitter.localVelocity;
-        localEmitVelocity.z = baseSpeed * swipeVelocityScale * swipeVelocity;
-        emitter.localVelocity = localEmitVelocity;
+        //Vector3 localEmitVelocity = emitter.localVelocity;
+        //localEmitVelocity.z = baseSpeed * swipeVelocityScale * swipeVelocity;
+        //emitter.localVelocity = localEmitVelocity;
 
         // fire away!
-        emitter.Emit();
+        //emitter.Emit();
     }
 
     public static Vector3 GetSwipeDirectionVector( FingerGestures.SwipeDirection direction )

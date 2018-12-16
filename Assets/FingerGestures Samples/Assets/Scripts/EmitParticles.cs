@@ -11,7 +11,7 @@ public class EmitParticles : MonoBehaviour
 
     public void Emit()
     {
-        emitter.Emit();
+        //emitter.Emit();
     }
 
     public void Emit( Vector3 dir )

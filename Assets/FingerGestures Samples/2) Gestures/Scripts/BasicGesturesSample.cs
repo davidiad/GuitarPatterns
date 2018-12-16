@@ -37,7 +37,7 @@ public class BasicGesturesSample : SampleBase
     {
         if( gesture.Selection == tapObject )
         {
-            SpawnParticles( tapObject );
+            //SpawnParticles( tapObject );
             UI.StatusText = "Tapped with finger " + gesture.Fingers[0];
         }
     }
@@ -46,7 +46,7 @@ public class BasicGesturesSample : SampleBase
     {
         if( gesture.Selection == doubleTapObject )
         {
-            SpawnParticles( doubleTapObject );
+            //SpawnParticles( doubleTapObject );
             UI.StatusText = "Double-Tapped with finger " + gesture.Fingers[0];
         }
     }
@@ -55,7 +55,7 @@ public class BasicGesturesSample : SampleBase
     {
         if( gesture.Selection == longPressObject )
         {
-            SpawnParticles( longPressObject );
+            //SpawnParticles( longPressObject );
             UI.StatusText = "Performed a long-press with finger " + gesture.Fingers[0];
         }
     }
@@ -81,7 +81,7 @@ public class BasicGesturesSample : SampleBase
             dragFingerIndex = finger.Index;
 
             // spawn some particles because it's cool.
-            SpawnParticles( dragObject );
+            //SpawnParticles( dragObject );
         }
         else if( finger.Index == dragFingerIndex )  // gesture in progress, make sure that this event comes from the finger that is dragging our dragObject
         {
@@ -98,7 +98,7 @@ public class BasicGesturesSample : SampleBase
                 dragFingerIndex = -1;
 
                 // spawn some particles because it's cool.
-                SpawnParticles( dragObject );
+                //SpawnParticles( dragObject );
 
             }
         }
@@ -138,12 +138,12 @@ public class BasicGesturesSample : SampleBase
 
     #region Utils
 
-    void SpawnParticles( GameObject obj )
-    {
-        ParticleEmitter emitter = obj.GetComponentInChildren<ParticleEmitter>();
-        if( emitter )
-            emitter.Emit();
-    }
+    //void SpawnParticles( GameObject obj )
+    //{
+    //    ParticleEmitter emitter = obj.GetComponentInChildren<ParticleEmitter>();
+    //    if( emitter )
+    //        emitter.Emit();
+    //}
 
     #endregion
 }
