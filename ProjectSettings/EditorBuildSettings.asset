@@ -5,5 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Fretboard.unity
+    guid: 01e2171b00b154ab1b4fde5f847efac5
+  - enabled: 0
+    path: Assets/FingerGestures Samples/1) Finger Events/FingerEventsPart2.unity
+    guid: 79f9aaca6c4c8c94b9199979671be2bb
+  - enabled: 1
+    path: Assets/FingerGestures Samples/1) Finger Events/FingerEventsPart1.unity
+    guid: 96c92f48165a2fc46bdb086542e4b3f4
+  m_configObjects: {}
